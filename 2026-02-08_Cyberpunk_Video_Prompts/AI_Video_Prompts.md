@@ -1,118 +1,30 @@
-# AI Video Director - Epic Character Series (Full Narrative Expansion)
+第一部分：10 位角色詳細描述 (Next Scene X, Frame 0)
+Next Scene 1 (Frame 0):
+背景為雨後霓虹閃爍的巷弄，地面反射五彩光影。女性黑客身著黑色高領緊身皮衣，外罩一件半透明的全息機能夾克，景深極淺，背後燈火朦朧。頭髮為銀色短髮，夾雜藍色光纖導線。胸部大小為 C-cup，形態自然。手指纖細，指尖鑲嵌著微型數據接口。手持一台折疊式全息終端機，腰間掛著數顆數據炸彈。周圍漂浮著三台六邊形掃描無人機，發出幽幽藍光。
 
-This document contains 10 Character Groups. Each group features 3 continuous scenes for a full cinematic sequence.
+Next Scene 2 (Frame 0):
+背景是星艦機庫，巨大的推進器噴射著微弱餘溫。飛行員身著白色機能連身飛行服，領口微開，景深聚焦於她自信的面部。頭髮為高束的烈焰紅馬尾。胸部大小為 D-cup，受飛行服束縛呈現緊緻輪廓。手指戴著感應式飛行手套，指關節有金屬強化。手提著一頂科技感十足的全息頭盔。身後是一台正在檢修的重型機甲，火花四濺。
 
----
+Next Scene 3 (Frame 0):
+背景為充滿綠意與導管的生化實驗室，透明培养槽散發綠光。科學家穿著修身的銀色防輻射長袍，景深中度，可見後方複雜的化學儀器。頭髮為淡粉色長捲髮。胸部大小為 B-cup，知性優雅。手指靈活地操控著液態金屬樣本，指甲帶有變色塗層。手持一支裝滿發光藥劑的注射槍。周圍佈滿了生命維持系統與全息數據圖表。
 
-## Group 1: The Glitch Runner (Cyberpunk Netrunner)
-### Scene 1: Infiltration. Scene 2: Chase. Scene 3: Leap.
+Next Scene 4 (Frame 0):
+背景是繁華都市的高樓邊緣，俯瞰下方的車水馬龍。城市忍者身著深灰色納米迷彩服，景深寬廣，展現壯闊天際線。頭髮為紮起的黑色丸子頭，綁帶隨風飄揚。胸部大小為 C-cup，充滿運動美感。手指纏繞著防滑繃帶，抓地力強。手握一把帶有藍光槽的電磁短刀。周圍有隱形的折射干擾裝置，空氣呈現輕微扭曲。
 
-## Group 2: The Ace of Hangar (Orbital Pilot)
-### Scene 1: Ritual. Scene 2: Boarding. Scene 3: Combat.
+Next Scene 5 (Frame 0):
+背景為荒涼的黃沙戈壁，巨大的沉沒古船遺跡。荒野拾荒者穿著破舊但機能性強的沙色斗篷，內襯防護裝甲，景深模糊了遠處的沙塵暴。頭髮為粗獷的髒辮，點綴著齒輪裝飾。胸部大小為 D-cup，展現成熟力量感。手指因勞作略顯粗糙，戴著黃銅色機械指套。手提一具古老的能源核心。周圍是拼湊而成的履帶式探測器與地雷。
 
-## Group 3: The Bio-Architect (Genetic Medic)
-### Scene 1: Outbreak. Scene 2: Pursuit. Scene 3: Resolution.
+Next Scene 6 (Frame 0):
+背景是深海研究站的透明圓頂，窗外有巨大的發光章魚游過。潛水員穿著深藍色液體動力緊身衣，景深極深，展現深海的壓迫感。頭髮為濕漉漉的黑色長髮。胸部大小為 C-cup，曲線流暢。手指穿戴著鰭狀蹼手套。手持一個大功率水底電筒。周圍是高壓氧氣艙與自動維修機械臂。
 
-## Group 4: The Neon Ghost (Tactical Ninja)
-### Scene 1: Dive. Scene 2: Takedown. Scene 3: Vanishing.
+Next Scene 7 (Frame 0):
+背景是虛擬偶像的演唱會舞台，無數全息方塊在空中起舞。歌手身著發光的蕾絲蓬蓬裙與金屬束腰，景深聚焦，邊緣光暈華麗。頭髮為天藍色長直髮，長度過腰。胸部大小為 B-cup，纖瘦可愛。手指佩戴著透明的觸控戒指。手握一支浮空的機能麥克風。周圍環繞著環繞式全息投影幕與炫彩射燈。
 
-## Group 5: The Core Scavenger (Desert Nomad)
-### Scene 1: Discovery. Scene 2: Collapse. Scene 3: Escape.
+Next Scene 8 (Frame 0):
+背景是太空站的維修外廊，星光點點。工程師身著厚重的重型外骨骼裝甲，胸口有明亮的黃色警示燈，景深展現宇宙的空曠。頭髮為剪得很短的咖啡色短髮。胸部大小為 E-cup，支撐感十足。手指操作著多功能的機械手。手提一個噴射推進器部件。周圍是漂浮的維修工具箱與磁力吸附裝置。
 
----
+Next Scene 9 (Frame 0):
+背景是和風科幻的茶室，紙窗外是霓虹雨景。特工身著改良式科技旗袍，側面開叉露出一圈武器掛架，景深唯美。頭髮為垂落的烏黑長髮，插著一支發光髮簪。胸部大小為 D-cup，成熟端莊。手指塗著暗紅色指甲油，指尖輕觸茶杯。手持一把隱藏式摺疊扇。周圍是微型竊聽機器人化作的裝飾盆栽。
 
-## Group 6: The Abyss Explorer (Deep Sea Diver)
-
-### Scene 1: The Sunken Temple
-**Next Scene 1 (Frame 0):** 深海遺蹟。黑色濕髮潛水員，C-cup，發光水母背景。大功率電筒。
-**English:** Beat 1: Swims into temple. Beat 2: Torch reveals Kraken eye. Beat 3: Tentacle attack. Beat 4: Flash flare. Beat 5: Suction pull.
-**中文:** 畫面 1: 游入神廟。畫面 2: 照出怪眼。畫面 3: 觸手襲擊。畫面 4: 閃光彈。畫面 5: 強烈吸力。
-
-### Scene 2: Kraken Chase
-**Next Scene 2 (Frame 0):** 窄小管道。水壓巨大。C-cup 受壓。手指扣管壁。
-**English:** Beat 1: Rapid swim. Beat 2: Pipe collapse. Beat 3: EMP blast. Beat 4: Creature recoils. Beat 5: Airlock reach.
-**中文:** 畫面 1: 疾速游泳。畫面 2: 管道崩塌。畫面 3: 電磁脈衝。畫面 4: 怪物退縮。畫面 5: 到達氣閘。
-
-### Scene 3: Ascent to Light
-**Next Scene 3 (Frame 0):** 海面下方。氣泡升騰。她正向上游動，C-cup 曲線流暢。陽光透射水面。
-**English:** Beat 1: Kicks toward surface. Beat 2: Bubbles surround her. Beat 3: Reaches into the light. Beat 4: Breaks the surface. Beat 5: Gasps in fresh air.
-**中文:** 畫面 1: 向海面游動。畫面 2: 氣泡環繞。畫面 3: 伸向陽光。畫面 4: 衝出水面。畫面 5: 呼吸新鮮空氣。
-
----
-
-## Group 7: The Virtual Siren (Holographic Idol)
-
-### Scene 1: Opening Act
-**Next Scene 1 (Frame 0):** 全息舞台。藍長髮，發光裙，B-cup。全息麥克風。
-**English:** Beat 1: Hand raise, petals. Beat 2: Soundwaves visual. Beat 3: Gravity off. Beat 4: Float start. Beat 5: Audience reach.
-**中文:** 畫面 1: 舉手，花瓣。畫面 2: 聲波可視。畫面 3: 重力消失。畫面 4: 開始漂浮。畫面 5: 伸手向觀眾。
-
-### Scene 2: Nebula Metamorphosis
-**Next Scene 2 (Frame 0):** 星雲背景。裙擺變星光。B-cup 旋轉。長髮如翼。
-**English:** Beat 1: Spins into vortex. Beat 2: Body glows white. Beat 3: Shatters to particles. Beat 4: Reform as wings. Beat 5: Galaxy ascent.
-**中文:** 畫面 1: 旋轉成渦流。畫面 2: 全身發白光。畫面 3: 碎成微粒。畫面 4: 重組成翅膀。畫面 5: 升入銀河。
-
-### Scene 3: Final Resonance
-**Next Scene 3 (Frame 0):** 城市上空。巨大全息影像。她正張開雙臂俯瞰，B-cup 閃耀。
-**English:** Beat 1: Beams of light erupt. Beat 2: Voice shakes the city. Beat 3: Digital rain falls. Beat 4: Fades into the sky. Beat 5: Final pose in stars.
-**中文:** 畫面 1: 光束爆發。畫面 2: 歌聲震動城市。畫面 3: 數位雨落下。畫面 4: 沒入天空。畫面 5: 星空中最後姿勢。
-
----
-
-## Group 8: The Void Tech (Station Engineer)
-
-### Scene 1: Hull Repair
-**Next Scene 1 (Frame 0):** 太空外廊。咖啡短髮裝甲，E-cup。機械手握推進器。
-**English:** Beat 1: Boot unlock. Beat 2: Drift to leak. Beat 3: Plasma weld. Beat 4: Meteor strike. Beat 5: Void tumble.
-**中文:** 畫面 1: 靴子解鎖。畫面 2: 漂向裂口。畫面 3: 電漿焊接。畫面 4: 隕石撞擊。畫面 5: 翻滾墜入虛空。
-
-### Scene 2: Tether Rescue
-**Next Scene 2 (Frame 0):** 深空。翻滾中，手指射出磁力索。E-cup 受力明顯。
-**English:** Beat 1: Fires grappling tether. Beat 2: Hooks railing. Beat 3: Jerks back to station. Beat 4: Hull slam. Beat 5: Visor crack, gasp.
-**中文:** 畫面 1: 射出磁力繩。畫面 2: 扣住欄杆。畫面 3: 拉回車站。畫面 4: 撞上船身。畫面 5: 面罩裂開，喘息。
-
-### Scene 3: Mission Complete
-**Next Scene 3 (Frame 0):** 氣閘內部。脫下頭盔。短髮汗濕。E-cup 劇烈喘息。背景是修復的裂口。
-**English:** Beat 1: Helmet removal. Beat 2: Deep breath of air. Beat 3: Looks at the Earth. Beat 4: Thumbs up to camera. Beat 5: Lights return to normal.
-**中文:** 畫面 1: 脫下頭盔。畫面 2: 深呼吸。畫面 3: 望向地球。畫面 4: 對鏡頭比讚。畫面 5: 燈光恢復正常。
-
----
-
-## Group 9: The Lotus Blade (Secret Agent)
-
-### Scene 1: Tea House Ambush
-**Next Scene 1 (Frame 0):** 和風茶室。科技旗袍，D-cup。摺扇藏針。
-**English:** Beat 1: Fan snap, needles. Beat 2: Table kick. Beat 3: Katana dodge. Beat 4: Fan slash. Beat 5: Screen jump.
-**中文:** 畫面 1: 展扇露針。畫面 2: 踢桌。畫面 3: 躲避武士刀。畫面 4: 扇刃割裂。畫面 5: 躍過屏風。
-
-### Scene 2: Rainy Duel
-**Next Scene 2 (Frame 0):** 雨中街道。旗袍濕透。D-cup 曲線。手握髮簪化盾。
-**English:** Beat 1: Pin throw, shield. Beat 2: Bullet block. Beat 3: Rain dash. Beat 4: Spin kick. Beat 5: Hero landing.
-**中文:** 畫面 1: 擲簪化盾。畫面 2: 擋彈。畫面 3: 雨中衝刺。畫面 4: 旋風踢。畫面 5: 英雄降落。
-
-### Scene 3: Final Strike
-**Next Scene 3 (Frame 0):** 霓虹屋頂。刀尖滴雨。她正優雅收傘，D-cup 輪廓在月光下唯美。
-**English:** Beat 1: Final blade strike. Beat 2: Sheathes weapon. Beat 3: Rain stops. Beat 4: Looks at target. Beat 5: Disappears in mist.
-**中文:** 畫面 1: 最後一擊。畫面 2: 收刀入鞘。畫面 3: 雨停。畫面 4: 注視目標。畫面 5: 消失在霧中。
-
----
-
-## Group 10: The Nitro Queen (Street Racer)
-
-### Scene 1: Starting Line
-**Next Scene 1 (Frame 0):** 賽車座艙。綠短髮，紅賽車服，C-cup。換擋桿。
-**English:** Beat 1: Ignition slam. Beat 2: Roar & shake. Beat 3: Green light. Beat 4: Tire melt. Beat 5: Rocket start.
-**中文:** 畫面 1: 啟動。畫面 2: 咆哮抖動。畫面 3: 綠燈。畫面 4: 輪胎熔化。畫面 5: 彈射起跑。
-
-### Scene 2: Neon Drift
-**Next Scene 2 (Frame 0):** 狹窄彎道。甩尾中。C-cup 隨慣性偏移。眼神銳利。
-**English:** Beat 1: Handbrake pull. Beat 2: 90-degree drift. Beat 3: Nitro boost. Beat 4: Blue fire. Beat 5: Overtake.
-**中文:** 畫面 1: 拉手剎。畫面 2: 90 度甩尾。畫面 3: 氮氣加速。畫面 4: 藍色火焰。畫面 5: 超車。
-
-### Scene 3: Victory Lap
-**Next Scene 3 (Frame 0):** 終點線。全息獎盃。她正鑽出車窗歡呼，C-cup 充滿活力。
-**English:** Beat 1: Crosses finish line. Beat 2: 180 drift stop. Beat 3: Steps out of car. Beat 4: Raises fist. Beat 5: Shower of light.
-**中文:** 畫面 1: 衝線。畫面 2: 180 度甩尾停。畫面 3: 鑽出車外。畫面 4: 舉拳。畫面 5: 光雨落下。
-
----
-Acting should be emotional and realistic. 4K details, natural color, cinematic lighting and shadows, crisp textures, clean edges, fine material detail, high microcontrast, realistic shading, accurate tone mapping, smooth gradients, realistic highlights, detailed fabric and hair, sharp and natural.
+Next Scene 10 (Frame 0):
+背景是地下賽車場，引擎轟鳴，煙霧瀰漫。賽車手穿著紅黑相間的緊身賽車服，腹部鏤空設計，景深聚焦於她充滿野性的眼神。頭髮為挑染綠色的利落短髮。胸部大小為 C-cup，結實有力。手指扣在方向盤模擬器上。手提一罐能量飲料。周圍是改裝賽車與全息計時看板。
