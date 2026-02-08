@@ -1,114 +1,118 @@
-# AI Video Director - Epic Character Series (30-Scene Narrative Expansion)
+# AI Video Director - Epic Character Series (Full Narrative Expansion)
 
 This document contains 10 Character Groups. Each group features 3 continuous scenes for a full cinematic sequence.
 
 ---
 
 ## Group 1: The Glitch Runner (Cyberpunk Netrunner)
-
-### Scene 1: The Infiltration
-**Next Scene 1 (Frame 0):** 雨後霓虹閃爍的巷弄。銀髮黑客，C-cup 胸部，指尖數據接口，手持全息終端。
-**English Version:** Beat 1: Taps terminal, data streams swirl. Beat 2: Bypasses firewall with a swipe. Beat 3: Blue energy ripple affects lights. Beat 4: Security siren blares. Beat 5: Dash prep, eyes glowing.
-**中文版本:** 畫面 1: 敲擊終端，數據旋轉。畫面 2: 揮手突破防火牆。畫面 3: 能量波干擾燈光。畫面 4: 警報響起。畫面 5: 準備衝刺，眼部發光。
-
-### Scene 2: The Chase
-**Next Scene 2 (Frame 0):** 高空管道衝刺。背後三台紅光無人機。C-cup 受風壓緊貼。數據炸彈啟動中。
-**English Version:** Beat 1: Sprints down pipe. Beat 2: Throws data bomb backward. Beat 3: Digital vortex consumes drones. Beat 4: Steam roll over a vent. Beat 5: Jumps off edge toward rooftop.
-**中文版本:** 畫面 1: 管道衝刺。畫面 2: 向後投擲炸彈。畫面 3: 數位渦流吞噬無人機。畫面 4: 蒸汽口翻滾。畫面 5: 躍向天台。
-
-### Scene 3: The Vertigo Leap
-**Next Scene 3 (Frame 0):** 半空中，下方是霓虹深淵。雙臂張開，D-cup 胸部在風中起伏。景深展現城市廣度。
-**English Version:** Beat 1: Reaches peak of jump. Beat 2: Activates gravity-boots, blue rings. Beat 3: Descent toward skyscraper glass. Beat 4: Touches glass, magnetic ripples. Beat 5: Runs horizontally on wall.
-**中文版本:** 畫面 1: 跳躍頂點。畫面 2: 啟動重力靴，藍色能量環。畫面 3: 向大樓玻璃下降。畫面 4: 手觸玻璃產生漣漪。畫面 5: 在牆面橫跑。
-
----
+### Scene 1: Infiltration. Scene 2: Chase. Scene 3: Leap.
 
 ## Group 2: The Ace of Hangar (Orbital Pilot)
-
-### Scene 1: Pre-flight Ritual
-**Next Scene 1 (Frame 0):** 星艦機庫。紅馬尾，白色飛行服，D-cup。手提全息頭盔。
-**English Version:** Beat 1: Snaps helmet shut. Beat 2: Wrist HUD sync. Beat 3: Tightens chest straps. Beat 4: Walks to massive mech. Beat 5: Determined gaze up.
-**中文版本:** 畫面 1: 扣上頭盔。畫面 2: 腕部 HUD 同步。畫面 3: 拉緊胸帶。畫面 4: 走向機甲。畫面 5: 充滿鬥志地仰望。
-
-### Scene 2: Boarding & Launch
-**Next Scene 2 (Frame 0):** 機甲座艙內部。雙手握住感應操縱桿。D-cup 受力壓向靠背。
-**English Version:** Beat 1: Thrusters ignite, blue light. Beat 2: Mech slides onto rail. Beat 3: Rapid launch acceleration. Beat 4: Body pressed into seat. Beat 5: Blasts through energy shield.
-**中文版本:** 畫面 1: 點火藍光。畫面 2: 滑入軌道。畫面 3: 疾速加速。畫面 4: 身體壓入座椅。畫面 5: 衝破護盾。
-
-### Scene 3: Space Combat
-**Next Scene 3 (Frame 0):** 宇宙背景。機甲背負電漿炮。星光閃爍。
-**English Version:** Beat 1: 180-degree turn in zero-G. Beat 2: Fires plasma cannon, purple beam. Beat 3: Dodges missiles. Beat 4: Barrel roll through debris. Beat 5: Victory scream.
-**中文版本:** 畫面 1: 失重轉身。畫面 2: 發射紫色電漿炮。畫面 3: 閃避飛彈。畫面 4: 穿過碎片雲桶滾。畫面 5: 勝利吶喊。
-
----
+### Scene 1: Ritual. Scene 2: Boarding. Scene 3: Combat.
 
 ## Group 3: The Bio-Architect (Genetic Medic)
-
-### Scene 1: Lab Outbreak
-**Next Scene 1 (Frame 0):** 綠槽實驗室。粉髮科學家，銀袍，B-cup。手持發光藥劑。
-**English Version:** Beat 1: Serum drops into metal. Beat 2: Metal spikes erupt. Beat 3: Protective duck. Beat 4: Grabs containment grenade. Beat 5: Alarms flash red.
-**中文版本:** 畫面 1: 藥劑滴入。畫面 2: 金屬刺竄出。畫面 3: 蹲下防護。畫面 4: 抓起穩定彈。畫面 5: 紅燈閃爍。
-
-### Scene 2: The Chase
-**Next Scene 2 (Frame 0):** 白色走廊。手持雙生化槍。粉髮隨動作飛舞。
-**English Version:** Beat 1: Sprints at camera. Beat 2: Fires at metal tentacles. Beat 3: Tentacles melt to goop. Beat 4: Slides under door. Beat 5: Control panel lock.
-**中文版本:** 畫面 1: 正面衝刺。畫面 2: 射擊金屬觸手。畫面 3: 觸手溶化。畫面 4: 滑進門。畫面 5: 面板鎖門。
-
-### Scene 3: Final Resolution
-**Next Scene 3 (Frame 0):** 實驗室核心，液體金屬被凍結。她疲憊地靠在牆上，B-cup 劇烈起伏。
-**English Version:** Beat 1: Wipes sweat from brow. Beat 2: Looks at the frozen sculpture. Beat 3: Drops the empty serum gun. Beat 4: Emergency lights turn white. Beat 5: A tired smile appears.
-**中文版本:** 畫面 1: 抹去額頭汗水。畫面 2: 看著凍結的雕塑。畫面 3: 丟下空藥槍。畫面 4: 應急燈轉白。畫面 5: 露出疲憊笑容。
-
----
+### Scene 1: Outbreak. Scene 2: Pursuit. Scene 3: Resolution.
 
 ## Group 4: The Neon Ghost (Tactical Ninja)
-
-### Scene 1: Night Dive
-**Next Scene 1 (Frame 0):** 天台邊緣。黑髮丸子頭，深灰迷彩，C-cup。握電磁短刀。
-**English Version:** Beat 1: Unsheathes blade. Beat 2: Scans target below. Beat 3: Freefall leap. Beat 4: Wind whips hair. Beat 5: Landing prep.
-**中文版本:** 畫面 1: 拔刀。畫面 2: 掃描目標。畫面 3: 自由落體。畫面 4: 風吹亂髮。畫面 5: 預備降落。
-
-### Scene 2: Aerial Takedown
-**Next Scene 2 (Frame 0):** 半空中。與無人機搏鬥。C-cup 受重力下壓。
-**English Version:** Beat 1: Slashes drone. Beat 2: Grapples next drone. Beat 3: Triple flip. Beat 4: Fires wire. Beat 5: Swings across street.
-**中文版本:** 畫面 1: 劈開無人機。畫面 2: 抓牢下一台。畫面 3: 三連翻滾。畫面 4: 射抓鉤。畫面 5: 盪過街道。
-
-### Scene 3: Vanishing Act
-**Next Scene 3 (Frame 0):** 地面小巷。煙霧彈炸開。她正緩緩隱入暗影，C-cup 輪廓朦朧。
-**English Version:** Beat 1: Slams smoke bomb. Beat 2: Cloaking device activates. Beat 3: Becomes a shimmering outline. Beat 4: Steps into the shadows. Beat 5: Completely vanishes.
-**中文版本:** 畫面 1: 砸下煙霧彈。畫面 2: 啟動隱身裝置。畫面 3: 變為閃爍輪廓。畫面 4: 走入陰影。畫面 5: 完全消失。
-
----
+### Scene 1: Dive. Scene 2: Takedown. Scene 3: Vanishing.
 
 ## Group 5: The Core Scavenger (Desert Nomad)
-
-### Scene 1: Discovery
-**Next Scene 1 (Frame 0):** 荒涼戈壁墜艦。髒辮，沙色斗篷，D-cup。機械指套拿能源核心。
-**English Version:** Beat 1: Inserts core. Beat 2: Ship groans. Beat 3: Dust falls. Beat 4: Shields eyes. Beat 5: Engine hums.
-**中文版本:** 畫面 1: 插入核心。畫面 2: 星艦呻吟。畫面 3: 落塵。畫面 4: 遮眼。畫面 5: 引擎轟鳴。
-
-### Scene 2: Collapse Escape
-**Next Scene 2 (Frame 0):** 傾斜甲板。下滑中，手指扣入縫隙。D-cup 貼緊甲板。
-**English Version:** Beat 1: Slides down hull. Beat 2: Grabs cable. Beat 3: Swings over flame. Beat 4: Kicks door. Beat 5: Leaps into sand.
-**中文版本:** 畫面 1: 沿船滑落。畫面 2: 抓電纜。畫面 3: 盪過火燄。畫面 4: 踢開門。畫面 5: 躍入沙中。
-
-### Scene 3: Rover Escape
-**Next Scene 3 (Frame 0):** 沙漠。她跳上履帶車，單手握把。D-cup 隨顛簸震動。背景是崩塌的巨艦。
-**English Version:** Beat 1: Ignites rover engine. Beat 2: Sand erupts from wheels. Beat 3: Races away from the crash. Beat 4: Looks back at the explosion. Beat 5: Disappears into the sun.
-**中文版本:** 畫面 1: 啟動履帶車。畫面 2: 車輪捲起飛沙。畫面 3: 遠離墜機點。畫面 4: 回頭看爆炸。畫面 5: 沒入烈日中。
+### Scene 1: Discovery. Scene 2: Collapse. Scene 3: Escape.
 
 ---
 
 ## Group 6: The Abyss Explorer (Deep Sea Diver)
-### Scene 1: Sunken Temple. 2: Kraken Chase. 3: Airlock Escape.
+
+### Scene 1: The Sunken Temple
+**Next Scene 1 (Frame 0):** 深海遺蹟。黑色濕髮潛水員，C-cup，發光水母背景。大功率電筒。
+**English:** Beat 1: Swims into temple. Beat 2: Torch reveals Kraken eye. Beat 3: Tentacle attack. Beat 4: Flash flare. Beat 5: Suction pull.
+**中文:** 畫面 1: 游入神廟。畫面 2: 照出怪眼。畫面 3: 觸手襲擊。畫面 4: 閃光彈。畫面 5: 強烈吸力。
+
+### Scene 2: Kraken Chase
+**Next Scene 2 (Frame 0):** 窄小管道。水壓巨大。C-cup 受壓。手指扣管壁。
+**English:** Beat 1: Rapid swim. Beat 2: Pipe collapse. Beat 3: EMP blast. Beat 4: Creature recoils. Beat 5: Airlock reach.
+**中文:** 畫面 1: 疾速游泳。畫面 2: 管道崩塌。畫面 3: 電磁脈衝。畫面 4: 怪物退縮。畫面 5: 到達氣閘。
+
+### Scene 3: Ascent to Light
+**Next Scene 3 (Frame 0):** 海面下方。氣泡升騰。她正向上游動，C-cup 曲線流暢。陽光透射水面。
+**English:** Beat 1: Kicks toward surface. Beat 2: Bubbles surround her. Beat 3: Reaches into the light. Beat 4: Breaks the surface. Beat 5: Gasps in fresh air.
+**中文:** 畫面 1: 向海面游動。畫面 2: 氣泡環繞。畫面 3: 伸向陽光。畫面 4: 衝出水面。畫面 5: 呼吸新鮮空氣。
+
+---
+
 ## Group 7: The Virtual Siren (Holographic Idol)
-### Scene 1: Stage Intro. 2: Nebula Flight. 3: Particle Finale.
+
+### Scene 1: Opening Act
+**Next Scene 1 (Frame 0):** 全息舞台。藍長髮，發光裙，B-cup。全息麥克風。
+**English:** Beat 1: Hand raise, petals. Beat 2: Soundwaves visual. Beat 3: Gravity off. Beat 4: Float start. Beat 5: Audience reach.
+**中文:** 畫面 1: 舉手，花瓣。畫面 2: 聲波可視。畫面 3: 重力消失。畫面 4: 開始漂浮。畫面 5: 伸手向觀眾。
+
+### Scene 2: Nebula Metamorphosis
+**Next Scene 2 (Frame 0):** 星雲背景。裙擺變星光。B-cup 旋轉。長髮如翼。
+**English:** Beat 1: Spins into vortex. Beat 2: Body glows white. Beat 3: Shatters to particles. Beat 4: Reform as wings. Beat 5: Galaxy ascent.
+**中文:** 畫面 1: 旋轉成渦流。畫面 2: 全身發白光。畫面 3: 碎成微粒。畫面 4: 重組成翅膀。畫面 5: 升入銀河。
+
+### Scene 3: Final Resonance
+**Next Scene 3 (Frame 0):** 城市上空。巨大全息影像。她正張開雙臂俯瞰，B-cup 閃耀。
+**English:** Beat 1: Beams of light erupt. Beat 2: Voice shakes the city. Beat 3: Digital rain falls. Beat 4: Fades into the sky. Beat 5: Final pose in stars.
+**中文:** 畫面 1: 光束爆發。畫面 2: 歌聲震動城市。畫面 3: 數位雨落下。畫面 4: 沒入天空。畫面 5: 星空中最後姿勢。
+
+---
+
 ## Group 8: The Void Tech (Station Engineer)
-### Scene 1: Hull Repair. 2: Meteor Impact. 3: Tether Rescue.
+
+### Scene 1: Hull Repair
+**Next Scene 1 (Frame 0):** 太空外廊。咖啡短髮裝甲，E-cup。機械手握推進器。
+**English:** Beat 1: Boot unlock. Beat 2: Drift to leak. Beat 3: Plasma weld. Beat 4: Meteor strike. Beat 5: Void tumble.
+**中文:** 畫面 1: 靴子解鎖。畫面 2: 漂向裂口。畫面 3: 電漿焊接。畫面 4: 隕石撞擊。畫面 5: 翻滾墜入虛空。
+
+### Scene 2: Tether Rescue
+**Next Scene 2 (Frame 0):** 深空。翻滾中，手指射出磁力索。E-cup 受力明顯。
+**English:** Beat 1: Fires grappling tether. Beat 2: Hooks railing. Beat 3: Jerks back to station. Beat 4: Hull slam. Beat 5: Visor crack, gasp.
+**中文:** 畫面 1: 射出磁力繩。畫面 2: 扣住欄杆。畫面 3: 拉回車站。畫面 4: 撞上船身。畫面 5: 面罩裂開，喘息。
+
+### Scene 3: Mission Complete
+**Next Scene 3 (Frame 0):** 氣閘內部。脫下頭盔。短髮汗濕。E-cup 劇烈喘息。背景是修復的裂口。
+**English:** Beat 1: Helmet removal. Beat 2: Deep breath of air. Beat 3: Looks at the Earth. Beat 4: Thumbs up to camera. Beat 5: Lights return to normal.
+**中文:** 畫面 1: 脫下頭盔。畫面 2: 深呼吸。畫面 3: 望向地球。畫面 4: 對鏡頭比讚。畫面 5: 燈光恢復正常。
+
+---
+
 ## Group 9: The Lotus Blade (Secret Agent)
-### Scene 1: Tea House Ambush. 2: Rain Duel. 3: Final Stance.
+
+### Scene 1: Tea House Ambush
+**Next Scene 1 (Frame 0):** 和風茶室。科技旗袍，D-cup。摺扇藏針。
+**English:** Beat 1: Fan snap, needles. Beat 2: Table kick. Beat 3: Katana dodge. Beat 4: Fan slash. Beat 5: Screen jump.
+**中文:** 畫面 1: 展扇露針。畫面 2: 踢桌。畫面 3: 躲避武士刀。畫面 4: 扇刃割裂。畫面 5: 躍過屏風。
+
+### Scene 2: Rainy Duel
+**Next Scene 2 (Frame 0):** 雨中街道。旗袍濕透。D-cup 曲線。手握髮簪化盾。
+**English:** Beat 1: Pin throw, shield. Beat 2: Bullet block. Beat 3: Rain dash. Beat 4: Spin kick. Beat 5: Hero landing.
+**中文:** 畫面 1: 擲簪化盾。畫面 2: 擋彈。畫面 3: 雨中衝刺。畫面 4: 旋風踢。畫面 5: 英雄降落。
+
+### Scene 3: Final Strike
+**Next Scene 3 (Frame 0):** 霓虹屋頂。刀尖滴雨。她正優雅收傘，D-cup 輪廓在月光下唯美。
+**English:** Beat 1: Final blade strike. Beat 2: Sheathes weapon. Beat 3: Rain stops. Beat 4: Looks at target. Beat 5: Disappears in mist.
+**中文:** 畫面 1: 最後一擊。畫面 2: 收刀入鞘。畫面 3: 雨停。畫面 4: 注視目標。畫面 5: 消失在霧中。
+
+---
+
 ## Group 10: The Nitro Queen (Street Racer)
-### Scene 1: Start Line. 2: Neon Drift. 3: Nitro Loop.
+
+### Scene 1: Starting Line
+**Next Scene 1 (Frame 0):** 賽車座艙。綠短髮，紅賽車服，C-cup。換擋桿。
+**English:** Beat 1: Ignition slam. Beat 2: Roar & shake. Beat 3: Green light. Beat 4: Tire melt. Beat 5: Rocket start.
+**中文:** 畫面 1: 啟動。畫面 2: 咆哮抖動。畫面 3: 綠燈。畫面 4: 輪胎熔化。畫面 5: 彈射起跑。
+
+### Scene 2: Neon Drift
+**Next Scene 2 (Frame 0):** 狹窄彎道。甩尾中。C-cup 隨慣性偏移。眼神銳利。
+**English:** Beat 1: Handbrake pull. Beat 2: 90-degree drift. Beat 3: Nitro boost. Beat 4: Blue fire. Beat 5: Overtake.
+**中文:** 畫面 1: 拉手剎。畫面 2: 90 度甩尾。畫面 3: 氮氣加速。畫面 4: 藍色火焰。畫面 5: 超車。
+
+### Scene 3: Victory Lap
+**Next Scene 3 (Frame 0):** 終點線。全息獎盃。她正鑽出車窗歡呼，C-cup 充滿活力。
+**English:** Beat 1: Crosses finish line. Beat 2: 180 drift stop. Beat 3: Steps out of car. Beat 4: Raises fist. Beat 5: Shower of light.
+**中文:** 畫面 1: 衝線。畫面 2: 180 度甩尾停。畫面 3: 鑽出車外。畫面 4: 舉拳。畫面 5: 光雨落下。
 
 ---
 Acting should be emotional and realistic. 4K details, natural color, cinematic lighting and shadows, crisp textures, clean edges, fine material detail, high microcontrast, realistic shading, accurate tone mapping, smooth gradients, realistic highlights, detailed fabric and hair, sharp and natural.
