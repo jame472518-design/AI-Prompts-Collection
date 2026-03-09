@@ -9,6 +9,7 @@
  *   node concat_video.js --input ./clips/ --output ./output/episode01.mp4
  *   node concat_video.js --input ./clips/ --output ./output/episode01.mp4 --music ./music/bgm.mp3
  *   node concat_video.js --input ./clips/ --output ./output/episode01.mp4 --music ./music/bgm.mp3 --title "The Cookie Heist"
+ *   node concat_video.js --input ./clips/ --output ./output/episode01.mp4 --music ./music/bgm.mp3 --narration ./narration/ep01_narration.wav --title "The Cookie Heist"
  */
 
 const { execSync } = require('child_process');
@@ -80,7 +81,26 @@ function concat(videos, output, options = {}) {
     currentInput = musicOutput;
   }
 
-  // Step 4: Add title text overlay (if provided)
+  // Step 4: Add narration voiceover (if provided)
+  if (options.narration) {
+    const narrationOutput = options.title
+      ? path.join(tmpDir, '_narration_temp.mp4')
+      : output;
+
+    console.log(`Adding narration: ${options.narration}`);
+    execSync(
+      `ffmpeg -y -i "${currentInput}" -i "${options.narration}" ` +
+      `-filter_complex "[1:a]volume=0.8[vo]; ` +
+      `[0:a][vo]amix=inputs=2:duration=first:dropout_transition=2[a]" ` +
+      `-map 0:v -map "[a]" -c:v copy -c:a aac -shortest "${narrationOutput}"`,
+      { stdio: 'inherit' }
+    );
+
+    if (currentInput !== output) fs.unlinkSync(currentInput);
+    currentInput = narrationOutput;
+  }
+
+  // Step 5: Add title text overlay (if provided)
   if (options.title) {
     console.log(`Adding title: ${options.title}`);
     execSync(
@@ -124,6 +144,7 @@ Options:
   --input    Directory containing video clips (sorted alphabetically)
   --output   Output file path
   --music    (Optional) Background music file
+  --narration (Optional) Narration voiceover file (volume 80%)
   --title    (Optional) Title text overlay (shown first 3 seconds)
 
 Extract last frame (for scene chaining):
@@ -147,6 +168,7 @@ if (args.extract) {
 
   concat(videos, args.output, {
     music: args.music,
+    narration: args.narration,
     title: args.title,
   });
 }

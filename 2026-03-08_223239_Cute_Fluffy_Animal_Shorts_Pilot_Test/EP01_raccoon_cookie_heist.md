@@ -21,6 +21,10 @@
 **Music Prompt:**
 `sneaky spy pizzicato strings, tiptoeing staccato bass, building tension, mysterious and playful, cartoon heist movie opening, 100 bpm, no vocals, instrumental, cinematic spy comedy`
 
+**Narration Script (旁白腳本):**
+`深夜的廚房裡，一隻小浣熊悄悄探出了頭……牠的目標只有一個——那罐餅乾。`
+- Duration: 5s | Tone: mysterious, whispering storyteller
+
 **中文說明：** Q版浣熊從廚房門框後慢慢探出大頭，大眼睛誇張地左右掃視。發現台面上的餅乾罐，瞳孔變成巨大的卡通星星。舔了舔小嘴唇充滿期待，然後開始用胖爪誇張地踮腳潛入廚房。鏡頭從低角度追蹤浣熊進入月光下的廚房。
 
 ---
@@ -34,6 +38,10 @@
 
 **Music Prompt:**
 `tension building orchestral strings, climbing ascending melody, moment of danger with brief comedic trombone when slipping, recovery with relieved piccolo trill, mission impossible parody, 110 bpm, no vocals, cartoon action score`
+
+**Narration Script (旁白腳本):**
+`小浣熊深吸一口氣，開始了牠的攀爬大作戰……差一點！差一點就掉下去了！`
+- Duration: 5s | Tone: tense, excited commentator
 
 **中文說明：** 浣熊到達廚房台面下，仰頭看高處的餅乾罐。深吸一口氣鼓起胖臉頰，然後開始用小爪抓著抽屜把手攀爬。蓬鬆條紋尾巴直直伸出保持平衡，搖搖晃晃。爬到一半一隻爪滑掉，單手懸掛後驚慌地重新抓住。鏡頭跟隨攀爬向上搖。
 
@@ -49,6 +57,10 @@
 **Music Prompt:**
 `triumphant brief fanfare for cookie grab, happy munching sounds, then sudden dramatic record scratch silence when light turns on, single slow drip sound effect, comedic frozen moment, total silence except one cookie crumb falling, 105 bpm dropping to 0, no vocals, spy caught red-handed score`
 
+**Narration Script (旁白腳本):**
+`終於拿到了！好好吃……等等，燈怎麼亮了？！`
+- Duration: 4s | Tone: joyful then sudden shock, dramatic pause
+
 **中文說明：** 浣熊登上台面，興奮顫抖地掀開餅乾罐蓋。用胖爪抓起最大的餅乾咬了一大口，臉頰誇張地鼓得圓圓的。餅乾碎屑散落在蓬鬆灰毛上。突然廚房燈亮了。浣熊在嘴嚼到一半完全定格，巨大的心虛眼睛慢慢轉向光源，嘴裡還叼著餅乾。一粒碎屑從塞滿的臉頰慢動作落下。
 
 ---
@@ -62,6 +74,10 @@
 
 **Music Prompt:**
 `sudden frantic cartoon chase music, rapid pizzicato and xylophone, comical running percussion, brief falling whoosh sound, then warm gentle resolution melody as raccoon peeks back, satisfied mischievous ending with soft chime, 140 bpm dropping to 85 bpm, no vocals, cartoon heist escape to cozy ending`
+
+**Narration Script (旁白腳本):**
+`跑啊跑啊——嘿嘿，餅乾到手，任務完成！晚安～`
+- Duration: 4s | Tone: panicked rush then satisfied, cozy whisper at end
 
 **中文說明：** 定格一拍後，浣熊的大心虛眼睛快速亂瞄。緊抓著餅乾，短胖小腿模糊地瘋狂搖擺跑過台面。餅乾碎屑像尾巴一樣飛散。跑到邊緣，把餅乾保護性地抱在胸前，閉上眼跳下台面。最後畫面：浣熊從台面下探出頭，只看得到眼睛和偵探帽，邊嚼偷來的餅乾邊滿足地眨眼。
 
