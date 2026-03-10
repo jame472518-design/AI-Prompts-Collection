@@ -15,8 +15,10 @@
 **Starting Image Prompt (for text-to-image generation):**
 `An adorable chibi raccoon with oversized head, enormous sparkly eyes with dark mask markings, extremely puffy grey plush fur, wearing a tiny detective hat, peeking around a kitchen doorframe at night, one chubby paw gripping the doorframe, eyes locked on something off-screen with intense focus, moonlight casting dramatic shadows, 3D cartoon Pixar style, chibi proportions, kawaii aesthetic, pastel kitchen background, dramatic noir lighting, 8k render`
 
-**I2V Motion Prompt:**
-`The chibi raccoon slowly peeks its oversized head further around the kitchen doorframe, enormous eyes scanning left and right with exaggerated caution. It spots the cookie jar on the counter and its pupils dilate into huge cartoon stars. It licks its tiny lips with anticipation, then begins tiptoeing into the kitchen with comically exaggerated sneaky steps on its chubby paws. Camera slowly tracks the raccoon from a low angle as it enters the moonlit kitchen. Dramatic shadows, dust particles in moonbeams, noir atmosphere.`
+**I2V Motion Prompt (v2 - simplified, 2-3 actions max):**
+`The chibi raccoon slowly peeks its oversized head around the kitchen doorframe, enormous eyes scanning left and right with exaggerated caution. It spots the cookie jar on the counter and its pupils dilate wide with excited desire. Camera holds steady low-angle shot. Moonlit kitchen, dramatic noir shadows, dust particles in moonbeams.`
+
+**Transition Anchor (結尾錨點):** Raccoon has entered the kitchen, facing toward the counter. Low-angle camera.
 
 **Music Prompt:**
 `sneaky spy pizzicato strings, tiptoeing staccato bass, building tension, mysterious and playful, cartoon heist movie opening, 100 bpm, no vocals, instrumental, cinematic spy comedy`
@@ -25,7 +27,7 @@
 `深夜的廚房裡，一隻小浣熊悄悄探出了頭……牠的目標只有一個——那罐餅乾。`
 - Duration: 5s | Tone: mysterious, whispering storyteller
 
-**中文說明：** Q版浣熊從廚房門框後慢慢探出大頭，大眼睛誇張地左右掃視。發現台面上的餅乾罐，瞳孔變成巨大的卡通星星。舔了舔小嘴唇充滿期待，然後開始用胖爪誇張地踮腳潛入廚房。鏡頭從低角度追蹤浣熊進入月光下的廚房。
+**中文說明：** Q版浣熊從廚房門框後慢慢探出大頭，大眼睛誇張地左右掃視。發現台面上的餅乾罐，瞳孔因興奮而放大。鏡頭維持低角度穩定拍攝。
 
 ---
 
@@ -33,17 +35,19 @@
 
 **Starting Image:** Use last frame of Scene 1
 
-**I2V Motion Prompt:**
-`The chibi raccoon reaches the kitchen counter and looks up at the towering cookie jar above. It takes a deep determined breath, puffing out its chubby cheeks, then begins climbing up the cabinet using tiny paws gripping drawer handles. Its fluffy striped tail sticks straight out for balance, wobbling dangerously. Halfway up, one paw slips and it dangles by one arm before recovering with a panicked grab. Camera tilts upward following the climb, slight handheld shake for tension. Moonlit kitchen, dramatic climbing shadows.`
+**I2V Motion Prompt (v2 - simplified, 3 actions max):**
+`The chibi raccoon stands at the base of the kitchen counter, looking up at the towering cookie jar above. It puffs out its chubby cheeks with determination and begins climbing up using drawer handles, fluffy striped tail wobbling for balance. One paw slips briefly before grabbing back on. Camera tilts upward following the climb. Moonlit kitchen, tense atmosphere.`
+
+**Transition Anchor (結尾錨點):** Raccoon has reached the counter top, near the cookie jar. Counter-level camera.
 
 **Music Prompt:**
-`tension building orchestral strings, climbing ascending melody, moment of danger with brief comedic trombone when slipping, recovery with relieved piccolo trill, mission impossible parody, 110 bpm, no vocals, cartoon action score`
+`tension building orchestral strings, climbing ascending melody, moment of danger with brief comedic trombone when slipping, mission impossible parody, 110 bpm, no vocals, cartoon action score`
 
 **Narration Script (旁白腳本):**
 `小浣熊深吸一口氣，開始了牠的攀爬大作戰……差一點！差一點就掉下去了！`
 - Duration: 5s | Tone: tense, excited commentator
 
-**中文說明：** 浣熊到達廚房台面下，仰頭看高處的餅乾罐。深吸一口氣鼓起胖臉頰，然後開始用小爪抓著抽屜把手攀爬。蓬鬆條紋尾巴直直伸出保持平衡，搖搖晃晃。爬到一半一隻爪滑掉，單手懸掛後驚慌地重新抓住。鏡頭跟隨攀爬向上搖。
+**中文說明：** 浣熊站在廚房台面下方（承接 Scene 1），仰頭看高處的餅乾罐。鼓起胖臉頰開始攀爬，尾巴搖搖晃晃保持平衡。一隻爪差點滑掉又重新抓住。鏡頭跟隨向上。
 
 ---
 
@@ -51,17 +55,19 @@
 
 **Starting Image:** Use last frame of Scene 2
 
-**I2V Motion Prompt:**
-`The chibi raccoon, now on the counter, triumphantly lifts the cookie jar lid with trembling excited paws. It grabs the biggest cookie with both chubby paws and takes an enormous satisfying bite, cheeks puffing out comically full. Cookie crumbs scatter across its puffy grey fur. Then suddenly a bright kitchen light switches on. The raccoon freezes completely mid-chew, enormous guilty eyes slowly turning toward the light source, cookie still in mouth. One crumb falls from its stuffed cheek in slow motion. Camera holds medium shot during the bite, then quick-zooms to the frozen guilty face when light turns on. Dramatic spotlight replacing moonlight.`
+**I2V Motion Prompt (v2 - simplified, 3 actions max):**
+`The chibi raccoon on the counter grabs the biggest cookie with both chubby paws and takes an enormous bite, cheeks puffing out comically full. Suddenly the kitchen light switches on. The raccoon freezes mid-chew, enormous guilty eyes slowly turning toward the light source. Camera holds medium shot then zooms to the frozen guilty face. Dramatic spotlight replacing moonlight.`
+
+**Transition Anchor (結尾錨點):** Raccoon frozen on counter, cookie in mouth, staring at light source. Counter-level medium shot.
 
 **Music Prompt:**
-`triumphant brief fanfare for cookie grab, happy munching sounds, then sudden dramatic record scratch silence when light turns on, single slow drip sound effect, comedic frozen moment, total silence except one cookie crumb falling, 105 bpm dropping to 0, no vocals, spy caught red-handed score`
+`triumphant brief fanfare for cookie grab, happy munching sounds, then sudden dramatic record scratch silence when light turns on, comedic frozen moment, 105 bpm dropping to 0, no vocals, spy caught red-handed score`
 
 **Narration Script (旁白腳本):**
 `終於拿到了！好好吃……等等，燈怎麼亮了？！`
 - Duration: 4s | Tone: joyful then sudden shock, dramatic pause
 
-**中文說明：** 浣熊登上台面，興奮顫抖地掀開餅乾罐蓋。用胖爪抓起最大的餅乾咬了一大口，臉頰誇張地鼓得圓圓的。餅乾碎屑散落在蓬鬆灰毛上。突然廚房燈亮了。浣熊在嘴嚼到一半完全定格，巨大的心虛眼睛慢慢轉向光源，嘴裡還叼著餅乾。一粒碎屑從塞滿的臉頰慢動作落下。
+**中文說明：** 浣熊在台面上（承接 Scene 2）抓起餅乾大咬一口，臉頰鼓得圓圓的。突然廚房燈亮了，浣熊嚼到一半完全定格，心虛的大眼睛慢慢轉向光源。
 
 ---
 
@@ -69,25 +75,25 @@
 
 **Starting Image:** Use last frame of Scene 3
 
-**I2V Motion Prompt:**
-`After a frozen beat, the chibi raccoon's enormous guilty eyes dart around quickly. Still clutching the cookie, it breaks into a panicked waddle-run across the counter with its short chubby legs moving in a blur. Cookie crumbs fly behind it like a trail. It reaches the edge, hugs the cookie to its chest protectively with both paws, squeezes its eyes shut, and jumps off the counter into darkness below. Final shot: the raccoon peeks back up from below the counter edge, just its eyes and detective hat visible, gives a tiny satisfied wink while munching the stolen cookie. Camera tracks the panicked run, then static shot of the peek-back moment. Dramatic to warm cozy lighting at the end.`
+**I2V Motion Prompt (v2 - simplified, 3 actions max):**
+`The frozen chibi raccoon on the counter suddenly bolts into a panicked waddle-run, clutching the cookie to its chest. It reaches the counter edge and jumps off into darkness below. Final moment: it peeks back up from below the edge, just its eyes and detective hat visible, giving a satisfied wink. Camera tracks the run then holds on the peek-back moment. Warm cozy lighting at the end.`
 
 **Music Prompt:**
-`sudden frantic cartoon chase music, rapid pizzicato and xylophone, comical running percussion, brief falling whoosh sound, then warm gentle resolution melody as raccoon peeks back, satisfied mischievous ending with soft chime, 140 bpm dropping to 85 bpm, no vocals, cartoon heist escape to cozy ending`
+`sudden frantic cartoon chase music, rapid pizzicato and xylophone, comical running percussion, then warm gentle resolution melody as raccoon peeks back, satisfied mischievous ending with soft chime, 140 bpm dropping to 85 bpm, no vocals, cartoon heist escape to cozy ending`
 
 **Narration Script (旁白腳本):**
 `跑啊跑啊——嘿嘿，餅乾到手，任務完成！晚安～`
 - Duration: 4s | Tone: panicked rush then satisfied, cozy whisper at end
 
-**中文說明：** 定格一拍後，浣熊的大心虛眼睛快速亂瞄。緊抓著餅乾，短胖小腿模糊地瘋狂搖擺跑過台面。餅乾碎屑像尾巴一樣飛散。跑到邊緣，把餅乾保護性地抱在胸前，閉上眼跳下台面。最後畫面：浣熊從台面下探出頭，只看得到眼睛和偵探帽，邊嚼偷來的餅乾邊滿足地眨眼。
+**中文說明：** 定格中的浣熊（承接 Scene 3）突然慌張地抱著餅乾狂奔，跑到台面邊緣跳下去。最後從下方探出頭，只露出眼睛和偵探帽，滿足地眨眼。
 
 ---
 
 ## Post-Production
 
-### Concatenation:
+### Concatenation (with crossfade transitions):
 ```bash
-node scripts/concat_video.js --input ./episodes/EP01_clips/ --output ./output/EP01_cookie_heist.mp4 --music ./music/EP01_bgm.mp3 --title "The Cookie Heist"
+node scripts/concat_video.js --input ./episodes/EP01_clips/ --output ./output/EP01_cookie_heist.mp4 --music ./music/EP01_bgm.mp3 --crossfade 0.3 --title "The Cookie Heist"
 ```
 
 ### Scene Chaining:

@@ -16,6 +16,15 @@
 [Speed/intensity modifiers]
 ```
 
+## Scene Transition Rules (v2)
+
+**To avoid choppy transitions between scenes:**
+
+1. **Max 2-3 actions per 6-second scene** — Don't cram too many actions. Let the AI complete each motion naturally.
+2. **Transition Anchor** — Each scene's prompt must START by describing the character's position/state that matches the ENDING of the previous scene. Example: if Scene 1 ends with raccoon at the counter, Scene 2 must begin with "The raccoon at the counter..."
+3. **Consistent camera angles** — Avoid drastic camera angle changes between consecutive scenes. Gradual transitions (e.g., low-angle → eye-level) are OK.
+4. **Use crossfade** — When concatenating, use `--crossfade 0.3` to add 0.3s fade transitions between clips.
+
 ## Negative Prompt (apply to ALL videos):
 `morphing, warping, face deformation, flickering, blurry, distorted, extra limbs, realistic, photorealistic, jittery motion, sudden scene change`
 

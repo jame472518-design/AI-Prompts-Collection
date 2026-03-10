@@ -16,6 +16,15 @@
 [速度/強度修飾詞]
 ```
 
+## 場景過渡規則（v2）
+
+**避免場景之間卡頓不連貫：**
+
+1. **每 6 秒最多 2-3 個動作** — 不要塞太多動作，讓 AI 自然完成每個動態。
+2. **過渡錨點** — 每段 prompt 開頭必須描述角色的位置/狀態，與上一段結尾一致。例如：Scene 1 結尾浣熊在台面旁，Scene 2 就要從「浣熊站在台面旁」開始。
+3. **鏡頭角度一致** — 連續場景間避免劇烈的鏡頭角度變化。漸進變化（如低角度→平視）可以。
+4. **使用交叉溶解** — 串接時使用 `--crossfade 0.3` 加入 0.3 秒的淡入淡出過渡。
+
 ## 負面提示詞（所有影片都用）：
 `morphing, warping, face deformation, flickering, blurry, distorted, extra limbs, realistic, photorealistic, jittery motion, sudden scene change`
 

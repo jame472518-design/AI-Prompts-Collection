@@ -41,27 +41,64 @@ function createFileList(videos, listPath) {
   return listPath;
 }
 
+function concatWithCrossfade(videos, outputPath, crossfadeDuration) {
+  console.log(`Concatenating ${videos.length} clips with ${crossfadeDuration}s crossfade...`);
+
+  if (videos.length < 2) {
+    // Single video, just copy
+    fs.copyFileSync(videos[0], outputPath);
+    return;
+  }
+
+  // Build xfade filter chain for multiple videos
+  // Each clip is assumed to be ~6 seconds
+  const clipDuration = 6;
+  const inputs = videos.map((v, i) => `-i "${v}"`).join(' ');
+  const filterParts = [];
+  let lastLabel = '[0]';
+
+  for (let i = 1; i < videos.length; i++) {
+    const offset = clipDuration * i - crossfadeDuration * i;
+    const outLabel = i < videos.length - 1 ? `[v${i}]` : '[vout]';
+    filterParts.push(
+      `${lastLabel}[${i}]xfade=transition=fade:duration=${crossfadeDuration}:offset=${offset}${outLabel}`
+    );
+    lastLabel = outLabel;
+  }
+
+  const filterComplex = filterParts.join('; ');
+  execSync(
+    `ffmpeg -y ${inputs} -filter_complex "${filterComplex}" -map "[vout]" -c:v libx264 -crf 19 -preset fast "${outputPath}"`,
+    { stdio: 'inherit' }
+  );
+}
+
 function concat(videos, output, options = {}) {
   const tmpDir = path.dirname(output);
   const listPath = path.join(tmpDir, '_concat_list.txt');
 
-  // Step 1: Create file list for FFmpeg concat
-  createFileList(videos, listPath);
+  const hasPostProcessing = options.music || options.narration || options.title;
 
-  // Step 2: Concatenate videos
-  const concatOutput = options.music || options.title
+  // Step 1: Concatenate videos (with or without crossfade)
+  const concatOutput = hasPostProcessing
     ? path.join(tmpDir, '_concat_temp.mp4')
     : output;
 
-  console.log(`Concatenating ${videos.length} clips...`);
-  execSync(
-    `ffmpeg -y -f concat -safe 0 -i "${listPath}" -c copy "${concatOutput}"`,
-    { stdio: 'inherit' }
-  );
+  if (options.crossfade && parseFloat(options.crossfade) > 0) {
+    concatWithCrossfade(videos, concatOutput, parseFloat(options.crossfade));
+  } else {
+    // Simple concat (no crossfade)
+    createFileList(videos, listPath);
+    console.log(`Concatenating ${videos.length} clips...`);
+    execSync(
+      `ffmpeg -y -f concat -safe 0 -i "${listPath}" -c copy "${concatOutput}"`,
+      { stdio: 'inherit' }
+    );
+  }
 
   let currentInput = concatOutput;
 
-  // Step 3: Add background music (if provided)
+  // Step 2: Add background music (if provided)
   if (options.music) {
     const musicOutput = options.title
       ? path.join(tmpDir, '_music_temp.mp4')
@@ -81,7 +118,7 @@ function concat(videos, output, options = {}) {
     currentInput = musicOutput;
   }
 
-  // Step 4: Add narration voiceover (if provided)
+  // Step 3: Add narration voiceover (if provided)
   if (options.narration) {
     const narrationOutput = options.title
       ? path.join(tmpDir, '_narration_temp.mp4')
@@ -100,7 +137,7 @@ function concat(videos, output, options = {}) {
     currentInput = narrationOutput;
   }
 
-  // Step 5: Add title text overlay (if provided)
+  // Step 4: Add title text overlay (if provided)
   if (options.title) {
     console.log(`Adding title: ${options.title}`);
     execSync(
@@ -145,6 +182,7 @@ Options:
   --output   Output file path
   --music    (Optional) Background music file
   --narration (Optional) Narration voiceover file (volume 80%)
+  --crossfade (Optional) Crossfade duration in seconds between clips (e.g. 0.3)
   --title    (Optional) Title text overlay (shown first 3 seconds)
 
 Extract last frame (for scene chaining):
@@ -169,6 +207,7 @@ if (args.extract) {
   concat(videos, args.output, {
     music: args.music,
     narration: args.narration,
+    crossfade: args.crossfade,
     title: args.title,
   });
 }
