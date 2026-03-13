@@ -1,15 +1,19 @@
 /**
  * Video Concatenation Script
- * Concatenates multiple 6-second clips into one complete episode video.
- * Optionally adds background music and simple text overlay.
+ * Concatenates multiple clips into one complete episode video.
+ * Supports two modes:
+ *   - "shorts" (default): Concatenates 6-second I2V clips
+ *   - "comic": Comic drama mode — static images with Ken Burns effect + narration + subtitles
  *
  * Prerequisites: FFmpeg must be installed and in PATH
  *
- * Usage:
+ * Usage (Shorts mode):
  *   node concat_video.js --input ./clips/ --output ./output/episode01.mp4
- *   node concat_video.js --input ./clips/ --output ./output/episode01.mp4 --music ./music/bgm.mp3
- *   node concat_video.js --input ./clips/ --output ./output/episode01.mp4 --music ./music/bgm.mp3 --title "The Cookie Heist"
- *   node concat_video.js --input ./clips/ --output ./output/episode01.mp4 --music ./music/bgm.mp3 --narration ./narration/ep01_narration.wav --title "The Cookie Heist"
+ *   node concat_video.js --input ./clips/ --output ./output/episode01.mp4 --music ./music/bgm.mp3 --crossfade 0.3
+ *
+ * Usage (Comic drama mode):
+ *   node concat_video.js --mode comic --scenes ./scenes.json --output ./output/comic01.mp4
+ *   node concat_video.js --mode comic --scenes ./scenes.json --output ./output/comic01.mp4 --music bgm.mp3 --subtitle subs.srt
  */
 
 const { execSync } = require('child_process');
@@ -159,6 +163,250 @@ function concat(videos, output, options = {}) {
   console.log(`\nDone! Output: ${output} (${(stats.size / 1024 / 1024).toFixed(1)} MB)`);
 }
 
+// ==========================================
+// Comic Drama Mode (漫劇模式)
+// ==========================================
+
+/**
+ * Ken Burns effect presets
+ * Each preset defines zoompan filter parameters for FFmpeg
+ */
+const KEN_BURNS_PRESETS = {
+  'zoom-in': (d, fps) =>
+    `zoompan=z='min(zoom+0.0015,1.4)':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d=${d * fps}:s=1080x1920:fps=${fps}`,
+  'zoom-out': (d, fps) =>
+    `zoompan=z='if(eq(on,1),1.4,max(zoom-0.0015,1))':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d=${d * fps}:s=1080x1920:fps=${fps}`,
+  'pan-left': (d, fps) =>
+    `zoompan=z='1.3':x='if(eq(on,1),iw*0.3/(1.3),x-1)':y='ih/2-(ih/zoom/2)':d=${d * fps}:s=1080x1920:fps=${fps}`,
+  'pan-right': (d, fps) =>
+    `zoompan=z='1.3':x='if(eq(on,1),0,x+1)':y='ih/2-(ih/zoom/2)':d=${d * fps}:s=1080x1920:fps=${fps}`,
+  'pan-up': (d, fps) =>
+    `zoompan=z='1.3':x='iw/2-(iw/zoom/2)':y='if(eq(on,1),ih*0.3/(1.3),y-1)':d=${d * fps}:s=1080x1920:fps=${fps}`,
+  'pan-down': (d, fps) =>
+    `zoompan=z='1.3':x='iw/2-(iw/zoom/2)':y='if(eq(on,1),0,y+1)':d=${d * fps}:s=1080x1920:fps=${fps}`,
+  'none': (d, fps) =>
+    `zoompan=z='1':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d=${d * fps}:s=1080x1920:fps=${fps}`,
+};
+
+/**
+ * Generate a video clip from a static image using Ken Burns effect
+ * @param {string} imagePath - Path to the static image
+ * @param {string} outputPath - Output video path
+ * @param {number} duration - Duration in seconds
+ * @param {string} camera - Ken Burns preset name
+ * @param {number} fps - Frames per second (default 25)
+ */
+function applyKenBurns(imagePath, outputPath, duration, camera = 'zoom-in', fps = 25) {
+  const preset = KEN_BURNS_PRESETS[camera] || KEN_BURNS_PRESETS['zoom-in'];
+  const filter = preset(duration, fps);
+  console.log(`  Ken Burns [${camera}] on ${path.basename(imagePath)} (${duration}s)...`);
+  execSync(
+    `ffmpeg -y -loop 1 -i "${imagePath}" -vf "${filter}" -t ${duration} -c:v libx264 -pix_fmt yuv420p -crf 19 -preset fast "${outputPath}"`,
+    { stdio: 'inherit' }
+  );
+}
+
+/**
+ * Comic drama pipeline
+ * Reads a scenes.json file and assembles a complete comic drama video
+ *
+ * scenes.json format:
+ * {
+ *   "title": "回家的路",
+ *   "fps": 25,
+ *   "resolution": "1080x1920",
+ *   "scenes": [
+ *     {
+ *       "image": "./images/scene01.png",
+ *       "video": null,
+ *       "duration": 8,
+ *       "camera": "zoom-out",
+ *       "narration": "./audio/narration_01.wav",
+ *       "sfx": "./audio/sfx_01.wav"
+ *     },
+ *     {
+ *       "image": null,
+ *       "video": "./clips/scene02_motion.mp4",
+ *       "duration": 8,
+ *       "camera": "none",
+ *       "narration": "./audio/narration_02.wav",
+ *       "sfx": null
+ *     }
+ *   ]
+ * }
+ */
+function buildComicDrama(scenesJsonPath, outputPath, options = {}) {
+  const scenesData = JSON.parse(fs.readFileSync(scenesJsonPath, 'utf8'));
+  const scenes = scenesData.scenes;
+  const fps = scenesData.fps || 25;
+  const baseDir = path.dirname(scenesJsonPath);
+  const tmpDir = path.dirname(outputPath);
+
+  console.log(`\n=== Comic Drama: ${scenesData.title || 'Untitled'} ===`);
+  console.log(`Scenes: ${scenes.length} | FPS: ${fps}\n`);
+
+  const sceneVideos = [];
+
+  // Step 1: Generate video for each scene (Ken Burns or use existing video)
+  console.log('Step 1: Generating scene videos...');
+  for (let i = 0; i < scenes.length; i++) {
+    const scene = scenes[i];
+    const sceneOutput = path.join(tmpDir, `_comic_scene_${String(i + 1).padStart(2, '0')}.mp4`);
+
+    if (scene.video) {
+      // Use pre-made I2V video clip (for scenes with motion effects)
+      const videoSrc = path.resolve(baseDir, scene.video);
+      fs.copyFileSync(videoSrc, sceneOutput);
+      console.log(`  Scene ${i + 1}: Using I2V video ${path.basename(scene.video)}`);
+    } else if (scene.image) {
+      // Apply Ken Burns to static image
+      const imageSrc = path.resolve(baseDir, scene.image);
+      applyKenBurns(imageSrc, sceneOutput, scene.duration, scene.camera || 'zoom-in', fps);
+    }
+
+    sceneVideos.push(sceneOutput);
+  }
+
+  // Step 2: Add per-scene narration and SFX
+  console.log('\nStep 2: Adding per-scene audio...');
+  const sceneWithAudio = [];
+  for (let i = 0; i < scenes.length; i++) {
+    const scene = scenes[i];
+    const hasAudio = scene.narration || scene.sfx;
+    const audioOutput = path.join(tmpDir, `_comic_scene_audio_${String(i + 1).padStart(2, '0')}.mp4`);
+
+    if (hasAudio) {
+      let audioInputs = '';
+      let filterParts = [];
+      let inputIdx = 1;
+
+      audioInputs += ` -i "${sceneVideos[i]}"`;
+
+      if (scene.narration) {
+        const narSrc = path.resolve(baseDir, scene.narration);
+        audioInputs += ` -i "${narSrc}"`;
+        filterParts.push(`[${inputIdx}:a]volume=1.0[nar]`);
+        inputIdx++;
+      }
+      if (scene.sfx) {
+        const sfxSrc = path.resolve(baseDir, scene.sfx);
+        audioInputs += ` -i "${sfxSrc}"`;
+        filterParts.push(`[${inputIdx}:a]volume=0.5[sfx]`);
+        inputIdx++;
+      }
+
+      // Mix audio tracks
+      let mixFilter = '';
+      if (scene.narration && scene.sfx) {
+        mixFilter = `${filterParts.join('; ')}; [nar][sfx]amix=inputs=2:duration=first[a]`;
+      } else if (scene.narration) {
+        mixFilter = `${filterParts[0].replace('[nar]', '[a]')}`;
+      } else {
+        mixFilter = `${filterParts[0].replace('[sfx]', '[a]')}`;
+      }
+
+      console.log(`  Scene ${i + 1}: Mixing audio...`);
+      execSync(
+        `ffmpeg -y${audioInputs} -filter_complex "${mixFilter}" -map 0:v -map "[a]" -c:v copy -c:a aac -shortest "${audioOutput}"`,
+        { stdio: 'inherit' }
+      );
+      sceneWithAudio.push(audioOutput);
+    } else {
+      // Add silent audio track for concat compatibility
+      console.log(`  Scene ${i + 1}: Adding silent audio...`);
+      execSync(
+        `ffmpeg -y -i "${sceneVideos[i]}" -f lavfi -i anullsrc=r=44100:cl=stereo -map 0:v -map 1:a -c:v copy -c:a aac -shortest "${audioOutput}"`,
+        { stdio: 'inherit' }
+      );
+      sceneWithAudio.push(audioOutput);
+    }
+  }
+
+  // Step 3: Concatenate all scenes with crossfade
+  console.log('\nStep 3: Concatenating scenes...');
+  const crossfade = options.crossfade ? parseFloat(options.crossfade) : 0.5;
+  const concatOutput = (options.music || options.subtitle)
+    ? path.join(tmpDir, '_comic_concat.mp4')
+    : outputPath;
+
+  if (crossfade > 0 && sceneWithAudio.length >= 2) {
+    // Build xfade with variable durations
+    const inputs = sceneWithAudio.map((v) => `-i "${v}"`).join(' ');
+    const filterParts = [];
+    let lastLabel = '[0]';
+    let accumulatedOffset = 0;
+
+    for (let i = 0; i < scenes.length - 1; i++) {
+      accumulatedOffset += scenes[i].duration - crossfade;
+      const outLabel = i < scenes.length - 2 ? `[v${i}]` : '[vout]';
+      filterParts.push(
+        `${lastLabel}[${i + 1}]xfade=transition=fade:duration=${crossfade}:offset=${accumulatedOffset.toFixed(2)}${outLabel}`
+      );
+      lastLabel = outLabel;
+    }
+
+    const filterComplex = filterParts.join('; ');
+    execSync(
+      `ffmpeg -y ${inputs} -filter_complex "${filterComplex}" -map "[vout]" -c:v libx264 -crf 19 -preset fast "${concatOutput}"`,
+      { stdio: 'inherit' }
+    );
+  } else {
+    // Simple concat
+    const listPath = path.join(tmpDir, '_comic_concat_list.txt');
+    createFileList(sceneWithAudio, listPath);
+    execSync(
+      `ffmpeg -y -f concat -safe 0 -i "${listPath}" -c copy "${concatOutput}"`,
+      { stdio: 'inherit' }
+    );
+    if (fs.existsSync(listPath)) fs.unlinkSync(listPath);
+  }
+
+  let currentInput = concatOutput;
+
+  // Step 4: Add background music / original song
+  if (options.music) {
+    const musicOutput = options.subtitle
+      ? path.join(tmpDir, '_comic_music.mp4')
+      : outputPath;
+
+    const totalDuration = scenes.reduce((sum, s) => sum + s.duration, 0);
+    console.log(`\nStep 4: Adding BGM/song: ${options.music}`);
+    execSync(
+      `ffmpeg -y -i "${currentInput}" -i "${options.music}" ` +
+      `-filter_complex "[1:a]volume=0.3,afade=t=out:st=${totalDuration - 3}:d=3[bg]; ` +
+      `[0:a][bg]amix=inputs=2:duration=first:dropout_transition=2[a]" ` +
+      `-map 0:v -map "[a]" -c:v copy -c:a aac -shortest "${musicOutput}"`,
+      { stdio: 'inherit' }
+    );
+    if (currentInput !== outputPath) fs.unlinkSync(currentInput);
+    currentInput = musicOutput;
+  }
+
+  // Step 5: Burn subtitles (SRT file)
+  if (options.subtitle) {
+    console.log(`\nStep 5: Burning subtitles: ${options.subtitle}`);
+    const subPath = options.subtitle.replace(/\\/g, '/').replace(/:/g, '\\:');
+    execSync(
+      `ffmpeg -y -i "${currentInput}" ` +
+      `-vf "subtitles='${subPath}':force_style='FontSize=20,PrimaryColour=&H00FFFFFF,OutlineColour=&H00000000,Outline=2,MarginV=40'" ` +
+      `-c:a copy "${outputPath}"`,
+      { stdio: 'inherit' }
+    );
+    if (currentInput !== outputPath) fs.unlinkSync(currentInput);
+  }
+
+  // Cleanup temp files
+  sceneVideos.forEach(f => { if (fs.existsSync(f)) fs.unlinkSync(f); });
+  sceneWithAudio.forEach(f => { if (fs.existsSync(f)) fs.unlinkSync(f); });
+
+  const stats = fs.statSync(outputPath);
+  console.log(`\n=== Done! Output: ${outputPath} (${(stats.size / 1024 / 1024).toFixed(1)} MB) ===`);
+}
+
+// ==========================================
+// Shorts Mode (原有功能)
+// ==========================================
+
 // Extract last frame from a video (for scene chaining)
 function extractLastFrame(videoPath, outputImagePath) {
   console.log(`Extracting last frame from: ${videoPath}`);
@@ -171,43 +419,90 @@ function extractLastFrame(videoPath, outputImagePath) {
 
 // Main
 const args = parseArgs();
+const mode = args.mode || 'shorts';
 
-if (!args.input || !args.output) {
-  console.log(`
-Usage:
-  node concat_video.js --input <clips_dir> --output <output.mp4> [--music <bgm.mp3>] [--title "Episode Title"]
+if (mode === 'comic') {
+  // Comic Drama Mode
+  if (!args.scenes || !args.output) {
+    console.log(`
+Comic Drama Mode:
+  node concat_video.js --mode comic --scenes <scenes.json> --output <output.mp4>
 
 Options:
-  --input    Directory containing video clips (sorted alphabetically)
-  --output   Output file path
-  --music    (Optional) Background music file
-  --narration (Optional) Narration voiceover file (volume 80%)
-  --crossfade (Optional) Crossfade duration in seconds between clips (e.g. 0.3)
-  --title    (Optional) Title text overlay (shown first 3 seconds)
+  --scenes     JSON file defining scenes (images, durations, camera, audio)
+  --output     Output file path
+  --music      (Optional) Background music or original song
+  --subtitle   (Optional) SRT subtitle file for quote overlays
+  --crossfade  (Optional) Crossfade duration between scenes (default: 0.5)
 
-Extract last frame (for scene chaining):
-  node concat_video.js --extract <video.mp4> --frame <output.png>
-  `);
-  process.exit(1);
-}
-
-if (args.extract) {
-  extractLastFrame(args.extract, args.frame || 'last_frame.png');
-} else {
-  const videos = findVideoFiles(args.input);
-  if (videos.length === 0) {
-    console.error('No video files found in ' + args.input);
+scenes.json format:
+  {
+    "title": "Episode Title",
+    "fps": 25,
+    "scenes": [
+      {
+        "image": "./images/scene01.png",   // Static image (use Ken Burns)
+        "video": null,                      // OR pre-made I2V video clip
+        "duration": 8,                      // Scene duration in seconds
+        "camera": "zoom-in",               // Ken Burns: zoom-in/zoom-out/pan-left/pan-right/pan-up/pan-down/none
+        "narration": "./audio/nar_01.wav",  // Per-scene narration audio
+        "sfx": "./audio/sfx_01.wav"         // Per-scene sound effects
+      }
+    ]
+  }
+    `);
     process.exit(1);
   }
 
-  console.log('Found clips:');
-  videos.forEach((v, i) => console.log(`  ${i + 1}. ${path.basename(v)}`));
-  console.log();
-
-  concat(videos, args.output, {
+  buildComicDrama(args.scenes, args.output, {
     music: args.music,
-    narration: args.narration,
+    subtitle: args.subtitle,
     crossfade: args.crossfade,
-    title: args.title,
   });
+
+} else {
+  // Shorts Mode (original)
+  if (!args.input || !args.output) {
+    console.log(`
+Shorts Mode (default):
+  node concat_video.js --input <clips_dir> --output <output.mp4> [--music <bgm.mp3>] [--title "Episode Title"]
+
+Options:
+  --input      Directory containing video clips (sorted alphabetically)
+  --output     Output file path
+  --music      (Optional) Background music file
+  --narration  (Optional) Narration voiceover file (volume 80%)
+  --crossfade  (Optional) Crossfade duration in seconds between clips (e.g. 0.3)
+  --title      (Optional) Title text overlay (shown first 3 seconds)
+
+Extract last frame (for scene chaining):
+  node concat_video.js --extract <video.mp4> --frame <output.png>
+
+Comic Drama Mode:
+  node concat_video.js --mode comic --scenes <scenes.json> --output <output.mp4>
+  (Use --mode comic for more details)
+    `);
+    process.exit(1);
+  }
+
+  if (args.extract) {
+    extractLastFrame(args.extract, args.frame || 'last_frame.png');
+  } else {
+    const videos = findVideoFiles(args.input);
+    if (videos.length === 0) {
+      console.error('No video files found in ' + args.input);
+      process.exit(1);
+    }
+
+    console.log('Found clips:');
+    videos.forEach((v, i) => console.log(`  ${i + 1}. ${path.basename(v)}`));
+    console.log();
+
+    concat(videos, args.output, {
+      music: args.music,
+      narration: args.narration,
+      crossfade: args.crossfade,
+      title: args.title,
+    });
+  }
 }
