@@ -1,0 +1,3 @@
+從 Android 上層了解 Power Management 知識與 debug 整合流程	能獨立分析 PowerManagerService、WakeLock、Doze 等模組的問題，並建立 power issue debug SOP
+建立 Code Review 的 AI 自動檢查及撰寫機制	導入 AI 輔助工具於 code review 流程，自動產出 review 報告，提升 review 效率與品質
+實現 One Image 架構並支援不同 SKU 客製化	單一 image 可透過 factory data 或 property 區分 SKU，動態載入對應客製化設定
