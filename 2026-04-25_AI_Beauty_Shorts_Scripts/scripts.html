@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YouTube Shorts 逐字稿 · 80 支(女性獨白版)</title>
+<style>
+  :root {
+    --bg: #f7f5f2;
+    --card: #ffffff;
+    --text: #1a1a1a;
+    --muted: #888;
+    --border: #ececec;
+    --shadow: 0 2px 12px rgba(0,0,0,0.04);
+    --c1: #e91e63;
+    --c2: #6a1b9a;
+    --c3: #b8860b;
+    --c4: #00838f;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, "Microsoft JhengHei", "PingFang TC", "Noto Sans TC", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.8;
+    font-size: 16px;
+  }
+  header {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+    color: white;
+    padding: 48px 24px 32px;
+    text-align: center;
+  }
+  header h1 { margin: 0 0 8px; font-size: 28px; letter-spacing: 2px; }
+  header p { margin: 0; color: #aaa; font-size: 14px; }
+  header .tip {
+    margin-top: 16px;
+    display: inline-block;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    color: #ddd;
+    padding: 8px 14px;
+    border-radius: 999px;
+    font-size: 12px;
+  }
+  nav {
+    position: sticky;
+    top: 0;
+    background: rgba(247,245,242,0.96);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+    padding: 12px 16px;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+    z-index: 100;
+  }
+  nav a {
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 999px;
+    font-size: 14px;
+    color: var(--text);
+    background: white;
+    border: 1px solid var(--border);
+    transition: all .2s;
+  }
+  nav a:hover { transform: translateY(-1px); box-shadow: var(--shadow); }
+  nav a.c1 { border-left: 4px solid var(--c1); }
+  nav a.c2 { border-left: 4px solid var(--c2); }
+  nav a.c3 { border-left: 4px solid var(--c3); }
+  nav a.c4 { border-left: 4px solid var(--c4); }
+  main { max-width: 760px; margin: 0 auto; padding: 32px 16px 80px; }
+  section { margin-bottom: 56px; }
+  .section-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 24px 0 20px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--border);
+  }
+  .section-title .badge { width: 8px; height: 32px; border-radius: 4px; }
+  .section-title h2 { margin: 0; font-size: 22px; letter-spacing: 1px; }
+  .section-title .count { margin-left: auto; font-size: 13px; color: var(--muted); }
+  .card {
+    background: var(--card);
+    border-radius: 12px;
+    padding: 20px 22px;
+    margin-bottom: 14px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+  }
+  .card-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    gap: 12px;
+  }
+  .card-head h3 {
+    margin: 0;
+    font-size: 17px;
+    font-weight: 600;
+    flex: 1;
+  }
+  .card-head .num {
+    font-family: "SF Mono", Consolas, monospace;
+    color: var(--muted);
+    font-size: 13px;
+    font-weight: 400;
+    margin-right: 6px;
+  }
+  .copy {
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 4px 10px;
+    font-size: 12px;
+    cursor: pointer;
+    color: var(--muted);
+    transition: all .15s;
+    flex-shrink: 0;
+  }
+  .copy:hover { background: var(--text); color: white; border-color: var(--text); }
+  .copy.copied { background: #4caf50; color: white; border-color: #4caf50; }
+  .pov {
+    background: #111;
+    color: #fff;
+    padding: 14px 18px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 15px;
+    text-align: center;
+    margin: 0 0 16px;
+    letter-spacing: 1.2px;
+    line-height: 1.6;
+    position: relative;
+    font-family: "Microsoft JhengHei", -apple-system, sans-serif;
+  }
+  .pov::before {
+    content: "🎬 畫面頂部字幕";
+    position: absolute;
+    top: -10px;
+    left: 14px;
+    background: var(--card);
+    font-size: 10px;
+    font-weight: 400;
+    color: var(--muted);
+    padding: 0 6px;
+    letter-spacing: 0.5px;
+  }
+  .script {
+    font-size: 15.5px;
+    line-height: 1.95;
+    color: #333;
+    white-space: pre-wrap;
+    padding: 14px 16px;
+    background: #fafaf8;
+    border-left: 3px solid var(--border);
+    border-radius: 4px;
+  }
+  .meta {
+    margin-top: 10px;
+    font-size: 12px;
+    color: var(--muted);
+    display: flex;
+    gap: 12px;
+  }
+  .c1 .badge, .c1 .pov { --accent: var(--c1); }
+  .c2 .badge, .c2 .pov { --accent: var(--c2); }
+  .c3 .badge, .c3 .pov { --accent: var(--c3); }
+  .c4 .badge, .c4 .pov { --accent: var(--c4); }
+  .c1 .badge { background: var(--c1); }
+  .c2 .badge { background: var(--c2); }
+  .c3 .badge { background: var(--c3); }
+  .c4 .badge { background: var(--c4); }
+  .c1 .script { border-left-color: var(--c1); }
+  .c2 .script { border-left-color: var(--c2); }
+  .c3 .script { border-left-color: var(--c3); }
+  .c4 .script { border-left-color: var(--c4); }
+  footer { text-align: center; color: var(--muted); font-size: 12px; padding: 24px; }
+  @media (max-width: 600px) {
+    header h1 { font-size: 22px; }
+    main { padding: 24px 12px 60px; }
+    .card { padding: 16px 18px; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>YouTube Shorts 逐字稿</h1>
+  <p>成熟女性獨白版 · 80 支完整腳本</p>
+  <div class="tip">人設:30 歲專業女性 · 坐在桌前 · POV 字幕顯示在畫面上方中央</div>
+</header>
+
+<nav>
+  <a href="#s1" class="c1">兩性關係</a>
+  <a href="#s2" class="c2">黑暗心理學</a>
+  <a href="#s3" class="c3">歷史八卦</a>
+  <a href="#s4" class="c4">人生金句</a>
+</nav>
+
+<main>
+
+<section id="s1" class="c1">
+  <div class="section-title"><span class="badge"></span><h2>兩性關係 / 戀愛心理</h2><span class="count">20 支</span></div>
+
+  <div class="card">
+    <div class="card-head"><h3><span class="num">01</span>女生傳這 3 句話,其實是在測試你</h3><button class="copy">複製</button></div>
+    <div class="pov">POV: 你交了一個懂女人的女朋友</div>
+    <div class="script">老實說,女生的話從來不是字面上那個意思。當她說「你好無聊喔」,其實不是無聊,她在等你開口約她。當她說「算了沒事」,她心裡有一千件事,你越沒問,她越失望。當她說「你都不懂我」,她要的從來不是解釋,是一個擁抱。我三十歲才看懂這些。所以如果你身邊有一個她,別只聽她說了什麼。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><h3><span class="num">02</span>為什麼你越主動她越冷</h3><button class="copy">複製</button></div>
+    <div class="pov">POV: 一個 30 歲女人告訴你感情的真相</div>
+    <div class="script">我見過太多男生,越愛越慌、越用力越沒有存在感。不是你做錯了,是你做太多了。當你秒回、隨叫隨到,你在她心裡,會從「值得追的人」變成「方便的人」。我們要的不是你給多少,是你有沒有讓我們怕失去。有時候退一步,比進一百步更有用。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><h3><span class="num">03</span>這樣回訊息,她會忍不住想你</h3><button class="copy">複製</button></div>
+    <div class="pov">POV: 你身邊多了一個會撩人的學姐</div>
+    <div class="script">我跟你說個秘密——回訊息其實是一門很溫柔的藝術。她問你在做什麼,別再回「沒事」了,換成「剛想到妳,然後手機就震了」。她問你吃飯沒,別說「吃了」,說「還沒,要不要一起?」她問你週末忙嗎,別說「不忙」,說「看是誰約我」。撩人不靠字多,靠那一秒的心跳。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><h3><span class="num">04</span>女生喜歡上你的 4 個信號</h3><button class="copy">複製</button></div>
+    <div class="pov">POV: 你聽見一個女生說她怎麼喜歡上一個人</div>
+    <div class="script">喜歡一個人是藏不住的,女生尤其藏不住。她會沒事就找你聊廢話,因為在想你。她會記得你喝什麼咖啡,因為你的小事她都在乎。她會吃你的醋但嘴硬不說,因為怕被看穿。她願意讓你看她素顏,因為你是那個她不想偽裝的人。如果她做了三樣,她早就淪陷了。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><h3><span class="num">05</span>分手後女生真正在想什麼</h3><button class="copy">複製</button></div>
+    <div class="pov">POV: 你遇到一個告訴你女生分手真實狀態的女人</div>
+    <div class="script">我每次看男生分手後,都覺得他們誤會了。女生不是瀟灑,只是不讓你看見。第一週,她在等你低頭。第二週,她在刪你的照片,刪一張哭一次。第三週,她開始約朋友,假裝過得很好。一個月後,她還是會偷偷點開你的限動。一個看似冷靜離開的女人,只是比你懂得藏傷口。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><h3><span class="num">06</span>讓她主動找你的 3 個方法</h3><button class="copy">複製</button></div>
+    <div class="pov">POV: 妳姊姊第一次告訴你撩女生的真相</div>
+    <div class="script">我觀察過很多會讓女生上心的男生,他們都不主動,但也不冷漠。他們不秒回,讓女生開始猜「他在忙什麼?」他們會發動態但不針對她,讓她自己對號入座。他們偶爾提一下別的女生名字,讓她的好奇心替他們工作。讓女生追你的關鍵不是技巧,是那種「我其實不一定非妳不可」的從容。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><h3><span class="num">07</span>高價值男人從不說的 3 句話</h3><button class="copy">複製</button></div>
+    <div class="pov">POV: 你遇到一個懂得分辨男人的女人</div>
+    <div class="script">這些年我看過的男人裡,真正讓女人上癮的那種,從不說這三句話。「你為什麼不回我?」——掉價。「我哪裡做錯了?」——失去崇拜。「我會等你。」——說出口那一刻,她就知道你不會走。讓女人迷戀的從來不是「你愛我有多深」,是「我永遠搞不懂你下一步想什麼」。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><h3><span class="num">08</span>女生嘴上說不要,心裡想的是什麼</h3><button class="copy">複製</button></div>
+    <div class="pov">POV: 你身邊終於有個願意翻譯女生心理的人</div>
+    <div class="script">我們女生說話,大多時候不是字面意思。說「你不用買」,其實是「你買了我會感動哭」。說「我不餓」,其實是「你點了我會吃」。說「隨便」,其實是「你最好懂我想吃什麼」。懂女人的男人不是聽她說什麼,是聽她沒說出口的那一層。這個功課,值得你練一輩子。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><h3><span class="num">09</span>她開始不愛你的 5 個徵兆</h3><button class="copy">複製</button></div>
+    <div class="pov">POV: 你遇到一個會看出感情快結束的女人</div>
+    <div class="script">愛情要離開之前,一定會留下腳印。回訊息變慢、變短。不再跟你分享日常。你約她,她總有事。吵架她不再生氣,只是淡淡看你。最後一句會是「我們好像不適合」。等到你發現的時候,那扇門,其實早就悄悄關上了。這些徵兆,我希望你永遠用不到。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><h3><span class="num">10</span>30 歲女生真正想要的,不是錢</h3><button class="copy">複製</button></div>
+    <div class="pov">POV: 你坐在一個 30 歲女人對面聽她說真話</div>
+    <div class="script">男生都以為 30 歲的女生找對象只看銀行存款,我告訴你,不是。我們要的是——回到家不用戴面具的那個人。半夜崩潰時,有人接電話。我們發光時,你不刺眼。我們有自己的世界,你也有你的。錢只是進場券,這四件事,才是一個 30 歲女人選擇留下的真正理由。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><h3><span class="num">11</span>她在測試你愛不愛她的 3 個瞬間</h3><button class="copy">複製</button></div>
+    <div class="pov">POV: 你有一個願意告訴你答案的女性朋友</div>
+    <div class="script">女生不會直接問你愛不愛她,我們會用三個瞬間試你。她說「我變胖了」——錯誤示範是同意,正解是「我喜歡現在的妳」。她突然鬧脾氣——別講道理,抱她。她問「你前女友比我好嗎?」——永遠只有一個答案:「沒人比得上妳。」愛情的考試沒有重考,但學會了,可以用一輩子。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><h3><span class="num">12</span>曖昧期女生最在意的 3 件事</h3><button class="copy">複製</button></div>
+    <div class="pov">POV: 你遇到一個懂曖昧的女人</div>
+    <div class="script">曖昧期的女生,比你想像的更緊張。我們在意你會不會突然消失。在意你是不是同時跟別人曖昧。在意你有沒有把我們當一回事。這個階段,穩定比熱情更值錢。一個忽冷忽熱的男人,會把一個本來喜歡他的女生,慢慢變成一個刪掉他的女生。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><h3><span class="num">13</span>讓女生對你上癮的心理學</h3><button class="copy">複製</button></div>
+    <div class="pov">POV: 你聽見一個心理系女生說出秘密</div>
+    <div class="script">想讓一個女生忘不掉你?這個詞你記得——「間歇性獎勵」。今天熱情、明天淡淡、後天又突然超好。我們的大腦對「不確定的好」,分泌最多多巴胺。這就是賭場抓人的原理。但記得,這不是玩弄,是節奏。真正的吸引力,不是永遠在場,是讓對方捨不得你離場。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><h3><span class="num">14</span>女生最討厭聽到的 4 句話</h3><button class="copy">複製</button></div>
+    <div class="pov">POV: 你身邊多了一個會直接講話的女人</div>
+    <div class="script">這四句話,是讓感情快速死掉的毒藥。「你想太多了」——否定她的感受。「隨便你」——告訴她你不在乎。「我前女友不會這樣」——直接出局。「女人都這樣」——她會覺得你根本不懂她。說話前停 3 秒,感情可以多撐 3 年。會說話的男人,從不讓女人拿著刀睡。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><h3><span class="num">15</span>她主動找你,代表什麼</h3><button class="copy">複製</button></div>
+    <div class="pov">POV: 一個女人替你解讀女生傳的每條訊息</div>
+    <div class="script">女生主動找你,背後的訊息你看懂了嗎?週末晚上找你——她喜歡你。凌晨找你——她想你想到睡不著。沒事也找你聊廢話——她已經淪陷。只在需要的時候找你——對不起,那叫工具人。看懂她出現的時機,比聽懂她說的每個字,都重要一百倍。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><h3><span class="num">16</span>男生追不到女生的 3 個原因</h3><button class="copy">複製</button></div>
+    <div class="pov">POV: 你遇到一個直接告訴你答案的前輩</div>
+    <div class="script">我看過太多追不到女生的男生,大多不是條件問題,是三個錯誤。太早表白——她還沒心動,遊戲就結束了。對她太好——她習慣了,就不會珍惜。沒有自己的生活——我們會覺得你太閒了。女生愛你,愛的不是你有多好,是她在你身上付出了什麼、變成了什麼樣的自己。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><h3><span class="num">17</span>她對你冷淡,到底怎麼辦</h3><button class="copy">複製</button></div>
+    <div class="pov">POV: 你遇到一個願意教你挽回的姊姊</div>
+    <div class="script">當她突然冷下來,你越解釋、越糟。第一步,閉嘴,不奪命連環 call。第二步,自己消失三天,去運動、見朋友、發好看的動態。第三步,三天後輕輕一句:「剛好想到妳,還好嗎?」讓她回頭的從來不是你苦苦哀求,是她突然意識到——你不再那麼需要她。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><h3><span class="num">18</span>她願意為你做這 3 件事,代表真的愛你</h3><button class="copy">複製</button></div>
+    <div class="pov">POV: 你身邊有一個會告訴你真心話的女人</div>
+    <div class="script">女生愛你有多深,看她願意為你脆弱多少。素顏見你——她不想在你面前偽裝。生病讓你照顧——她把最不堪的那一面交給你。帶你見她朋友——她已經在替你們的未來鋪路。如果她做了兩件以上,別再懷疑,她是真的把心放你那裡了。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><h3><span class="num">19</span>高段女生都懂的 3 個戀愛潛規則</h3><button class="copy">複製</button></div>
+    <div class="pov">POV: 你遇到一個會談戀愛的女人</div>
+    <div class="script">我這些年看過會愛人的女生,都不犯這三個錯。她不在吵架時翻舊帳——感情會被磨光。她不當他的媽——男人會越養越廢。她不把他當全部——有自己的世界,才有讓他著迷的距離。真正會愛的人都懂——把自己留三分,才有資格分七分給另一個人。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><h3><span class="num">20</span>分手後挽回的 3 個關鍵</h3><button class="copy">複製</button></div>
+    <div class="pov">POV: 你遇到一個挽回過感情的女人</div>
+    <div class="script">如果你真的想挽回,第一步不是追,是消失。先斷聯 30 天——你一直找她,她永遠不會想念你。第二,真的去改變——身材、工作、狀態,拍一張對比照。第三,輕描淡寫地出現——一句「最近過得不錯,妳呢?」她要回頭的不是你的愛,是你變成的那個更好的人。</div>
+  </div>
+</section>
+
+<section id="s2" class="c2">
+  <div class="section-title"><span class="badge"></span><h2>黑暗心理學 / 讀心術</h2><span class="count">20 支</span></div>
+
+  <div class="card">
+    <div class="card-head"><h3><span class="num">01</span>讓人無法拒絕你的 3 句話</h3><button class="copy">複製</button></div>
+    <div class="pov">POV: 你坐在一個心理系女生對面</div>
+    <div class="script">我學心理學這些年,最震撼的是這三句話——成功率高到讓人害怕。「我知道你可能會拒絕,但還是想問你」——先承認能拒絕,反而不好意思。「只要 5 分鐘就好」——心理成本降到最低。「反正你也沒損失對吧?」——啟動損失厭惡,大腦會自動點頭。話術不是操控,是把溝通變成藝術。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><h3><span class="num">02</span>一眼看穿對方在說謊的 4 個動作</h3><button class="copy">複製</button></div>
+    <div class="pov">POV: 你面前坐著一個會讀人的女人</div>
+    <div class="script">說謊的人嘴上會編,但身體不會配合。我告訴你四個細節。眼睛飄右上方——他在拼湊記憶。突然摸鼻子或嘴巴——他想掩蓋。重複你的問題——他在偷思考時間。細節暴增、話越說越多——越描越黑。下次你只要靜靜看著對方,真相會自己跳出來。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><h3><span class="num">03</span>讓對方忍不住聽你說話的 3 個技巧</h3><button class="copy">複製</button></div>
+    <div class="pov">POV: 你遇到一個說話很有氣場的女人</div>
+    <div class="script">我觀察過很多厲害的講者,他們一開口所有人都豎耳朵。第一,前 3 秒拋問題——「你知道為什麼嗎?」大腦會自動補答案。第二,關鍵句前停 1 秒——空白比聲音更抓人。第三,多說「你」少說「我」——讓對方感覺被看見。會說話的人,靠的不是內容,是節奏。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><h3><span class="num">04</span>為什麼越冷淡對方越愛你</h3><button class="copy">複製</button></div>
+    <div class="pov">POV: 你遇到一個懂人性的女人</div>
+    <div class="script">這個現象有個名字——「稀缺效應」。越得不到的,越想要。當你秒回、隨叫隨到,你在對方眼裡就是 24 小時便利商店。當你忙、有自己的生活、不那麼在乎,你就變成限量版。人性就是這麼有意思——免費的不要,搶不到的才珍貴。所以愛一個人,請別讓對方太確定。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><h3><span class="num">05</span>高情商的人從不說這 3 句話</h3><button class="copy">複製</button></div>
+    <div class="pov">POV: 你坐在一個從不失言的女人身邊</div>
+    <div class="script">我見過真正高情商的人,嘴巴永遠有把鎖。「我早就跟你說過了」——一句話打回對方的臉。「這有什麼難的?」——貶低對方所有的努力。「你怎麼這都不懂?」——直接把人變成敵人。嘴快的人賺一時的痛快,嘴慢的人賺一輩子的緣分。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><h3><span class="num">06</span>一秒看出誰是真心對你好</h3><button class="copy">複製</button></div>
+    <div class="pov">POV: 你遇到一個看透人心的女人</div>
+    <div class="script">真心和假意,其實藏不住。你開心時看他臉上的表情——假朋友會嫉妒你的好。你跌倒時看他第一時間站在哪——不給你大道理,只默默坐下陪你。聽他在你不在的場合怎麼提你——人前的好不算什麼,人後的稱讚才是真的。交朋友別用耳朵,用眼睛。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><h3><span class="num">07</span>操控你的人,常用這 3 招</h3><button class="copy">複製</button></div>
+    <div class="pov">POV: 你遇到一個逃出 PUA 的女人</div>
+    <div class="script">如果身邊有人讓你越來越懷疑自己,我告訴你,他可能在 PUA 你。第一步,不斷否定你——「你想太多」「你太敏感」。第二步,製造依賴——讓你覺得沒他你不行。第三步,間歇性對你超好——讓你捨不得離開。看穿這三招,你就有逃出來的勇氣。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><h3><span class="num">08</span>讓人喜歡你的 3 個心理學技巧</h3><button class="copy">複製</button></div>
+    <div class="pov">POV: 你遇到一個受歡迎的職場女人</div>
+    <div class="script">這三招,會讓陌生人在 5 分鐘內喜歡你。談話中重複對方的名字三次——大腦會把熟悉誤認成好感。對方說話時身體微微前傾——潛意識感覺被重視。離開前回憶一個小細節——「你剛說的那家咖啡店,我想去」。記住別人的小事,是這個世界最貴也最便宜的魅力。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><h3><span class="num">09</span>為什麼有些人一開口就贏</h3><button class="copy">複製</button></div>
+    <div class="pov">POV: 你遇到一個氣場很穩的女人</div>
+    <div class="script">我認識一些很有氣場的人,他們從不靠大聲。他們說話慢——快的人在解釋,慢的人在下判決。他們眼神不躲——看人就敢看 3 秒不眨。他們話少——能一句講完絕不講兩句。沉默,比發言更有殺傷力。真正強大的人,氣場都是從停頓裡長出來的。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><h3><span class="num">10</span>一句話看出誰在乎你</h3><button class="copy">複製</button></div>
+    <div class="pov">POV: 你遇到一個懂得辨識真心的女人</div>
+    <div class="script">想知道一個人在不在乎你?傳這句話就夠——「我最近過得不太好」。在乎你的人會問:「怎麼了,現在方便講嗎?」不在乎你的人會回:「加油,你可以的。」一句話,就能照出真心和敷衍。比你觀察一年都準。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><h3><span class="num">11</span>越努力討好越沒人愛你</h3><button class="copy">複製</button></div>
+    <div class="pov">POV: 你遇到一個終於學會拒絕的女人</div>
+    <div class="script">我以前是那種對每個人都好的人,後來才懂一個詞——「登門檻效應」。你越好說話,別人越得寸進尺。送一次早餐,後來變成你應該送。幫一次忙,後來變成你有義務。愛從來不是討來的,是讓人怕失去你才換來的。學會說「不」,比學會付出更重要。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><h3><span class="num">12</span>讓對方說「好」的心理學魔咒</h3><button class="copy">複製</button></div>
+    <div class="pov">POV: 你偷聽一個會說服人的女人</div>
+    <div class="script">想讓對方答應你?用「是的階梯」。先問三個他一定會說「是」的問題。「天氣不錯吧?」「對。」「你也剛下班?」「對。」「想放鬆一下?」「對。」最後再切入:「那一起去喝一杯?」大腦會慣性繼續說「好」。這,就是頂級銷售的秘密。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><h3><span class="num">13</span>人性最黑暗的 3 個真相</h3><button class="copy">複製</button></div>
+    <div class="pov">POV: 你坐在一個看透世界的女人對面</div>
+    <div class="script">長大後我才看懂,人性藏著三個你不敢面對的真相。別人羨慕你,但不希望你比他好太多。你混得差時真朋友只剩 3 個,混得好時突然多 30 個。沒人真的想聽你的痛苦,大家只想看你的精彩。所以——要嘛沉默,要嘛發光。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><h3><span class="num">14</span>識破假朋友的 3 個瞬間</h3><button class="copy">複製</button></div>
+    <div class="pov">POV: 你遇到一個把朋友看得透徹的女人</div>
+    <div class="script">誰是真朋友,看三個瞬間就現形。你成功時,他沉默了。你需要幫忙時,他突然很忙。你不再有價值時,他消失了。不用對質,不用翻臉,默默把他從生命名單裡劃掉就好。大人的絕交,從來不需要出聲。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><h3><span class="num">15</span>反操控,只需要 3 個字</h3><button class="copy">複製</button></div>
+    <div class="pov">POV: 你遇到一個走出情緒勒索的女人</div>
+    <div class="script">被 PUA、被情緒勒索的時候,你只需要學會三個字——「我不要」。不解釋、不道歉、不給理由。他問為什麼?再說一次:「我不要。」他生氣?再說一次:「我不要。」操控你的人最怕的就是你不解釋,因為他沒戲可唱。安靜的拒絕,才是最有力的反擊。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><h3><span class="num">16</span>讓對方難忘你的 3 個小動作</h3><button class="copy">複製</button></div>
+    <div class="pov">POV: 你遇到一個讓人忘不掉的女人</div>
+    <div class="script">讓一個人忘不掉你,從來不靠長相,靠三個細節。記住他說過的一件小事——「你媽生病好點了嗎?」在他脆弱時陪他 3 分鐘——不給建議,只聽。離開前給他一個眼神停頓——3 秒,不說話。細節,是這個世界最難戒的毒。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><h3><span class="num">17</span>一張嘴毀了所有人脈的 3 個習慣</h3><button class="copy">複製</button></div>
+    <div class="pov">POV: 你遇到一個在職場磨出來的女人</div>
+    <div class="script">我這些年在職場看過太多,人脈越走越窄的人,都有同樣的三個習慣。愛糾正別人——讓對方在眾人面前丟臉。聊天只講自己——把別人變成觀眾。愛傳話——今天跟你講 A 的壞話,明天一定講你的。嘴上贏了,人緣就輸了。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><h3><span class="num">18</span>讓人對你有好感的 3 秒法則</h3><button class="copy">複製</button></div>
+    <div class="pov">POV: 你遇到一個每個場合都被喜歡的女人</div>
+    <div class="script">我告訴你一個秘密,第一印象全在前 3 秒。第一秒,嘴角上揚 10 度——不笑開,但有溫度。第二秒,對視——不躲、不閃。第三秒,叫對方的名字——「XX,很高興認識你。」陌生人變朋友,從來只差這 3 秒。做得好的人,走到哪都被喜歡。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><h3><span class="num">19</span>頂尖銷售都在用的 3 個話術</h3><button class="copy">複製</button></div>
+    <div class="pov">POV: 你遇到一個賣過東西的女人</div>
+    <div class="script">我告訴你三句話,每年替頂尖銷售成交千萬。「你是想選 A 還是 B?」——不給拒絕,只給選擇。「很多像你一樣的人都選這個。」——觸發從眾。「這個優惠只到今天。」——稀缺製造行動。不是教你騙人,是讓你下次別再被騙。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><h3><span class="num">20</span>最可怕的心理學效應:習得性無助</h3><button class="copy">複製</button></div>
+    <div class="pov">POV: 你聽見一個走出陰影的女人說話</div>
+    <div class="script">你知道為什麼有人被傷害到不離開嗎?心理學有個名詞——習得性無助。實驗裡,狗被電擊到後來放開門也不逃。人也一樣。被打擊、否定、控制久了,會真心相信「我不行」。如果身邊有人讓你越活越小聲,那不是愛,是牢籠。離開,永遠不嫌晚。</div>
+  </div>
+</section>
+
+<section id="s3" class="c3">
+  <div class="section-title"><span class="badge"></span><h2>歷史八卦 + 古裝美女</h2><span class="count">20 支</span></div>
+
+  <div class="card">
+    <div class="card-head"><h3><span class="num">01</span>古代妃子晚上其實在做這件事</h3><button class="copy">複製</button></div>
+    <div class="pov">POV: 你遇到一個穿古裝的現代女生</div>
+    <div class="script">大家都以為古代妃子晚上都在等皇帝翻牌子,我告訴你,不是。皇帝一晚只能寵一人,後宮三千,妃子平均一年才輪到一次。剩下的夜呢?她們寫詩、刺繡,跟宮女「對食」——結拜成假夫妻。武則天還偷偷養了面首。深宮的夜,比我們想像的還冷。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><h3><span class="num">02</span>慈禧太后一頓飯吃多少錢</h3><button class="copy">複製</button></div>
+    <div class="pov">POV: 你穿越回清朝遇到一個知道內幕的女人</div>
+    <div class="script">慈禧太后一頓飯換算現在多少錢?說出來你會倒抽一口氣。每餐 108 道菜,只是擺好看的,真正吃的不到 5 道,剩下全倒掉。一年伙食費換算現在約新台幣 5 億。她在金碧輝煌裡吃飯時,城外百姓一天只有一碗稀飯。一個朝代為什麼會滅,其實從一張餐桌上就看得出來。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><h3><span class="num">03</span>楊貴妃真正的身材,跟你想的不一樣</h3><button class="copy">複製</button></div>
+    <div class="pov">POV: 你遇到一個讀過《楊太真外傳》的女人</div>
+    <div class="script">大家都以為楊貴妃是胖美人,這個誤會傳了一千年。根據《楊太真外傳》,她身高約 165 公分、體重 60 公斤。以唐代叫「豐腴」,放現在是標準身材。她受寵不是因為胖,是會跳胡旋舞、懂音律、會撒嬌。古代真正的美,從來不在臉,而在魂。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><h3><span class="num">04</span>古代皇帝一天到底多忙</h3><button class="copy">複製</button></div>
+    <div class="pov">POV: 你身邊有個讀過清史稿的女人</div>
+    <div class="script">大家都以為當皇帝很爽,我給你看一張行程表你就不想了。凌晨 3 點起床。5 點上朝,聽兩小時奏摺。7 點吃早飯,同時看奏章。下午批文件到天黑,晚上還要處理後宮、讀書。雍正皇帝每天只睡 4 小時,13 年批了 4 萬件奏摺。皇帝這份工作,是拿命換的權力。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><h3><span class="num">05</span>清朝格格不能嫁自己愛的人</h3><button class="copy">複製</button></div>
+    <div class="pov">POV: 你遇到一個替清朝格格嘆氣的女人</div>
+    <div class="script">大家以為格格是人生勝利組,我告訴你,她們的命比戲劇還慘。婚姻全由皇帝指定,大多嫁去蒙古,一輩子只能回京一次。在夫家還不能同房——要由保姆「翻牌」決定哪一晚。很多格格嫁過去 20 歲就鬱鬱而終。公主這個稱號,背後是一張一輩子的賣身契。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><h3><span class="num">06</span>古代宮女一輩子都在做什麼</h3><button class="copy">複製</button></div>
+    <div class="pov">POV: 你遇到一個為宮女心疼的女人</div>
+    <div class="script">古代宮女的人生,我每次想到都心疼。10 歲被選入宮,每天梳頭、倒水、洗衣服。原本要 25 歲才能出宮,但多數人活不到那天。工作辛苦加上精神折磨,平均壽命不到 30 歲。就算出宮了也很難嫁——別人嫌她們「伺候過人」。宮女不是一份職業,是一種徒刑。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><h3><span class="num">07</span>武則天 72 歲的驚人秘密</h3><button class="copy">複製</button></div>
+    <div class="pov">POV: 你遇到一個研究武則天的女人</div>
+    <div class="script">72 歲的武則天皮膚還能緊緻,秘密其實都寫在史書裡。她每天用「益母草洗面水」——把益母草燒成灰敷臉。飲食只吃少量珍珠粉配蜂王乳。她還養了張昌宗、張易之兩個年輕面首,史書直接寫「侍寢」。一個掌天下的女人,保養跟情慾,她都沒輸過任何人。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><h3><span class="num">08</span>古代科舉考試有多變態</h3><button class="copy">複製</button></div>
+    <div class="pov">POV: 你遇到一個替古代考生心疼的女人</div>
+    <div class="script">古代考試比你想像的更瘋狂。科舉考 3 天 2 夜,考生被關在 1.5 坪的小屋。吃喝拉撒全在裡面,自帶乾糧、自備蠟燭。有人考到一半昏倒、死亡,屍體得從牆上翻出來。最誇張的,是乾隆年間一位 98 歲考生,考中後 3 個月就走了。古代考試不是考智力,是拚命。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><h3><span class="num">09</span>古代女子一輩子要裹腳幾年</h3><button class="copy">複製</button></div>
+    <div class="pov">POV: 你遇到一個不忍回頭看歷史的女人</div>
+    <div class="script">古代女子幾歲開始裹腳?說出來你會心疼。通常 4 到 6 歲。用布緊纏腳趾,把除大拇趾外的四根腳趾折斷彎向腳心。這個過程要持續 5 到 10 年。很多女孩因感染發炎而死。活下來的,一輩子走路不穩、腰椎變形、壽命縮短。所謂的美,是時代壓在女人骨頭上的枷鎖。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><h3><span class="num">10</span>古代皇帝最怕什麼</h3><button class="copy">複製</button></div>
+    <div class="pov">POV: 你遇到一個看透權力的女人</div>
+    <div class="script">掌握天下的皇帝,最怕的居然是身邊的太監。歷史上被太監殺的皇帝超過 10 個,唐朝就有 7 個死於宦官之手。太監天天貼身伺候,下毒比誰都方便。皇帝最信任的人,往往就是最危險的人。權力的頂端,其實是世界上最孤單的地方。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><h3><span class="num">11</span>古代女子結婚的晚上發生什麼</h3><button class="copy">複製</button></div>
+    <div class="pov">POV: 你遇到一個讀過《宋代婚俗考》的女人</div>
+    <div class="script">古代新婚夜,真的像偶像劇那樣浪漫嗎?真相令人窒息。多數新娘在婚前從未見過丈夫一面。洞房那夜還有「聽房」習俗——親戚躲在窗外聽動靜。沒有愛情、沒有選擇、沒有退路。古代的婚姻不是愛情故事,是女人的第二次投胎。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><h3><span class="num">12</span>古代皇帝選妃的驚人標準</h3><button class="copy">複製</button></div>
+    <div class="pov">POV: 你遇到一個研究過清宮選秀的女人</div>
+    <div class="script">你以為皇帝選妃只看臉?我告訴你,標準變態到讓人瞠目結舌。第一關,看臉和身材比例。第二關,要露出腳——腳形不好直接淘汰。第三關,全身檢查疤痕、胎記。最後一關,聞氣味——有體味全部出局。普通女孩通過這四關,也不過當上最低階的宮女。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><h3><span class="num">13</span>古代太監其實超有錢</h3><button class="copy">複製</button></div>
+    <div class="pov">POV: 你遇到一個翻過明清實錄的女人</div>
+    <div class="script">大家都以為太監是窮人?頂級太監比親王還富。明朝魏忠賢家產換算現在超過新台幣 3 千億。清朝李蓮英死後留下 40 萬兩白銀,相當於國庫十分之一。他們手握皇帝的耳朵,送禮的大臣排隊。失去男兒身,換來富可敵國——你會願意換嗎?</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><h3><span class="num">14</span>古代沒有冰箱,夏天怎麼過</h3><button class="copy">複製</button></div>
+    <div class="pov">POV: 你遇到一個讀考古誌的女人</div>
+    <div class="script">古代夏天 40 度,沒冷氣沒冰箱怎麼活?答案叫「冰鑒」——青銅雙層盒,裡面放冬天儲存的冰塊。皇宮每年冬天派人鑿冰,存進地窖撐到夏天。窮人?只能硬撐。富人有「冰井」。楊貴妃夏天吃的冰鎮荔枝,一顆換算現在成本超過 3 千元。空調,才是真正改變人類的發明。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><h3><span class="num">15</span>古代沒有衛生棉,女生怎麼辦</h3><button class="copy">複製</button></div>
+    <div class="pov">POV: 你遇到一個讀過女性生活史的女人</div>
+    <div class="script">古代女生來月經怎麼辦?真相沒人敢告訴你。最早用草木灰——吸水但容易過敏。後來是棉布縫的「月事帶」——洗了重複用。窮人家連布都沒有,就用乾草或樹葉。因為衛生條件差,很多女性一輩子被婦女病折磨。你覺得理所當然的衛生棉,是 20 世紀才有的革命。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><h3><span class="num">16</span>古人其實活不到 40 歲</h3><button class="copy">複製</button></div>
+    <div class="pov">POV: 你遇到一個不羨慕古代的女人</div>
+    <div class="script">大家總嚮往古代的慢生活,我告訴你,他們平均壽命只有 35 歲。漢朝 22 歲,唐朝 27 歲,清朝才 33 歲。原因是戰爭、瘟疫、飢荒、生產、感染。能活到 60 歲叫「花甲」,是極稀有的祝壽對象。你現在若穿越回古代,恐怕早就成了黃土。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><h3><span class="num">17</span>古代公主和親,後來怎麼了</h3><button class="copy">複製</button></div>
+    <div class="pov">POV: 你遇到一個替和親公主嘆氣的女人</div>
+    <div class="script">歷代公主嫁去外族,後來命運如何?王昭君嫁匈奴,先後嫁 3 任單于——丈夫死了,連兒子都要嫁。文成公主嫁吐蕃,丈夫死後守寡 30 年。多數和親公主活不過 40 歲,墓都埋在草原。兩國的和平,從來都是一個女人用一生交換來的。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><h3><span class="num">18</span>古代沒有牙膏,怎麼刷牙</h3><button class="copy">複製</button></div>
+    <div class="pov">POV: 你遇到一個讀過古代生活誌的女人</div>
+    <div class="script">古代沒牙膏,他們怎麼清潔牙齒?最早是嚼楊柳枝。後來加入青鹽、茯苓粉當牙粉。宋朝就有了「牙刷」——用馬尾做刷毛。富人會用茶末刷牙、麝香漱口。但 90% 的古人一輩子沒刷過牙。「笑不露齒」的禮儀,其實是被牙齒逼出來的優雅。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><h3><span class="num">19</span>古代女性地位最高的朝代</h3><button class="copy">複製</button></div>
+    <div class="pov">POV: 你遇到一個替唐朝女人驕傲的女人</div>
+    <div class="script">古代哪個朝代的女人最自由?答案是唐朝。可以離婚、可以改嫁、可以騎馬、可以打馬球。不用裹腳、能讀書、能做官。武則天直接登基,上官婉兒主政 20 年。宋朝以後,才開始裹腳、守寡不嫁。「女子無才便是德」是明清才有的發明,不是中華文化的本來面貌。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><h3><span class="num">20</span>古代最有錢的妓女</h3><button class="copy">複製</button></div>
+    <div class="pov">POV: 你遇到一個讀過青樓史的女人</div>
+    <div class="script">你以為古代頂級妓女窮嗎?比皇后還有錢。唐朝薛濤養了幾十個文人。明朝陳圓圓一笑,引爆「衝冠一怒為紅顏」,改寫朝代命運。清朝賽金花一場宴會收入超過知縣一年俸祿。她們不是只賣肉體——會詩、會琴、會棋、會畫。真正的美色,從來不是長相,是腦袋。</div>
+  </div>
+</section>
+
+<section id="s4" class="c4">
+  <div class="section-title"><span class="badge"></span><h2>人生金句 / 殘酷真相</h2><span class="count">20 支</span></div>
+
+  <div class="card">
+    <div class="card-head"><h3><span class="num">01</span>30 歲才懂的 4 個殘酷真相</h3><button class="copy">複製</button></div>
+    <div class="pov">POV: 你遇到一個 30 歲願意說真話的姊姊</div>
+    <div class="script">30 歲那年,這個世界突然把溫柔的濾鏡拿掉。我才懂,父母會老,而且老得比我想的快。朋友會散,能留下的不會超過 3 個。努力不一定成功,但不努力一定很慘。我愛的人不一定愛我,愛我的人我也不一定珍惜。長大不是變強,是學會接住這四把刀。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><h3><span class="num">02</span>這 3 種朋友,越早斷越好</h3><button class="copy">複製</button></div>
+    <div class="pov">POV: 你遇到一個把生命名單清乾淨的女人</div>
+    <div class="script">走到一定年紀,你會明白——不是所有人都該留在你的生命裡。只在需要你時出現的人。希望你過得好但不能比他好的人。話越來越不投機、三觀越來越遠的人。成年人的社交不是加法,是減法。你身邊的人,就是你未來三年的樣子。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><h3><span class="num">03</span>有錢人從不會告訴你的 3 個習慣</h3><button class="copy">複製</button></div>
+    <div class="pov">POV: 你遇到一個混過高層的女人</div>
+    <div class="script">我觀察過很多有錢人,他們有三個秘密從不掛在嘴上。第一,不抱怨,有事直接做。第二,花錢買時間——請人打掃、叫外送、坐計程車。第三,圈子裡都是比自己強的人,從不混在抱怨群組。窮人省錢,富人省時間。差距,就是從這裡拉開的。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><h3><span class="num">04</span>30 歲前一定要做的 3 件事</h3><button class="copy">複製</button></div>
+    <div class="pov">POV: 你遇到一個 30 歲後悔過的女人</div>
+    <div class="script">30 歲前沒做這三件事,我告訴你,後面會後悔一輩子。獨自旅行一次——你會在路上遇見另一個自己。認真愛一個人——就算最後分開也值得。存下第一筆 10 萬——那是你人生第一個真正的底氣。青春最大的浪費,不是玩樂,是錯過該成長的時機。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><h3><span class="num">05</span>讓你變強的 3 個殘酷事實</h3><button class="copy">複製</button></div>
+    <div class="pov">POV: 你遇到一個不再靠別人的女人</div>
+    <div class="script">接受這三件事,你才算真的長大。沒有人有義務對你好,包括你的爸媽。你哭過、崩潰過,明天太陽還是照常升起。你的痛苦只是你的,別人最多同情 3 秒。長大不是變冷酷,是學會不依賴別人的擁抱,也能活下去。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><h3><span class="num">06</span>你越沒本事,越會計較這 3 件事</h3><button class="copy">複製</button></div>
+    <div class="pov">POV: 你遇到一個專注往前走的女人</div>
+    <div class="script">我見過的沒本事的人,永遠在三件事上耗自己。在意別人的閒話——因為改變不了自己。糾結小錢小利——錙銖必較的人從來沒富過。困在過去的錯誤——把時間花在悔恨,而不是重來。強者只看未來,弱者只活在過去。你站在哪一邊?</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><h3><span class="num">07</span>人生最貴的 4 個字:不值得</h3><button class="copy">複製</button></div>
+    <div class="pov">POV: 你遇到一個學會放手的女人</div>
+    <div class="script">這些年我學會了最值錢的四個字——「不值得」。不值得為不愛你的人哭。不值得為看不起你的人解釋。不值得為小事失眠到天亮。不值得為一頓飯去討好誰。學會說「不值得」,比學會賺錢更難——也更重要。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><h3><span class="num">08</span>真正成熟的人有 3 個特徵</h3><button class="copy">複製</button></div>
+    <div class="pov">POV: 你遇到一個真正成熟的女人</div>
+    <div class="script">真正的成熟,跟年齡無關,跟這三件事有關。不再試圖改變別人——你終於懂每個人都有自己的軌跡。不再為小事情緒化——先處理事,再處理感受。不再害怕失去——因為你知道自己有重建的能力。成熟,是一個人最低調也最強的保護色。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><h3><span class="num">09</span>人生最該遠離的 3 種人</h3><button class="copy">複製</button></div>
+    <div class="pov">POV: 你遇到一個替自己活的女人</div>
+    <div class="script">這三種人,越早離開越好。情緒勒索你的人——用內疚把你綁住。不斷拉你進負能量的人——聊一次比加班還累。打壓你夢想的人——他們不敢做,也不想看你做到。你的生命品質,就是你身邊 5 個人的平均值。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><h3><span class="num">10</span>父母不會告訴你的 3 個道理</h3><button class="copy">複製</button></div>
+    <div class="pov">POV: 你遇到一個懂了爸媽的女人</div>
+    <div class="script">爸媽不擅長表達,但有三件事我希望你早點懂。他們也是第一次當父母,會犯錯,但已經盡力了。他們比你想得老得更快,每見一次少一次。他們什麼都不要,只要你偶爾打通電話。別等到再也撥不通,才學會該怎麼愛他們。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><h3><span class="num">11</span>讓你毀掉一生的 3 個習慣</h3><button class="copy">複製</button></div>
+    <div class="pov">POV: 你遇到一個戒掉壞習慣的女人</div>
+    <div class="script">這三個習慣,正在悄悄偷走你的人生。每件事都「等一下再說」。每天熬夜滑手機到凌晨 2 點。用「我就是這樣的人」當逃避改變的藉口。人生不是被一場大事打倒的,是被一千個小選擇慢慢拖進深淵。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><h3><span class="num">12</span>頂級孤獨的 3 個階段</h3><button class="copy">複製</button></div>
+    <div class="pov">POV: 你遇到一個學會獨處的女人</div>
+    <div class="script">心理學家說,頂級孤獨有三個階段。第一級,你害怕一個人吃飯。第二級,你開始享受獨處。第三級,你發現獨處比陪伴更珍貴。當你能一個人吃飯、一個人旅行、一個人做決定,你就真正長大了。孤獨不是懲罰,是成長的入場券。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><h3><span class="num">13</span>為什麼越懂事越沒人疼</h3><button class="copy">複製</button></div>
+    <div class="pov">POV: 你遇到一個曾經很懂事的女人</div>
+    <div class="script">你從小就被誇「懂事」?那你可能是最受傷的孩子。懂事的人從不發脾氣——大家以為你沒情緒。懂事的人總是讓步——大家以為你不在乎。懂事的人很少求助——大家以為你不需要。長大後我才發現,原來會哭的孩子才有糖吃。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><h3><span class="num">14</span>這 3 件事,是有錢的底氣</h3><button class="copy">複製</button></div>
+    <div class="pov">POV: 你遇到一個把錢活出自由的女人</div>
+    <div class="script">真正的有錢,不是銀行存款的數字,是這三件事。不用看老闆臉色——你隨時可以走人。父母生病,能立刻找最好的醫生。不愛的人,可以立刻說再見。錢買不來幸福,但能買來自由——而自由,本身就是幸福。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><h3><span class="num">15</span>30 歲後的朋友,其實是「合作夥伴」</h3><button class="copy">複製</button></div>
+    <div class="pov">POV: 你遇到一個分清友誼層級的女人</div>
+    <div class="script">30 歲後我才懂,這個年紀的朋友,不是陪你哭的人。是陪你一起變強的人。是可以資源互換的人。是做事不用解釋太多的人。青春時的朋友靠感情,成年後的朋友靠能力。別為了老情分,把自己拉回低層次的圈子。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><h3><span class="num">16</span>人生最怕的不是失敗,是這 3 件事</h3><button class="copy">複製</button></div>
+    <div class="pov">POV: 你遇到一個敢冒險的女人</div>
+    <div class="script">人生真正可怕的,從來不是失敗。是年輕時沒做想做的事,後來連做的勇氣都沒了。是被「安全感」騙了一輩子,以為穩定才是答案。是活在別人的期待裡,回頭發現這根本不是自己的人生。最大的風險,是從不冒險。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><h3><span class="num">17</span>讓你和別人拉開差距的 3 個習慣</h3><button class="copy">複製</button></div>
+    <div class="pov">POV: 你遇到一個靠習慣翻身的女人</div>
+    <div class="script">拉開人生差距的,從來不是天賦,是這三個習慣。每天多讀 30 分鐘——十年後就是 182 天。每天早睡 1 小時——決定你的能量、外貌、人生節奏。每週整理一次過去——知道自己在哪裡、要去哪裡。小習慣的複利,比任何大爆發都可怕。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><h3><span class="num">18</span>這 4 種錢,越花越賺</h3><button class="copy">複製</button></div>
+    <div class="pov">POV: 你遇到一個會花錢的女人</div>
+    <div class="script">我後來才懂,有些錢看起來花掉了,其實是賺了。花在學習上——知識會自己複利。花在健康上——身體是所有投資的本金。花在人脈上——一頓飯可能換來一個機會。花在體驗上——記憶才是一輩子真正擁有的東西。會花錢的人,最後都最有錢。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><h3><span class="num">19</span>人生最治癒的 3 句話</h3><button class="copy">複製</button></div>
+    <div class="pov">POV: 你遇到一個走過低潮的女人</div>
+    <div class="script">人累了,這三句話你放在心裡,會輕一點。「我已經盡力了。」——允許自己不完美。「這不是我的錯。」——不為別人的情緒買單。「明天還會更好。」——不是假裝樂觀,是給自己一個明天。有時候,自救靠的不是大道理,是三句溫柔的話。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><h3><span class="num">20</span>到一定年紀才明白的 4 件事</h3><button class="copy">複製</button></div>
+    <div class="pov">POV: 你遇到一個不再年輕的女人</div>
+    <div class="script">到一定年紀,你才會懂這四件事。父母的愛不是理所當然——他們年輕時也想過自由。喜歡的人要勇敢追——錯過了就真的沒了。健康不是年輕時的問題——30 歲後,每一天都在還債。真正能陪你到老的朋友,不會超過 3 個。人生很短,別為不重要的人耗盡自己。</div>
+  </div>
+</section>
+
+</main>
+
+<footer>共 80 支逐字稿 · 點擊「複製」一鍵複製 POV + 逐字稿</footer>
+
+<script>
+  document.querySelectorAll('.card').forEach(card => {
+    const script = card.querySelector('.script');
+    const pov = card.querySelector('.pov');
+    const text = script.textContent.trim();
+    const povText = pov.textContent.trim();
+    const len = text.length;
+    const sec = Math.round(len / 3.5);
+    const meta = document.createElement('div');
+    meta.className = 'meta';
+    meta.innerHTML = `<span>${len} 字</span><span>約 ${sec} 秒</span>`;
+    script.after(meta);
+
+    const btn = card.querySelector('.copy');
+    btn.addEventListener('click', () => {
+      const full = `${povText}\n\n${text}`;
+      navigator.clipboard.writeText(full).then(() => {
+        btn.textContent = '已複製';
+        btn.classList.add('copied');
+        setTimeout(() => {
+          btn.textContent = '複製';
+          btn.classList.remove('copied');
+        }, 1500);
+      });
+    });
+  });
+</script>
+</body>
+</html>
