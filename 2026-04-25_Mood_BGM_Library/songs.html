@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>情緒 BGM 曲庫 · 65 首</title>
+<style>
+  :root {
+    --bg: #f7f5f2;
+    --card: #ffffff;
+    --text: #1a1a1a;
+    --muted: #888;
+    --border: #ececec;
+    --shadow: 0 2px 12px rgba(0,0,0,0.04);
+    --c1: #d32f2f;
+    --c2: #f57c00;
+    --c3: #fbc02d;
+    --c4: #7b1fa2;
+    --c5: #1976d2;
+    --c6: #388e3c;
+    --c7: #00838f;
+    --c8: #616161;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, "Microsoft JhengHei", "PingFang TC", "Noto Sans TC", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    font-size: 16px;
+  }
+  header {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+    color: white;
+    padding: 48px 24px 32px;
+    text-align: center;
+  }
+  header h1 { margin: 0 0 8px; font-size: 28px; letter-spacing: 2px; }
+  header p { margin: 0; color: #aaa; font-size: 14px; }
+  .search-box {
+    max-width: 760px;
+    margin: 24px auto 0;
+    padding: 0 16px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(247,245,242,0.96);
+    backdrop-filter: blur(10px);
+    padding-top: 16px;
+    padding-bottom: 12px;
+  }
+  .search-box input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    font-size: 15px;
+    background: white;
+    font-family: inherit;
+    outline: none;
+    transition: border .15s;
+  }
+  .search-box input:focus { border-color: var(--text); }
+  nav {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 16px 16px;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  nav a {
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 13px;
+    color: var(--text);
+    background: white;
+    border: 1px solid var(--border);
+    transition: all .15s;
+  }
+  nav a:hover { transform: translateY(-1px); box-shadow: var(--shadow); }
+  main { max-width: 760px; margin: 0 auto; padding: 0 16px 80px; }
+  section { margin-bottom: 40px; }
+  .section-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 24px 0 16px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--border);
+  }
+  .section-title .icon {
+    width: 36px; height: 36px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px;
+    border-radius: 8px;
+    color: white;
+  }
+  .section-title h2 { margin: 0; font-size: 20px; letter-spacing: 1px; flex: 1; }
+  .section-title .count { font-size: 12px; color: var(--muted); }
+  .card {
+    background: var(--card);
+    border-radius: 10px;
+    padding: 14px 16px;
+    margin-bottom: 10px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    transition: transform .12s;
+    cursor: pointer;
+  }
+  .card:hover { transform: translateY(-1px); border-color: var(--muted); }
+  .card .num {
+    font-family: "SF Mono", Consolas, monospace;
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 400;
+    padding-top: 3px;
+    min-width: 24px;
+  }
+  .card .info { flex: 1; }
+  .card .title-row {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 4px;
+  }
+  .card .song { font-weight: 700; font-size: 16px; }
+  .card .artist { color: var(--muted); font-size: 13px; }
+  .card .note { font-size: 13.5px; color: #555; line-height: 1.6; }
+  .card .copy-hint {
+    font-size: 11px;
+    color: var(--muted);
+    opacity: 0;
+    transition: opacity .15s;
+  }
+  .card:hover .copy-hint { opacity: 1; }
+  .card.copied { background: #e8f5e9; border-color: #4caf50; }
+  .s1 .icon { background: var(--c1); } .s1 a { border-left: 3px solid var(--c1); }
+  .s2 .icon { background: var(--c2); } .s2 a { border-left: 3px solid var(--c2); }
+  .s3 .icon { background: var(--c3); color: #333; } .s3 a { border-left: 3px solid var(--c3); }
+  .s4 .icon { background: var(--c4); } .s4 a { border-left: 3px solid var(--c4); }
+  .s5 .icon { background: var(--c5); } .s5 a { border-left: 3px solid var(--c5); }
+  .s6 .icon { background: var(--c6); } .s6 a { border-left: 3px solid var(--c6); }
+  .s7 .icon { background: var(--c7); } .s7 a { border-left: 3px solid var(--c7); }
+  .s8 .icon { background: var(--c8); } .s8 a { border-left: 3px solid var(--c8); }
+  .hidden { display: none !important; }
+  footer { text-align: center; color: var(--muted); font-size: 12px; padding: 24px; }
+  @media (max-width: 600px) {
+    header h1 { font-size: 22px; }
+    main { padding: 0 12px 60px; }
+    .card { padding: 12px 14px; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>情緒 BGM 曲庫</h1>
+  <p>依情緒主題分類 · 共 65 首 · 點擊任一首可複製歌名到搜尋</p>
+</header>
+
+<div class="search-box">
+  <input type="text" id="search" placeholder="🔍 搜尋歌名、演唱者、情緒...">
+</div>
+
+<nav>
+  <a href="#s1">🙏 神明保佑</a>
+  <a href="#s2">💰 發財中獎</a>
+  <a href="#s3">🎉 尾牙春酒</a>
+  <a href="#s4">🌐 抖音神曲</a>
+  <a href="#s5">⏳ 人生苦短</a>
+  <a href="#s6">💪 堅持熱血</a>
+  <a href="#s7">🌊 無奈向上</a>
+  <a href="#s8">🎵 靈魂共鳴</a>
+</nav>
+
+<main>
+
+<section id="s1" class="s1">
+  <div class="section-title"><div class="icon">🙏</div><h2>神明保佑 / 祈福類</h2><span class="count">8 首</span></div>
+
+  <div class="card"><div class="num">01</div><div class="info">
+    <div class="title-row"><span class="song">神明保庇</span><span class="artist">王彩樺</span></div>
+    <div class="note">尾牙天花板。歌名直接寫明「保庇」,洗腦度滿分,放十秒全場自動搖擺。</div></div></div>
+
+  <div class="card"><div class="num">02</div><div class="info">
+    <div class="title-row"><span class="song">媽祖保庇</span><span class="artist">伍佰 &amp; China Blue</span></div>
+    <div class="note">南部宮廟味十足,搖滾 + 台味祈福,氣場強到像真的把媽祖請來了。</div></div></div>
+
+  <div class="card"><div class="num">03</div><div class="info">
+    <div class="title-row"><span class="song">擲筊</span><span class="artist">玖壹壹</span></div>
+    <div class="note">求神明給答案的歌,歌詞一直「擲杯」,很多人開獎前播放當 buff。</div></div></div>
+
+  <div class="card"><div class="num">04</div><div class="info">
+    <div class="title-row"><span class="song">六字大明咒 Remix</span><span class="artist">多版本</span></div>
+    <div class="note">「嗡嘛呢叭咪吽」藏傳加持咒。YouTube 有一堆 1hr 電音版,適合連播祈福。</div></div></div>
+
+  <div class="card"><div class="num">05</div><div class="info">
+    <div class="title-row"><span class="song">南無阿彌陀佛 電音版</span><span class="artist">多版本</span></div>
+    <div class="note">佛號 Remix,搭配 EDM 節奏,氣場極強,一放等於開 buff。</div></div></div>
+
+  <div class="card"><div class="num">06</div><div class="info">
+    <div class="title-row"><span class="song">大悲咒 電音版</span><span class="artist">多版本</span></div>
+    <div class="note">觀世音菩薩加持咒,做成舞曲版本意外地魔性,抽獎前暖場用。</div></div></div>
+
+  <div class="card"><div class="num">07</div><div class="info">
+    <div class="title-row"><span class="song">老祖宗保佑我 (花木蘭 Remix)</span><span class="artist">網路版本</span></div>
+    <div class="note">出自迪士尼花木蘭祠堂祈禱場景,被做成洗腦電音版,近年尾牙神曲之一。</div></div></div>
+
+  <div class="card"><div class="num">08</div><div class="info">
+    <div class="title-row"><span class="song">關公護體</span><span class="artist">網路版本</span></div>
+    <div class="note">近年 IG/TikTok 爆紅的關公 Remix,氣勢磅礡,求財求平安專用。</div></div></div>
+</section>
+
+<section id="s2" class="s2">
+  <div class="section-title"><div class="icon">💰</div><h2>發財 / 中獎類</h2><span class="count">7 首</span></div>
+
+  <div class="card"><div class="num">01</div><div class="info">
+    <div class="title-row"><span class="song">好運來</span><span class="artist">祖海</span></div>
+    <div class="note">「好運來~我們好運來~」副歌直接祝福,大陸春晚神曲,華人都能哼兩句。</div></div></div>
+
+  <div class="card"><div class="num">02</div><div class="info">
+    <div class="title-row"><span class="song">財神到</span><span class="artist">許冠傑</span></div>
+    <div class="note">港味財神樂,抽獎、紅包、發獎金一放就對了。</div></div></div>
+
+  <div class="card"><div class="num">03</div><div class="info">
+    <div class="title-row"><span class="song">恭喜發財</span><span class="artist">劉德華</span></div>
+    <div class="note">華人共同記憶,CNY 必備,氣氛一放就到位。</div></div></div>
+
+  <div class="card"><div class="num">04</div><div class="info">
+    <div class="title-row"><span class="song">發財發福中國年</span><span class="artist">群星</span></div>
+    <div class="note">年節絕對不會錯過,跟恭喜發財組成雙拳 combo。</div></div></div>
+
+  <div class="card"><div class="num">05</div><div class="info">
+    <div class="title-row"><span class="song">迎財神</span><span class="artist">朱明瑛</span></div>
+    <div class="note">老派正宮版迎財神,氣場復古但很 work,適合做懷舊梗。</div></div></div>
+
+  <div class="card"><div class="num">06</div><div class="info">
+    <div class="title-row"><span class="song">恭喜恭喜</span><span class="artist">群星</span></div>
+    <div class="note">「每條大街小巷」經典中的經典,跨世代通吃。</div></div></div>
+
+  <div class="card"><div class="num">07</div><div class="info">
+    <div class="title-row"><span class="song">拜託財神爺</span><span class="artist">網路版本</span></div>
+    <div class="note">近年爆紅神曲,歌詞直接 cue 財神,抽獎必備。</div></div></div>
+</section>
+
+<section id="s3" class="s3">
+  <div class="section-title"><div class="icon">🎉</div><h2>尾牙春酒 / 熱場類</h2><span class="count">7 首</span></div>
+
+  <div class="card"><div class="num">01</div><div class="info">
+    <div class="title-row"><span class="song">愛拚才會贏</span><span class="artist">葉啟田</span></div>
+    <div class="note">台語天花板,「運命的字 我不認輸」,正能量宣示曲。</div></div></div>
+
+  <div class="card"><div class="num">02</div><div class="info">
+    <div class="title-row"><span class="song">癡情玫瑰花</span><span class="artist">玖壹壹 &amp; 歐漢聲</span></div>
+    <div class="note">節奏超抓、副歌洗腦,尾牙舞台神曲,全場搖。</div></div></div>
+
+  <div class="card"><div class="num">03</div><div class="info">
+    <div class="title-row"><span class="song">歡喜就好</span><span class="artist">陳雷</span></div>
+    <div class="note">「歡喜就好~」台語魔性洗腦,越聽越樂,中年同事最愛。</div></div></div>
+
+  <div class="card"><div class="num">04</div><div class="info">
+    <div class="title-row"><span class="song">明天會更好</span><span class="artist">群星</span></div>
+    <div class="note">經典大合唱神器,情緒一帶就起,適合收尾或頒獎橋段。</div></div></div>
+
+  <div class="card"><div class="num">05</div><div class="info">
+    <div class="title-row"><span class="song">朋友</span><span class="artist">周華健</span></div>
+    <div class="note">「朋友一生一起走」,兄弟情瞬間拉滿,全場勾肩搭背。</div></div></div>
+
+  <div class="card"><div class="num">06</div><div class="info">
+    <div class="title-row"><span class="song">恰似你的溫柔</span><span class="artist">蔡琴</span></div>
+    <div class="note">中年 boss 最愛,放這首讓老闆秒進入抒情模式,適合致詞前鋪陳。</div></div></div>
+
+  <div class="card"><div class="num">07</div><div class="info">
+    <div class="title-row"><span class="song">一剪梅</span><span class="artist">費玉清</span></div>
+    <div class="note">「雪花飄飄北風蕭蕭」國際爆紅梗,跨世代熟悉,做梗也正用都 OK。</div></div></div>
+</section>
+
+<section id="s4" class="s4">
+  <div class="section-title"><div class="icon">🌐</div><h2>抖音 / YT 爆紅 Remix</h2><span class="count">7 首</span></div>
+
+  <div class="card"><div class="num">01</div><div class="info">
+    <div class="title-row"><span class="song">九九八十一</span><span class="artist">大魚海棠 OST</span></div>
+    <div class="note">被當成「考生祈福 BGM」大量用,神秘感 + 中國風,放抽獎前也合適。</div></div></div>
+
+  <div class="card"><div class="num">02</div><div class="info">
+    <div class="title-row"><span class="song">孤勇者 電音版</span><span class="artist">陳奕迅</span></div>
+    <div class="note">雖然原曲是「致敬平凡英雄」,但被大量當成「抽獎前壯膽曲」。</div></div></div>
+
+  <div class="card"><div class="num">03</div><div class="info">
+    <div class="title-row"><span class="song">漠河舞廳</span><span class="artist">柳爽</span></div>
+    <div class="note">近年網紅慢搖,氛圍感 + 故事感強,適合過場轉折。</div></div></div>
+
+  <div class="card"><div class="num">04</div><div class="info">
+    <div class="title-row"><span class="song">烏蘭巴托的夜</span><span class="artist">譚維維 / 多版本</span></div>
+    <div class="note">悠揚蒼涼,情感片段絕配,用來做 POV 開場能瞬間建立氛圍。</div></div></div>
+
+  <div class="card"><div class="num">05</div><div class="info">
+    <div class="title-row"><span class="song">少年</span><span class="artist">夢然</span></div>
+    <div class="note">「我還是從前那個少年」抖音神曲,青春懷舊向,完播率高。</div></div></div>
+
+  <div class="card"><div class="num">06</div><div class="info">
+    <div class="title-row"><span class="song">芒種</span><span class="artist">音闕詩聽 / 趙方婧</span></div>
+    <div class="note">古風電音爆款,畫面感強,搭古裝 AI 美女天作之合。</div></div></div>
+
+  <div class="card"><div class="num">07</div><div class="info">
+    <div class="title-row"><span class="song">最炫民族風</span><span class="artist">鳳凰傳奇</span></div>
+    <div class="note">廣場舞之王,歡樂無上限,抖音催生無數 meme,必收入曲庫。</div></div></div>
+</section>
+
+<section id="s5" class="s5">
+  <div class="section-title"><div class="icon">⏳</div><h2>人生苦短 / 及時行樂</h2><span class="count">9 首</span></div>
+
+  <div class="card"><div class="num">01</div><div class="info">
+    <div class="title-row"><span class="song">乾杯</span><span class="artist">五月天</span></div>
+    <div class="note">「會不會 有一天 時間真的能倒退」,人生苦短主題曲,後勁強。</div></div></div>
+
+  <div class="card"><div class="num">02</div><div class="info">
+    <div class="title-row"><span class="song">人生短短幾個秋</span><span class="artist">高勝美</span></div>
+    <div class="note">「人生短短幾個秋啊 不醉不罷休」,歌名就是主題,老派但直接。</div></div></div>
+
+  <div class="card"><div class="num">03</div><div class="info">
+    <div class="title-row"><span class="song">瀟灑走一回</span><span class="artist">葉蒨文</span></div>
+    <div class="note">「瀟瀟灑灑走一回」經典中的經典,看淡一切向前走。</div></div></div>
+
+  <div class="card"><div class="num">04</div><div class="info">
+    <div class="title-row"><span class="song">笑看風雲</span><span class="artist">鄭少秋</span></div>
+    <div class="note">「讓那貪嗔怨 隨風消逝」,港劇式看透人生,氣勢磅礡。</div></div></div>
+
+  <div class="card"><div class="num">05</div><div class="info">
+    <div class="title-row"><span class="song">笑忘歌</span><span class="artist">五月天</span></div>
+    <div class="note">「你我的回憶 難免會帶著瘀青」,青春無悔,結尾金句金句金句。</div></div></div>
+
+  <div class="card"><div class="num">06</div><div class="info">
+    <div class="title-row"><span class="song">我還年輕,我還年輕</span><span class="artist">老王樂隊</span></div>
+    <div class="note">「去感受 風的溫柔」,迷茫青春金句,情緒片段神配樂。</div></div></div>
+
+  <div class="card"><div class="num">07</div><div class="info">
+    <div class="title-row"><span class="song">歲月神偷</span><span class="artist">金玟岐</span></div>
+    <div class="note">「時間的手 從指縫溜走」,時光感慨,配懷舊畫面絕配。</div></div></div>
+
+  <div class="card"><div class="num">08</div><div class="info">
+    <div class="title-row"><span class="song">消愁</span><span class="artist">毛不易</span></div>
+    <div class="note">「一杯敬明天 一杯敬過往」,人生苦短派代表作。</div></div></div>
+
+  <div class="card"><div class="num">09</div><div class="info">
+    <div class="title-row"><span class="song">像我這樣的人</span><span class="artist">毛不易</span></div>
+    <div class="note">代入感超強的民謠,小人物心聲,淚腺殺手。</div></div></div>
+</section>
+
+<section id="s6" class="s6">
+  <div class="section-title"><div class="icon">💪</div><h2>堅持 / 熱血勵志</h2><span class="count">12 首</span></div>
+
+  <div class="card"><div class="num">01</div><div class="info">
+    <div class="title-row"><span class="song">倔強</span><span class="artist">五月天</span></div>
+    <div class="note">「當我和世界不一樣 那就讓我不一樣」,堅持類的天花板。</div></div></div>
+
+  <div class="card"><div class="num">02</div><div class="info">
+    <div class="title-row"><span class="song">海闊天空</span><span class="artist">Beyond</span></div>
+    <div class="note">「原諒我這一生不羈放縱愛自由」,典中典,跨世代勵志神曲。</div></div></div>
+
+  <div class="card"><div class="num">03</div><div class="info">
+    <div class="title-row"><span class="song">光輝歲月</span><span class="artist">Beyond</span></div>
+    <div class="note">「今天只有殘留的軀殼 迎接光輝歲月」,夢想不滅。</div></div></div>
+
+  <div class="card"><div class="num">04</div><div class="info">
+    <div class="title-row"><span class="song">真心英雄</span><span class="artist">成龍 / 群星</span></div>
+    <div class="note">「把握生命裡的每一分鐘」,經典勵志大合唱。</div></div></div>
+
+  <div class="card"><div class="num">05</div><div class="info">
+    <div class="title-row"><span class="song">水手</span><span class="artist">鄭智化</span></div>
+    <div class="note">「他說風雨中這點痛算什麼」,勵志金句產地。</div></div></div>
+
+  <div class="card"><div class="num">06</div><div class="info">
+    <div class="title-row"><span class="song">星星點燈</span><span class="artist">鄭智化</span></div>
+    <div class="note">「星星點燈 照亮我家的窗」,溫暖堅持派代表。</div></div></div>
+
+  <div class="card"><div class="num">07</div><div class="info">
+    <div class="title-row"><span class="song">追夢赤子心</span><span class="artist">GALA</span></div>
+    <div class="note">「繼續跑 帶著赤子的驕傲」,畢業季、熱血剪輯必配。</div></div></div>
+
+  <div class="card"><div class="num">08</div><div class="info">
+    <div class="title-row"><span class="song">我相信</span><span class="artist">楊培安</span></div>
+    <div class="note">「我相信我就是我 我相信明天」,勵志必備大合唱。</div></div></div>
+
+  <div class="card"><div class="num">09</div><div class="info">
+    <div class="title-row"><span class="song">隱形的翅膀</span><span class="artist">張韶涵</span></div>
+    <div class="note">「每一次都在徘徊孤單中堅強」,國民勵志經典。</div></div></div>
+
+  <div class="card"><div class="num">10</div><div class="info">
+    <div class="title-row"><span class="song">孤勇者</span><span class="artist">陳奕迅</span></div>
+    <div class="note">「誰說站在光裡的才算英雄」,近年新經典,代入感極強。</div></div></div>
+
+  <div class="card"><div class="num">11</div><div class="info">
+    <div class="title-row"><span class="song">男兒當自強</span><span class="artist">林子祥 / 成龍</span></div>
+    <div class="note">「傲氣面對萬重浪」,霸氣宣告,男性向熱血天花板。</div></div></div>
+
+  <div class="card"><div class="num">12</div><div class="info">
+    <div class="title-row"><span class="song">夜空中最亮的星</span><span class="artist">逃跑計劃</span></div>
+    <div class="note">「能否聽清那仰望的人 心底的孤獨和嘆息」,夢想類必選。</div></div></div>
+</section>
+
+<section id="s7" class="s7">
+  <div class="section-title"><div class="icon">🌊</div><h2>現實無奈但積極向上</h2><span class="count">10 首</span></div>
+
+  <div class="card"><div class="num">01</div><div class="info">
+    <div class="title-row"><span class="song">平凡之路</span><span class="artist">朴樹</span></div>
+    <div class="note">「我曾經跨過山和大海 也穿過人山人海」,認命後仍向前,神作。</div></div></div>
+
+  <div class="card"><div class="num">02</div><div class="info">
+    <div class="title-row"><span class="song">藍蓮花</span><span class="artist">許巍</span></div>
+    <div class="note">「沒有什麼能夠阻擋 你對自由的嚮往」,自由不滅,靈魂曲。</div></div></div>
+
+  <div class="card"><div class="num">03</div><div class="info">
+    <div class="title-row"><span class="song">生活不止眼前的苟且</span><span class="artist">許巍</span></div>
+    <div class="note">「還有詩和遠方的田野」,歌名就是主題,中年心聲。</div></div></div>
+
+  <div class="card"><div class="num">04</div><div class="info">
+    <div class="title-row"><span class="song">曾經的你</span><span class="artist">許巍</span></div>
+    <div class="note">「曾夢想仗劍走天涯 看一看世界的繁華」,對過去的致敬。</div></div></div>
+
+  <div class="card"><div class="num">05</div><div class="info">
+    <div class="title-row"><span class="song">起風了</span><span class="artist">買辣椒也用券</span></div>
+    <div class="note">必選經典,「我曾難自拔於世界之大 也沉溺於其中夢話」,代入感無敵。</div></div></div>
+
+  <div class="card"><div class="num">06</div><div class="info">
+    <div class="title-row"><span class="song">入海</span><span class="artist">毛不易</span></div>
+    <div class="note">「以夢為馬 隨處可棲」,畢業季離別向的代表作。</div></div></div>
+
+  <div class="card"><div class="num">07</div><div class="info">
+    <div class="title-row"><span class="song">野子</span><span class="artist">蘇運瑩</span></div>
+    <div class="note">「怎麼大風越狠 我心越盪」,不服輸的倔強感。</div></div></div>
+
+  <div class="card"><div class="num">08</div><div class="info">
+    <div class="title-row"><span class="song">怒放的生命</span><span class="artist">汪峰</span></div>
+    <div class="note">「我想要怒放的生命 就像飛翔在遼闊的天空」,不甘平庸。</div></div></div>
+
+  <div class="card"><div class="num">09</div><div class="info">
+    <div class="title-row"><span class="song">向前走</span><span class="artist">林強</span></div>
+    <div class="note">台語前行經典,「阮欲來去台北打拼」,底層勇敢打拚代表。</div></div></div>
+
+  <div class="card"><div class="num">10</div><div class="info">
+    <div class="title-row"><span class="song">流浪到淡水</span><span class="artist">金門王 &amp; 李炳輝</span></div>
+    <div class="note">「有緣 無緣 大家來作伙」,小人物看透人生的豁達。</div></div></div>
+</section>
+
+<section id="s8" class="s8">
+  <div class="section-title"><div class="icon">🎵</div><h2>靈魂共鳴 / 情緒片段</h2><span class="count">5 首</span></div>
+
+  <div class="card"><div class="num">01</div><div class="info">
+    <div class="title-row"><span class="song">孤獨患者</span><span class="artist">陳奕迅</span></div>
+    <div class="note">「笑得太放肆 才顯得落寞」,都市寂寞經典,適合夜晚情緒片段。</div></div></div>
+
+  <div class="card"><div class="num">02</div><div class="info">
+    <div class="title-row"><span class="song">成都</span><span class="artist">趙雷</span></div>
+    <div class="note">「和我在成都的街頭走一走」,溫柔認命,民謠代表。</div></div></div>
+
+  <div class="card"><div class="num">03</div><div class="info">
+    <div class="title-row"><span class="song">董小姐</span><span class="artist">宋冬野</span></div>
+    <div class="note">「愛上一匹野馬 可我的家裡沒有草原」,民謠神作,畫面感極強。</div></div></div>
+
+  <div class="card"><div class="num">04</div><div class="info">
+    <div class="title-row"><span class="song">南山南</span><span class="artist">馬頔</span></div>
+    <div class="note">「你在南方的豔陽裡 大雪紛飛」,民謠代表,離別感。</div></div></div>
+
+  <div class="card"><div class="num">05</div><div class="info">
+    <div class="title-row"><span class="song">空空如也</span><span class="artist">任然</span></div>
+    <div class="note">「我假裝瀟灑轉身 裝作若無其事」,失去後繼續走的治癒系。</div></div></div>
+</section>
+
+</main>
+
+<footer>共 65 首 · 點擊任一首可自動複製歌名 + 演唱者</footer>
+
+<script>
+  // 點擊卡片複製
+  document.querySelectorAll('.card').forEach(card => {
+    const song = card.querySelector('.song').textContent.trim();
+    const artist = card.querySelector('.artist').textContent.trim();
+    const hint = document.createElement('span');
+    hint.className = 'copy-hint';
+    hint.textContent = '點擊複製';
+    card.querySelector('.title-row').appendChild(hint);
+
+    card.addEventListener('click', () => {
+      const text = `${song} ${artist}`;
+      navigator.clipboard.writeText(text).then(() => {
+        card.classList.add('copied');
+        hint.textContent = '✓ 已複製';
+        setTimeout(() => {
+          card.classList.remove('copied');
+          hint.textContent = '點擊複製';
+        }, 1200);
+      });
+    });
+  });
+
+  // 搜尋
+  const search = document.getElementById('search');
+  search.addEventListener('input', () => {
+    const q = search.value.trim().toLowerCase();
+    document.querySelectorAll('.card').forEach(card => {
+      const text = card.textContent.toLowerCase();
+      card.classList.toggle('hidden', q && !text.includes(q));
+    });
+    // 整個分類都沒結果就隱藏標題
+    document.querySelectorAll('section').forEach(sec => {
+      const visible = sec.querySelectorAll('.card:not(.hidden)').length;
+      sec.classList.toggle('hidden', q && visible === 0);
+    });
+  });
+</script>
+</body>
+</html>
