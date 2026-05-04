@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第一季 12 集 · Chie 棲羽 · 半三明治版</title>
+<style>
+  :root {
+    --bg: #f5f1ea;
+    --card: #ffffff;
+    --text: #1c1f1c;
+    --muted: #888;
+    --border: #e6e0d4;
+    --shadow: 0 2px 12px rgba(0,0,0,0.04);
+    --accent: #2d5a3d;
+    --accent2: #b8956b;
+    --accent3: #8b5a3c;
+    --psy: #4a4a6b;
+    --history: #6b4a2d;
+    --love: #a05050;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, "Microsoft JhengHei", "PingFang TC", "Noto Sans TC", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.85;
+    font-size: 16px;
+  }
+  header {
+    background: linear-gradient(135deg, #1a2820 0%, #2a3a30 100%);
+    color: white;
+    padding: 48px 24px 32px;
+    text-align: center;
+  }
+  header .label { color: var(--accent2); font-size: 12px; letter-spacing: 4px; margin-bottom: 8px; }
+  header h1 { margin: 0 0 8px; font-size: 28px; letter-spacing: 2px; }
+  header h1 .dot { color: var(--accent2); margin: 0 6px; }
+  header p { margin: 0; color: #ccc; font-size: 14px; line-height: 1.6; }
+  header .pin {
+    margin-top: 14px;
+    display: inline-block;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    color: #ddd;
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 11px;
+    letter-spacing: 2px;
+  }
+  main { max-width: 760px; margin: 0 auto; padding: 32px 16px 80px; }
+  .intro {
+    background: white;
+    border-radius: 12px;
+    padding: 22px 26px;
+    margin-bottom: 28px;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+  }
+  .intro h2 { margin: 0 0 8px; font-size: 16px; color: var(--accent); }
+  .intro p { margin: 0; font-size: 14px; color: #555; line-height: 1.7; }
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+    font-size: 12px;
+  }
+  .legend span {
+    padding: 3px 10px;
+    border-radius: 999px;
+    color: white;
+    letter-spacing: 1px;
+  }
+  .card {
+    background: var(--card);
+    border-radius: 12px;
+    padding: 22px 24px;
+    margin-bottom: 16px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--accent);
+  }
+  .card.sand { border-left-color: var(--accent3); }
+  .card.ai { border-left-color: var(--accent2); }
+  .card.history { border-left-color: var(--history); }
+  .card.psy { border-left-color: var(--psy); }
+  .card.love { border-left-color: var(--love); }
+  .card-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    gap: 12px;
+  }
+  .card-head h3 { margin: 0; font-size: 17px; font-weight: 600; flex: 1; }
+  .ep-pill {
+    background: var(--accent);
+    color: white;
+    font-family: "SF Mono", Consolas, monospace;
+    font-size: 11px;
+    padding: 3px 10px;
+    border-radius: 4px;
+    letter-spacing: 1px;
+    margin-right: 8px;
+    font-weight: 600;
+  }
+  .sand .ep-pill { background: var(--accent3); }
+  .ai .ep-pill { background: var(--accent2); }
+  .history .ep-pill { background: var(--history); }
+  .psy .ep-pill { background: var(--psy); }
+  .love .ep-pill { background: var(--love); }
+  .copy {
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 4px 10px;
+    font-size: 12px;
+    cursor: pointer;
+    color: var(--muted);
+    transition: all .15s;
+    flex-shrink: 0;
+  }
+  .copy:hover { background: var(--text); color: white; border-color: var(--text); }
+  .copy.copied { background: #4caf50; color: white; border-color: #4caf50; }
+  .meta-tag {
+    display: inline-block;
+    background: rgba(45,90,61,0.08);
+    color: var(--accent);
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+  }
+  .sand .meta-tag { background: rgba(139,90,60,0.10); color: var(--accent3); }
+  .ai .meta-tag { background: rgba(184,149,107,0.12); color: #8b6f47; }
+  .history .meta-tag { background: rgba(107,74,45,0.12); color: var(--history); }
+  .psy .meta-tag { background: rgba(74,74,107,0.12); color: var(--psy); }
+  .love .meta-tag { background: rgba(160,80,80,0.12); color: var(--love); }
+  .pov {
+    background: #1a201d;
+    color: #fff;
+    padding: 14px 18px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 15px;
+    text-align: center;
+    margin: 0 0 16px;
+    letter-spacing: 1.2px;
+    line-height: 1.6;
+    position: relative;
+  }
+  .pov::before {
+    content: "🎬 畫面頂部字幕";
+    position: absolute;
+    top: -10px;
+    left: 14px;
+    background: var(--card);
+    font-size: 10px;
+    font-weight: 400;
+    color: var(--muted);
+    padding: 0 6px;
+    letter-spacing: 0.5px;
+  }
+  .script {
+    font-size: 15.5px;
+    line-height: 1.95;
+    color: #333;
+    white-space: pre-wrap;
+    padding: 14px 16px;
+    background: #fafaf6;
+    border-left: 3px solid var(--accent);
+    border-radius: 4px;
+  }
+  .sand .script { border-left-color: var(--accent3); background: #faf6f1; }
+  .ai .script { border-left-color: var(--accent2); }
+  .history .script { border-left-color: var(--history); background: #faf5f0; }
+  .psy .script { border-left-color: var(--psy); background: #f7f7fa; }
+  .love .script { border-left-color: var(--love); background: #faf3f3; }
+  .meta {
+    margin-top: 10px;
+    font-size: 12px;
+    color: var(--muted);
+    display: flex;
+    gap: 12px;
+  }
+  .closing {
+    margin-top: 40px;
+    padding: 28px 30px;
+    background: linear-gradient(135deg, #2d5a3d 0%, #3a6e4a 100%);
+    color: white;
+    border-radius: 14px;
+    text-align: center;
+  }
+  .closing .big {
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+    line-height: 1.5;
+  }
+  .closing .small {
+    font-size: 13px;
+    color: rgba(255,255,255,0.8);
+  }
+  footer { text-align: center; color: var(--muted); font-size: 12px; padding: 24px; }
+  @media (max-width: 600px) {
+    header h1 { font-size: 22px; }
+    main { padding: 24px 12px 60px; }
+    .card { padding: 16px 18px; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="label">SEASON 1 · CHIE EDITION · v3.0</div>
+  <h1>第一季<span class="dot">·</span>12 集</h1>
+  <p>Chie 棲羽口吻 · 半三明治世代策展人版<br>「父母在老,我也在過。我們夾心,但不失格。」</p>
+  <div class="pin">HALF-SANDWICH SEASON 1</div>
+</header>
+
+<main>
+
+<div class="intro">
+  <h2>📝 使用說明</h2>
+  <p>5 集半三明治日常 + 2 集兩性 + 2 集黑暗心理 + 2 集歷史(古裝) + 1 集 AI 軟實力。第一集就直球——立刻定錨族群。<br>
+  發布建議:每週 3 支(週一 · 週三 · 週五),4 週跑完一季。EP09(父母老化)是季中 Signature 集,EP12 是季末品牌標誌集。<br>
+  視覺造型參照《角色聖經》第 4 節:半三明治集用「老家造型」,兩性 / 心理用「工作室」,歷史用「古裝」,AI 用「工作室」或「咖啡廳」。</p>
+  <div class="legend">
+    <span style="background: var(--accent3);">半三明治 · 5</span>
+    <span style="background: var(--love);">兩性 · 2</span>
+    <span style="background: var(--psy);">黑暗心理 · 2</span>
+    <span style="background: var(--history);">歷史 · 2</span>
+    <span style="background: var(--accent2);">AI · 1</span>
+  </div>
+</div>
+
+<div class="card sand">
+  <div class="card-head"><h3><span class="ep-pill">EP01</span>過年回家被親戚問「妳怎麼還不結婚」,我學會的回應</h3><button class="copy">複製</button></div>
+  <span class="meta-tag">半三明治 · 第一集就直球 · 立刻定錨族群</span>
+  <div class="pov">POV: 你聽見一個過年被逼婚的設計師回話</div>
+  <div class="script">過年回家,姑姑端著菜走過來,問我「妳怎麼還不結婚?」我以前會尷尬笑。現在我會說——「姑姑,不是我還沒結婚,是我還沒遇到值得停下來的人。」她愣了一下,沒再問。我發現一件事:問題不是要被回答,是要被重新框。妳不欠任何人交代,妳只欠自己一個誠實的答案。我是 Chie,半三明治世代的策展人。</div>
+  <div class="meta"><span>字數約 130</span><span>秒數約 38</span></div>
+</div>
+
+<div class="card love">
+  <div class="card-head"><h3><span class="ep-pill">EP02</span>30+ 還在談沒打算結婚的戀愛,我才發現一件事</h3><button class="copy">複製</button></div>
+  <span class="meta-tag">兩性 · 30+ 戀愛深度 · 跨性別共感</span>
+  <div class="pov">POV: 你聽見一個 30+ 設計師對你說真話</div>
+  <div class="script">上週我跟一個 30+ 男生吃飯,他第三次跟我說「其實我也沒打算結婚」。我以前會覺得這是逃避,現在我懂——這句話有兩種:一種是逃避責任的男生用來騙妳,一種是真的清楚自己的人用來尊重妳。30 歲後我們不能再用 25 歲的眼光看戀愛。妳要看的不是「他打不打算結婚」,是「他敢不敢替自己負責」。這個區別,比結婚證書值錢一百倍。</div>
+  <div class="meta"><span>字數約 140</span><span>秒數約 41</span></div>
+</div>
+
+<div class="card sand">
+  <div class="card-head"><h3><span class="ep-pill">EP03</span>我替父母想退休金,我的退休金誰想?</h3><button class="copy">複製</button></div>
+  <span class="meta-tag">半三明治 · 雙向供養 · 金錢焦慮金句</span>
+  <div class="pov">POV: 你看見一個 30 歲女兒在算試算表</div>
+  <div class="script">我有一張 Excel,每個月分三欄:自己生活、爸媽未來醫療、自己的退休金。算到第三欄常常算不下去。父母有勞退,但醫療費不知道哪天會來。我沒有小孩接力,自己的老年得自己備。這代人最大的孤獨,不是沒對象,是雙向供養但沒人接班。但我們不哭窮,我們算好。算好,就是一種尊嚴。我們夾心,但不失格。</div>
+  <div class="meta"><span>字數約 135</span><span>秒數約 40</span></div>
+</div>
+
+<div class="card psy">
+  <div class="card-head"><h3><span class="ep-pill">EP04</span>為什麼越懂事越沒人疼</h3><button class="copy">複製</button></div>
+  <span class="meta-tag">黑暗心理 · 大流量金句 · 高分享率</span>
+  <div class="pov">POV: 你遇到一個曾經很懂事的設計師</div>
+  <div class="script">妳從小就被誇「懂事」?我自己就是這樣長大的孩子。懂事的人從不發脾氣——大家以為妳沒情緒。懂事的人總是讓步——大家以為妳不在乎。懂事的人很少求助——大家以為妳不需要。30 歲後我才發現最諷刺的是——當父母開始老了、需要被照顧了,最先被叫回來的,永遠是最懂事的那個。我們不是要學變壞,是要學會說「我也需要被照顧」。</div>
+  <div class="meta"><span>字數約 138</span><span>秒數約 40</span></div>
+</div>
+
+<div class="card sand">
+  <div class="card-head"><h3><span class="ep-pill">EP05</span>同學群組已經不能聊,我學會默默退出</h3><button class="copy">複製</button></div>
+  <span class="meta-tag">半三明治 · 同代不再是同類 · 訂閱觸發</span>
+  <div class="pov">POV: 你滑過一個 30+ 設計師的螢幕</div>
+  <div class="script">同學群組今天又跳出彌月油飯照,我滑了滑沒回。以前我會勉強自己按愛心,怕被當邊緣人。後來我發現——我不在他們的劇本裡,他們也不在我的。我退了三個群組,沒有人問為什麼。我學會的不是冷漠,是節省。30 歲後最稀缺的是注意力,把它放在會回應你的地方。沒按劇本,也算數。</div>
+  <div class="meta"><span>字數約 122</span><span>秒數約 36</span></div>
+</div>
+
+<div class="card history">
+  <div class="card-head"><h3><span class="ep-pill">EP06</span>古代沒結婚卻活得最好的女人——唐代女道士的逆襲</h3><button class="copy">複製</button></div>
+  <span class="meta-tag">歷史 · 古裝集 1 · 視覺翻新 · 呼應主軸</span>
+  <div class="pov">POV: 你遇到一個替唐代女人驕傲的設計師</div>
+  <div class="script">前幾天我設計一個古風品牌,查資料發現一群人——唐代的女道士。她們不結婚、不生子,但活得比誰都精彩。太平公主、楊貴妃、玉真公主,都當過女道士。她們有自己的房產、能自由戀愛、寫詩、辦沙龍。那個年代,「出家為道」是女人最體面的「不結婚」。原來「沒按劇本走的女人活得最好」這件事,唐朝人就證明過了。</div>
+  <div class="meta"><span>字數約 130</span><span>秒數約 38</span></div>
+</div>
+
+<div class="card ai">
+  <div class="card-head"><h3><span class="ep-pill">EP07 · AI</span>在 AI 時代,你最該培養的不是技能,是品味</h3><button class="copy">複製</button></div>
+  <span class="meta-tag">AI 軟實力 · 策展人能力背書</span>
+  <div class="pov">POV: 你遇到一個替你篩品味的策展人</div>
+  <div class="script">我這幾年用 AI 做設計,看了上萬張 AI 生成的圖。我發現一件事——做出來不難,挑出來才難。AI 給你 1000 個版本,你能不能挑出「值得停下來看」的那一個?能,你就是策展人;不能,你就是被淹沒的人。所以在這個時代,別急著學工具——技能會被取代,但品味不會。品味,才是你最後的護城河。</div>
+  <div class="meta"><span>字數約 130</span><span>秒數約 38</span></div>
+</div>
+
+<div class="card love">
+  <div class="card-head"><h3><span class="ep-pill">EP08</span>分手後 30+ 才看清的事</h3><button class="copy">複製</button></div>
+  <span class="meta-tag">兩性 · 中年戀愛深度 · 反 25 歲邏輯</span>
+  <div class="pov">POV: 你聽見一個 30+ 分過手的女人</div>
+  <div class="script">30 歲那年我也分過手。25 歲分手是天崩地裂,30 歲分手反而很平靜——平靜到我自己都怕。我哭了一晚,第二天起來打開電腦繼續做案子。我發現一件事:30+ 分手不是因為不痛,是因為「我還有別的事要做」。我要繼續接案、要陪媽媽看病、要養我的貓。痛還在,但生活不會等。如果妳在 30+ 分手後沒崩潰,請替自己驕傲——那不是冷血,是妳變強了。</div>
+  <div class="meta"><span>字數約 145</span><span>秒數約 42</span></div>
+</div>
+
+<div class="card sand">
+  <div class="card-head"><h3><span class="ep-pill">EP09</span>父母開始老了,我才明白什麼叫「時間有限」</h3><button class="copy">複製</button></div>
+  <span class="meta-tag">半三明治 · Signature 集 · 情感重量級</span>
+  <div class="pov">POV: 你看見一個女兒陪媽媽在診間</div>
+  <div class="script">上週帶媽媽去看心臟科,等待叫號時我看著她坐在塑膠椅上滑手機。我突然意識到——她以前是替我看醫生的人,現在輪到我替她看了。30 歲那年我才真的懂「時間有限」這四個字。不是雞湯版本,是父母老化版本。每一次回家,都是少了一次的回家。半三明治世代最殘忍的功課,是學會在父母還在時,把「陪」這個字寫得真真切切。</div>
+  <div class="meta"><span>字數約 138</span><span>秒數約 40</span></div>
+</div>
+
+<div class="card psy">
+  <div class="card-head"><h3><span class="ep-pill">EP10</span>最可怕的心理學效應:習得性無助</h3><button class="copy">複製</button></div>
+  <span class="meta-tag">黑暗心理 · 內容深度爆款 · 半三明治特別有共鳴</span>
+  <div class="pov">POV: 你聽見一個走出陰影的女人</div>
+  <div class="script">妳知道為什麼有人被傷害到不離開嗎?心理學有個名詞——習得性無助。實驗裡,狗被電擊到後來放開門也不逃。人也一樣。半三明治世代特別容易陷入這個——親戚一句「妳怎麼還沒...」、同學一句「妳沒小孩會空虛」,重複久了,連自己都信。如果身邊有人讓妳越活越小聲,那不是愛,是牢籠。離開,永遠不嫌晚。</div>
+  <div class="meta"><span>字數約 130</span><span>秒數約 38</span></div>
+</div>
+
+<div class="card history">
+  <div class="card-head"><h3><span class="ep-pill">EP11</span>武媚娘前傳:在男人寫的劇本裡,她寫了自己的</h3><button class="copy">複製</button></div>
+  <span class="meta-tag">歷史 · 古裝集 2 · 主軸呼應 · 重量級女性敘事</span>
+  <div class="pov">POV: 你遇到一個替武則天平反的設計師</div>
+  <div class="script">我們都記得武則天當皇帝,但很少人知道她 14 歲入宮、25 歲被丟進感業寺剃光頭。她在沒有未來的尼姑庵裡待了五年。五年,沒人替她寫劇本。她做了什麼?她沒等。她寫詩、讀史、托人帶話、活下來。三十年後她登基。在那個男人寫的劇本裡,她替自己寫了一本新的。30+ 的我們也在類似的山洞——別等,自己寫。沒按劇本,也算數。</div>
+  <div class="meta"><span>字數約 138</span><span>秒數約 40</span></div>
+</div>
+
+<div class="card sand">
+  <div class="card-head"><h3><span class="ep-pill">EP12</span>我們夾心,但不失格——半三明治世代的 3 件值得停下來看的事</h3><button class="copy">複製</button></div>
+  <span class="meta-tag">半三明治 · 季末品牌標誌集 · 把 catchphrase 焊死</span>
+  <div class="pov">POV: 你看完一季,被一個策展人抱了一下</div>
+  <div class="script">12 集,這一季我陪你們走完。最後一集留三件值得停下來看的事——第一,父母還能陪的每一頓飯都是限量的,請吃慢一點。第二,沒按劇本走不是失敗,是妳替自己寫劇本,這件事永遠不晚。第三,記住八個字——「夾心,但不失格」。當親戚再問、群組再跳、深夜再失眠,請拿這八個字回應。我是 Chie,我們明天再挑一個值得停下來看的。</div>
+  <div class="meta"><span>字數約 145</span><span>秒數約 42</span></div>
+</div>
+
+<div class="closing">
+  <div class="big">「父母在老,我也在過。<br>我們夾心,但不失格。」</div>
+  <div class="small">— Season 1 · Chie 棲羽 · 半三明治世代的策展人 —</div>
+</div>
+
+</main>
+
+<footer>
+  第一季 12 集 · v3.0 · 2026-04-29 · Chie 棲羽 · 半三明治版<br>
+  搭配《角色聖經 v3.0》與《半三明治日常 20 支》使用
+</footer>
+
+<script>
+  document.querySelectorAll('.copy').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.stopPropagation();
+      const card = btn.closest('.card');
+      const script = card.querySelector('.script').textContent.trim();
+      navigator.clipboard.writeText(script).then(() => {
+        btn.textContent = '已複製';
+        btn.classList.add('copied');
+        setTimeout(() => {
+          btn.textContent = '複製';
+          btn.classList.remove('copied');
+        }, 1500);
+      });
+    });
+  });
+</script>
+</body>
+</html>

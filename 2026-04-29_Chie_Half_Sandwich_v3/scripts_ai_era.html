@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 世代必備能力 · 20 支逐字稿(Chie 口吻)</title>
+<style>
+  :root {
+    --bg: #f5f1ea;
+    --card: #ffffff;
+    --text: #1c1f1c;
+    --muted: #888;
+    --border: #e6e0d4;
+    --shadow: 0 2px 12px rgba(0,0,0,0.04);
+    --accent: #2d5a3d;
+    --accent2: #b8956b;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, "Microsoft JhengHei", "PingFang TC", "Noto Sans TC", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.85;
+    font-size: 16px;
+  }
+  header {
+    background: linear-gradient(135deg, #1a2820 0%, #2a3a30 100%);
+    color: white;
+    padding: 48px 24px 32px;
+    text-align: center;
+  }
+  header .label { color: var(--accent2); font-size: 12px; letter-spacing: 4px; margin-bottom: 8px; }
+  header h1 { margin: 0 0 8px; font-size: 28px; letter-spacing: 2px; }
+  header p { margin: 0; color: #ccc; font-size: 14px; }
+  header .pin {
+    margin-top: 14px;
+    display: inline-block;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    color: #ddd;
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 11px;
+    letter-spacing: 2px;
+  }
+  nav {
+    position: sticky;
+    top: 0;
+    background: rgba(245,241,234,0.96);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+    padding: 12px 16px;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+    z-index: 100;
+  }
+  nav a {
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 999px;
+    font-size: 13px;
+    color: var(--text);
+    background: white;
+    border: 1px solid var(--border);
+    transition: all .15s;
+    border-left: 4px solid var(--accent);
+  }
+  nav a:hover { background: var(--accent); color: white; border-color: var(--accent); }
+  main { max-width: 760px; margin: 0 auto; padding: 32px 16px 80px; }
+  section { margin-bottom: 56px; }
+  .section-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 24px 0 20px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--accent);
+  }
+  .section-title .icon {
+    width: 36px; height: 36px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+    border-radius: 8px;
+    background: var(--accent);
+    color: white;
+  }
+  .section-title h2 { margin: 0; font-size: 20px; letter-spacing: 1px; flex: 1; }
+  .section-title .count { font-size: 13px; color: var(--muted); }
+  .card {
+    background: var(--card);
+    border-radius: 12px;
+    padding: 20px 22px;
+    margin-bottom: 14px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+  }
+  .card-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    gap: 12px;
+  }
+  .card-head h3 { margin: 0; font-size: 17px; font-weight: 600; flex: 1; }
+  .card-head .num {
+    font-family: "SF Mono", Consolas, monospace;
+    color: var(--muted);
+    font-size: 13px;
+    font-weight: 400;
+    margin-right: 6px;
+  }
+  .copy {
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 4px 10px;
+    font-size: 12px;
+    cursor: pointer;
+    color: var(--muted);
+    transition: all .15s;
+    flex-shrink: 0;
+  }
+  .copy:hover { background: var(--text); color: white; border-color: var(--text); }
+  .copy.copied { background: #4caf50; color: white; border-color: #4caf50; }
+  .pov {
+    background: #1a201d;
+    color: #fff;
+    padding: 14px 18px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 15px;
+    text-align: center;
+    margin: 0 0 16px;
+    letter-spacing: 1.2px;
+    line-height: 1.6;
+    position: relative;
+  }
+  .pov::before {
+    content: "🎬 畫面頂部字幕";
+    position: absolute;
+    top: -10px;
+    left: 14px;
+    background: var(--card);
+    font-size: 10px;
+    font-weight: 400;
+    color: var(--muted);
+    padding: 0 6px;
+    letter-spacing: 0.5px;
+  }
+  .script {
+    font-size: 15.5px;
+    line-height: 1.95;
+    color: #333;
+    white-space: pre-wrap;
+    padding: 14px 16px;
+    background: #fafaf6;
+    border-left: 3px solid var(--accent);
+    border-radius: 4px;
+  }
+  .meta {
+    margin-top: 10px;
+    font-size: 12px;
+    color: var(--muted);
+    display: flex;
+    gap: 12px;
+  }
+  footer { text-align: center; color: var(--muted); font-size: 12px; padding: 24px; }
+  @media (max-width: 600px) {
+    header h1 { font-size: 22px; }
+    main { padding: 24px 12px 60px; }
+    .card { padding: 16px 18px; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="label">SCRIPTS · SEASON THEME 5</div>
+  <h1>AI 世代必備能力</h1>
+  <p>20 支逐字稿 · Chie 棲羽口吻 · AI 時代的人生選擇 / 思維 / 軟實力</p>
+  <div class="pin">HALF-SANDWICH CURATOR · 半三明治策展人 · v2.0</div>
+</header>
+
+<nav>
+  <a href="#g1">怎麼提問</a>
+  <a href="#g2">怎麼判斷</a>
+  <a href="#g3">怎麼選題</a>
+  <a href="#g4">怎麼學習</a>
+  <a href="#g5">怎麼活著</a>
+</nav>
+
+<main>
+
+<section id="g1">
+  <div class="section-title"><div class="icon">❓</div><h2>怎麼提問 · Prompt 思維</h2><span class="count">5 支</span></div>
+
+  <div class="card">
+    <div class="card-head"><h3><span class="num">01</span>AI 不是答案,是問題的鏡子</h3><button class="copy">複製</button></div>
+    <div class="pov">POV: 你遇到一個會問問題的設計師</div>
+    <div class="script">我這幾年用 AI 越多,越懂一件事——AI 不是答案,是問題的鏡子。你問什麼,它就照什麼回來。問「給我一個 LOGO」,你拿到 100 個 LOGO。問「我的品牌想傳達什麼信念」,你拿到一段值得思考的話。差別不在 AI,在你。會問的人,AI 是你的軍隊。不會問的人,AI 是你的雜訊。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><h3><span class="num">02</span>別問 AI「怎麼做」,問它「為什麼」</h3><button class="copy">複製</button></div>
+    <div class="pov">POV: 你旁聽一個策展人和 AI 對話</div>
+    <div class="script">一個小秘訣——當你卡關的時候,別問 AI 怎麼做,問它「為什麼」。「為什麼這個版面看起來吵?」「為什麼我寫的這段話沒有溫度?」AI 對「為什麼」的回答永遠比「怎麼做」深刻。因為「怎麼做」是技術,「為什麼」是思維。學會問為什麼,你就跨過了 90% 的人。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><h3><span class="num">03</span>一個好問題等於十個好答案</h3><button class="copy">複製</button></div>
+    <div class="pov">POV: 你坐在一個會問問題的人對面</div>
+    <div class="script">我在事務所工作 5 年才懂——一個好問題,可以救你十次工。客戶說「我要一個有質感的設計」,你別接,先問:「你想讓誰感覺有質感?他在哪一刻會看到?」設計界教我們做東西,沒人教我們問問題。但 AI 時代,會問問題的人,才是不會被取代的那個。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><h3><span class="num">04</span>追問比初問更值錢</h3><button class="copy">複製</button></div>
+    <div class="pov">POV: 你遇到一個從不只問一次的女人</div>
+    <div class="script">AI 給你的第一個答案,通常不是最好的。我發現一件事——它的第二個答案才開始有意思,第五個答案才到位。所以別停在「謝謝」就關掉。追問:「還有別的角度嗎?」「為什麼這樣?」「如果反過來想呢?」AI 越能被追問,它就越深。但前提是,你願意多問一次。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><h3><span class="num">05</span>學會把模糊的話變成具體的問題</h3><button class="copy">複製</button></div>
+    <div class="pov">POV: 你旁聽一個會把問題切碎的策展人</div>
+    <div class="script">我見過很多人不會用 AI——不是因為他們笨,是他們的問題太大。他們問「怎麼讓我的人生更好?」,AI 只能給你雞湯。改成具體的問題:「我下個月想存兩萬,我每月有 5 萬收入,該砍掉哪三項開銷?」AI 會給你能執行的答案。問題越具體,生命越具體。</div>
+  </div>
+</section>
+
+<section id="g2">
+  <div class="section-title"><div class="icon">👁️</div><h2>怎麼判斷 · 品味與選擇</h2><span class="count">5 支</span></div>
+
+  <div class="card">
+    <div class="card-head"><h3><span class="num">06</span>在 AI 時代,品味是最後的護城河</h3><button class="copy">複製</button></div>
+    <div class="pov">POV: 你遇到一個 200 張圖只挑 3 張的策展人</div>
+    <div class="script">今天看了 200 張 AI 生成的圖,只有 3 張讓我停下來。剩下的 197 張不是不美,是沒有「值得停下來」的東西。在這個時代,做出來不難,挑出來才難。AI 給你 1000 個版本,你能不能挑出那一個?能,你就是策展人。不能,你就是被淹沒的人。品味,是 AI 時代的最後護城河。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><h3><span class="num">07</span>怎麼判斷一個東西是 AI 還是人做的</h3><button class="copy">複製</button></div>
+    <div class="pov">POV: 你遇到一個一眼就能分辨的設計師</div>
+    <div class="script">我跟你說一個訣竅——AI 做的東西,沒有「不該存在」的地方。它太完美、太對稱、太合理。但人做的東西,總有一個小缺陷,可能是手抖了一下、可能是色塊偏了 2 px、可能是邊緣有一點髒。那個缺陷,就是「人」的證據。下次你不確定,看那個地方就好。AI 沒有「不小心」。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><h3><span class="num">08</span>不是 AI 太強,是你忘了停下來</h3><button class="copy">複製</button></div>
+    <div class="pov">POV: 你遇到一個拒絕被速度帶走的女人</div>
+    <div class="script">大家都在說 AI 讓我們快了 100 倍,我反而覺得——它讓我們忘了怎麼停下來。我看過太多人,用 AI 寫信、用 AI 做圖、用 AI 想點子,然後一天結束發現,自己沒有真的「想過」任何事。不是 AI 太強,是你忘了停下來思考。停下來,才是這個時代最稀缺的動作。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><h3><span class="num">09</span>多就是少:從 100 個選項中選 1 個</h3><button class="copy">複製</button></div>
+    <div class="pov">POV: 你遇到一個有選擇焦慮免疫力的策展人</div>
+    <div class="script">AI 給你 100 個方案,你選不出來?我教你一個方法——別比較它們有什麼「優點」,問它們「拿掉哪一個會最痛?」剩下的就是你真正要的。設計裡叫「核心特徵」,人生裡叫「不能失去的東西」。在 AI 過剩的時代,選擇力比創造力更重要。能放掉 99 個,你才能擁抱那 1 個。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><h3><span class="num">10</span>直覺,是大腦最高級的計算</h3><button class="copy">複製</button></div>
+    <div class="pov">POV: 你遇到一個相信直覺的設計師</div>
+    <div class="script">AI 的邏輯永遠比你強,但「直覺」永遠比 AI 強。為什麼?因為直覺是你 30 年人生看過的所有東西的總和——一張畫、一個眼神、一句沒說完的話、一場分手。AI 沒有過這些。所以下次當你「就是覺得不對」、卻說不出原因——別懷疑自己,那是你大腦最高級的運算結果。</div>
+  </div>
+</section>
+
+<section id="g3">
+  <div class="section-title"><div class="icon">🎯</div><h2>怎麼選題 · 優先級與專注</h2><span class="count">4 支</span></div>
+
+  <div class="card">
+    <div class="card-head"><h3><span class="num">11</span>30+ 的我們,時間是最貴的成本</h3><button class="copy">複製</button></div>
+    <div class="pov">POV: 你遇到一個把時間當奢侈品的女人</div>
+    <div class="script">在 AI 時代,每樣東西都變便宜了——文章便宜、圖片便宜、影片便宜。但有一樣東西更貴了,叫「你的時間」。30+ 的我們特別有感,父母老化的速度提醒我們時間真的有限。你滑 30 分鐘短影音,等於少陪了媽媽吃一頓飯。我這幾年最重要的功課,不是學 AI,是學會「不滑」。半三明治世代,時間是最貴的成本。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><h3><span class="num">12</span>不是你選太少,是你選太多</h3><button class="copy">複製</button></div>
+    <div class="pov">POV: 你遇到一個拒絕「都要」的女人</div>
+    <div class="script">我認識一個朋友,什麼都想學——AI、攝影、寫作、外語、投資。三年後,什麼都沒做好。不是他笨,是他「都要」。在 AI 時代,「都要」等於「都不要」。我這幾年的功課,是學會選 1 件事,深到底。其他的,先放著。深度,是 AI 永遠複製不了的東西。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><h3><span class="num">13</span>重要的事,AI 不會推給你</h3><button class="copy">複製</button></div>
+    <div class="pov">POV: 你遇到一個不靠演算法選擇的策展人</div>
+    <div class="script">演算法推給你的,是它認為「你會點」的東西。但你會點的東西,不一定是你「該做」的東西。我這兩年改了一個習慣——關掉抖音、關掉今日頭條、關掉所有「為你推薦」。我自己決定我要看什麼。重要的事,AI 不會推給你。你得自己挑。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><h3><span class="num">14</span>學會說「這個我不需要」</h3><button class="copy">複製</button></div>
+    <div class="pov">POV: 你遇到一個敢拒絕資訊的女人</div>
+    <div class="script">我這兩年最困難的功課,不是學新東西,是學會說「這個我不需要」。新出的 AI 工具——不需要。新冒出的爭議——不需要。新流行的話題——不需要。我寧可比別人慢三天,也不要被資訊洪流沖散我的判斷。在這個時代,「不需要」三個字,是最稀有的覺醒。</div>
+  </div>
+</section>
+
+<section id="g4">
+  <div class="section-title"><div class="icon">📚</div><h2>怎麼學習 · 新時代學法</h2><span class="count">3 支</span></div>
+
+  <div class="card">
+    <div class="card-head"><h3><span class="num">15</span>在 AI 時代,學東西的方法已經變了</h3><button class="copy">複製</button></div>
+    <div class="pov">POV: 你遇到一個重新學習的女人</div>
+    <div class="script">以前學東西是「累積知識」——讀書、上課、背重點。現在不一樣了。所有知識 AI 都有,你的腦子別當資料庫,要當「指揮官」。我現在學東西只問三個問題:這對我的真實問題有幫助嗎?我能不能在 24 小時內用一次?用了之後,我會不會更想知道下一層?三個都「會」,才學。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><h3><span class="num">16</span>AI 不是省時間,是創造時間</h3><button class="copy">複製</button></div>
+    <div class="pov">POV: 你遇到一個把時間當作品的設計師</div>
+    <div class="script">很多人說 AI 是省時間工具,我覺得錯了。AI 是「創造時間」的工具。它讓你把 10 小時的事壓縮到 1 小時——關鍵是,剩下的 9 小時你拿去做什麼?如果拿去滑手機,那 AI 沒幫你。如果拿去散步、看書、回家陪爸媽吃飯、做你一直沒做的事——那 AI 才真正改變了你的生命。對 30+ 的我們特別重要——時間,真的有限。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><h3><span class="num">17</span>你的學習速度,要比 AI 慢一點</h3><button class="copy">複製</button></div>
+    <div class="pov">POV: 你遇到一個刻意慢下來的策展人</div>
+    <div class="script">別跟 AI 比學習速度,你會輸。它一秒學完一本書,你需要一週。但你贏在哪裡?你會「消化」。AI 會背,但不會懂。我學一個東西,會故意停下來——出去走一圈、喝杯咖啡、跟朋友聊一聊。在那個停頓裡,知識才真的變成你的。慢,是這個時代的奢侈品。</div>
+  </div>
+</section>
+
+<section id="g5">
+  <div class="section-title"><div class="icon">🌿</div><h2>怎麼活著 · AI 取代不了的人味</h2><span class="count">3 支</span></div>
+
+  <div class="card">
+    <div class="card-head"><h3><span class="num">18</span>AI 寫得出我這篇,但寫不出我為什麼想哭</h3><button class="copy">複製</button></div>
+    <div class="pov">POV: 你聽見一個被自己感動的設計師</div>
+    <div class="script">有人問我,Chie 妳寫的東西,AI 也寫得出來,妳怕不怕被取代?我說我不怕。AI 可以寫出跟我一樣的字,但寫不出我為什麼今天想哭。它沒有過那場 24 歲的分手。它沒有過迪化街那個下午陽光打在老牆上的那一秒。文字可以被複製,經歷不能。所以——好好活著,就是你最大的護城河。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><h3><span class="num">19</span>你的不完美,是你最值錢的東西</h3><button class="copy">複製</button></div>
+    <div class="pov">POV: 你遇到一個擁抱缺陷的設計師</div>
+    <div class="script">設計圈這兩年最熱的詞,叫 "Imperfect by Design"——故意的不完美。為什麼?因為 AI 太完美,完美變得便宜了。反而是「不完美」變成稀缺。你的口吃、你的笑點怪、你的審美偏好、你的小執著——以前覺得是缺點的東西,在 AI 時代,變成你最值錢的東西。別修掉,留著。</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><h3><span class="num">20</span>你不是要打敗 AI,是要記得你是人</h3><button class="copy">複製</button></div>
+    <div class="pov">POV: 你遇到一個不焦慮的策展人</div>
+    <div class="script">大家都在問——怎麼樣才不會被 AI 打敗?我覺得這個問法錯了。你不需要打敗 AI,你需要記得你是人。人會累、會痛、會在媽媽病房折疊床上聽她呼吸、會在凌晨三點突然想哭、會為了一個畫面停下腳踏車。這些事 AI 永遠做不到。我們夾心,但不失格——這就是 AI 拿不走的。</div>
+  </div>
+</section>
+
+</main>
+
+<footer>共 20 支 · Chie 棲羽 口吻 · v2.0 · 2026-04-29 · AI 時代的人生選擇<br>「我們夾心,但不失格——這就是 AI 拿不走的。」</footer>
+
+<script>
+  document.querySelectorAll('.card').forEach(card => {
+    const script = card.querySelector('.script');
+    const pov = card.querySelector('.pov');
+    const text = script.textContent.trim();
+    const povText = pov.textContent.trim();
+    const len = text.length;
+    const sec = Math.round(len / 3.5);
+    const meta = document.createElement('div');
+    meta.className = 'meta';
+    meta.innerHTML = `<span>${len} 字</span><span>約 ${sec} 秒</span>`;
+    script.after(meta);
+
+    const btn = card.querySelector('.copy');
+    btn.addEventListener('click', () => {
+      const full = `${povText}\n\n${text}`;
+      navigator.clipboard.writeText(full).then(() => {
+        btn.textContent = '已複製';
+        btn.classList.add('copied');
+        setTimeout(() => {
+          btn.textContent = '複製';
+          btn.classList.remove('copied');
+        }, 1500);
+      });
+    });
+  });
+</script>
+</body>
+</html>

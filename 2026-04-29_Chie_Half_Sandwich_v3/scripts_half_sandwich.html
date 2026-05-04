@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>半三明治日常 · 20 支逐字稿 · Chie 棲羽</title>
+<style>
+  :root {
+    --bg: #f5f1ea;
+    --card: #ffffff;
+    --text: #1c1f1c;
+    --muted: #888;
+    --border: #e6e0d4;
+    --shadow: 0 2px 12px rgba(0,0,0,0.04);
+    --accent: #2d5a3d;
+    --accent2: #b8956b;
+    --accent3: #8b5a3c;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, "Microsoft JhengHei", "PingFang TC", "Noto Sans TC", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.85;
+    font-size: 16px;
+  }
+  header {
+    background: linear-gradient(135deg, #2a1a14 0%, #3d2a1f 100%);
+    color: white;
+    padding: 56px 24px 36px;
+    text-align: center;
+  }
+  header .label { color: var(--accent2); font-size: 12px; letter-spacing: 4px; margin-bottom: 8px; }
+  header h1 { margin: 0 0 8px; font-size: 30px; letter-spacing: 2px; }
+  header h1 .dot { color: var(--accent2); margin: 0 6px; }
+  header .sub { margin: 8px 0 0; color: #e0c8a8; font-size: 14px; line-height: 1.6; }
+  header .pin {
+    margin-top: 14px;
+    display: inline-block;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    color: #ddd;
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 11px;
+    letter-spacing: 2px;
+  }
+  nav {
+    position: sticky;
+    top: 0;
+    background: rgba(245,241,234,0.96);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+    padding: 12px 16px;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+    z-index: 100;
+  }
+  nav a {
+    text-decoration: none;
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 13px;
+    color: var(--text);
+    background: white;
+    border: 1px solid var(--border);
+    transition: all .15s;
+  }
+  nav a:hover { background: var(--accent3); color: white; border-color: var(--accent3); }
+  main { max-width: 760px; margin: 0 auto; padding: 32px 16px 80px; }
+  .intro {
+    background: white;
+    border-radius: 12px;
+    padding: 22px 26px;
+    margin-bottom: 28px;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+  }
+  .intro h2 { margin: 0 0 8px; font-size: 16px; color: var(--accent3); }
+  .intro p { margin: 0; font-size: 14px; color: #555; line-height: 1.7; }
+  .group-title {
+    margin: 36px 0 16px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--accent3);
+    font-size: 18px;
+    letter-spacing: 1.5px;
+    color: var(--accent3);
+    font-weight: 600;
+  }
+  .group-title .num {
+    display: inline-block;
+    color: var(--accent2);
+    font-size: 12px;
+    margin-right: 10px;
+    font-family: "SF Mono", Consolas, monospace;
+    letter-spacing: 2px;
+    vertical-align: middle;
+  }
+  .group-title .desc {
+    display: block;
+    margin-top: 4px;
+    font-size: 12px;
+    color: var(--muted);
+    font-weight: 400;
+    letter-spacing: 0.5px;
+  }
+  .card {
+    background: var(--card);
+    border-radius: 12px;
+    padding: 22px 24px;
+    margin-bottom: 16px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--accent3);
+  }
+  .card-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    gap: 12px;
+  }
+  .card-head h3 { margin: 0; font-size: 16px; font-weight: 600; flex: 1; }
+  .ep-pill {
+    background: var(--accent3);
+    color: white;
+    font-family: "SF Mono", Consolas, monospace;
+    font-size: 11px;
+    padding: 3px 10px;
+    border-radius: 4px;
+    letter-spacing: 1px;
+    margin-right: 8px;
+    font-weight: 600;
+  }
+  .copy {
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 4px 10px;
+    font-size: 12px;
+    cursor: pointer;
+    color: var(--muted);
+    transition: all .15s;
+    flex-shrink: 0;
+  }
+  .copy:hover { background: var(--text); color: white; border-color: var(--text); }
+  .copy.copied { background: #4caf50; color: white; border-color: #4caf50; }
+  .meta-tag {
+    display: inline-block;
+    background: rgba(139,90,60,0.10);
+    color: var(--accent3);
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+  }
+  .pov {
+    background: #1a201d;
+    color: #fff;
+    padding: 14px 18px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 15px;
+    text-align: center;
+    margin: 0 0 16px;
+    letter-spacing: 1.2px;
+    line-height: 1.6;
+    position: relative;
+  }
+  .pov::before {
+    content: "🎬 畫面頂部字幕";
+    position: absolute;
+    top: -10px;
+    left: 14px;
+    background: var(--card);
+    font-size: 10px;
+    font-weight: 400;
+    color: var(--muted);
+    padding: 0 6px;
+    letter-spacing: 0.5px;
+  }
+  .script {
+    font-size: 15.5px;
+    line-height: 1.95;
+    color: #333;
+    white-space: pre-wrap;
+    padding: 14px 16px;
+    background: #faf6f1;
+    border-left: 3px solid var(--accent3);
+    border-radius: 4px;
+  }
+  .meta {
+    margin-top: 10px;
+    font-size: 12px;
+    color: var(--muted);
+    display: flex;
+    gap: 12px;
+  }
+  .closing {
+    margin-top: 40px;
+    padding: 24px 28px;
+    background: linear-gradient(135deg, #8b5a3c 0%, #a06b4a 100%);
+    color: white;
+    border-radius: 14px;
+    text-align: center;
+  }
+  .closing .big {
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+  }
+  .closing .small {
+    font-size: 13px;
+    color: rgba(255,255,255,0.8);
+  }
+  footer { text-align: center; color: var(--muted); font-size: 12px; padding: 24px; }
+  @media (max-width: 600px) {
+    header h1 { font-size: 24px; }
+    main { padding: 24px 12px 60px; }
+    .card { padding: 16px 18px; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="label">HALF-SANDWICH GENERATION · DAILY</div>
+  <h1>半三明治<span class="dot">·</span>日常</h1>
+  <p class="sub">20 支逐字稿 · 5 切角分組 · Chie 棲羽口吻<br>「父母在老,我也在過。我們夾心,但不失格。」</p>
+  <div class="pin">主題 1 · 頻道主軸內容</div>
+</header>
+
+<nav>
+  <a href="#g1">過年 · 親戚場</a>
+  <a href="#g2">同學 · 社群場</a>
+  <a href="#g3">父母 · 老家場</a>
+  <a href="#g4">自己 · 深夜場</a>
+  <a href="#g5">重新框架</a>
+</nav>
+
+<main>
+
+<div class="intro">
+  <h2>📝 使用說明</h2>
+  <p>5 個切角各 4 支,字數 100-140,直接念就能上字幕。POV = 畫面頂部黑底白字字幕(TikTok / IG meme 格式)。<br>
+  發布建議:Group 3 父母場 + Group 5 重新框架最容易爆,排在第一週。Group 1 過年場留到春節前後上(時效流量)。<br>
+  視覺:Group 3 用「老家造型」、其他用「工作室」或「街頭」造型(見角色聖經第 4 節)。</p>
+</div>
+
+<!-- ============== GROUP 1 ============== -->
+<h2 class="group-title" id="g1"><span class="num">G1</span>過年 · 親戚場 <span class="desc">被審判的時刻 — 妳怎麼還不結婚 / 妳爸媽老了誰照顧 / 同學都生第二個了 / 一個人會孤單嗎</span></h2>
+
+<div class="card">
+  <div class="card-head"><h3><span class="ep-pill">#01</span>「妳怎麼還不結婚?」我學會的回應</h3><button class="copy">複製</button></div>
+  <span class="meta-tag">過年 · 親戚審判</span>
+  <div class="pov">POV: 你聽見一個過年被逼婚的設計師回話</div>
+  <div class="script">過年回家,姑姑端著菜走過來,問我「妳怎麼還不結婚?」我以前會尷尬笑。現在我會說——「姑姑,不是我還沒結婚,是我還沒遇到值得停下來的人。」她愣了一下,沒再問。我發現一件事:問題不是要被回答,是要被重新框。妳不欠任何人交代,妳只欠自己一個誠實的答案。</div>
+  <div class="meta"><span>字數約 110</span><span>秒數約 32</span></div>
+</div>
+
+<div class="card">
+  <div class="card-head"><h3><span class="ep-pill">#02</span>「妳爸媽老了誰照顧?」這句話,我三天才答得出來</h3><button class="copy">複製</button></div>
+  <span class="meta-tag">過年 · 親戚審判</span>
+  <div class="pov">POV: 你聽見一個半三明治世代的女兒</div>
+  <div class="script">親戚問我:「妳一個人,妳爸媽老了誰照顧?」那天我沒回。回台北的捷運上想了三天。後來我答得出來——「我照顧。我每月回家、我陪病房、我替媽媽找好醫生。我不是因為有對象才有資格照顧爸媽,我本來就是他們的女兒。」這句話送給今天的我,也送給今天的妳。我們沒有少誰,只是沒按誰的劇本走。</div>
+  <div class="meta"><span>字數約 130</span><span>秒數約 38</span></div>
+</div>
+
+<div class="card">
+  <div class="card-head"><h3><span class="ep-pill">#03</span>「同學都生第二個了」聽到這句,我學會的一件事</h3><button class="copy">複製</button></div>
+  <span class="meta-tag">過年 · 親戚審判</span>
+  <div class="pov">POV: 你身邊有一個被「同學都...」轟炸過的女人</div>
+  <div class="script">大姑問我:「妳同學都生第二個了,妳怎麼還沒動靜?」我沒生氣,因為我以前也會慌。但 30 歲後我終於懂——別人的時間表,不是我的時間表。同學在生第二個,我在替媽媽看門診、替自己存退休金、做我的設計案。我們不是在比賽,只是在不同的賽道。妳的賽道,妳替自己跑。</div>
+  <div class="meta"><span>字數約 115</span><span>秒數約 34</span></div>
+</div>
+
+<div class="card">
+  <div class="card-head"><h3><span class="ep-pill">#04</span>「妳一個人在台北會孤單嗎?」我的真實答案</h3><button class="copy">複製</button></div>
+  <span class="meta-tag">過年 · 親戚審判</span>
+  <div class="pov">POV: 你聽見一個獨居 30+ 設計師</div>
+  <div class="script">過年走前阿姨拉著我問:「妳一個人在台北,會不會孤單?」我以前會說「不會」,那是禮貌。現在我會說真話——會孤單,但孤單不是問題。問題是「我有沒有把孤單,活成自己的樣子」。我有我的咖啡、我的貓、我的設計、每月回來陪你們的飯。孤單是事實,不是失敗。這個我也走過了。</div>
+  <div class="meta"><span>字數約 122</span><span>秒數約 36</span></div>
+</div>
+
+<!-- ============== GROUP 2 ============== -->
+<h2 class="group-title" id="g2"><span class="num">G2</span>同學 · 社群場 <span class="desc">同代人不再是同類 — 群組彌月 / IG 學區 / 婚禮被點 / 同學會三秒尷尬</span></h2>
+
+<div class="card">
+  <div class="card-head"><h3><span class="ep-pill">#05</span>同學群組今天又在傳彌月照,我學會默默退出</h3><button class="copy">複製</button></div>
+  <span class="meta-tag">同學 · 社群</span>
+  <div class="pov">POV: 你滑過一個 30+ 設計師的螢幕</div>
+  <div class="script">同學群組今天又跳出彌月油飯照,我滑了滑沒回。以前我會勉強自己按愛心,怕被當邊緣人。後來我發現——我不在他們的劇本裡,他們也不在我的。我退了三個群組,沒有人問為什麼。我學會的不是冷漠,是節省。30 歲後最稀缺的是注意力,把它放在會回應你的地方。沒按劇本,也算數。</div>
+  <div class="meta"><span>字數約 122</span><span>秒數約 36</span></div>
+</div>
+
+<div class="card">
+  <div class="card-head"><h3><span class="ep-pill">#06</span>IG 滑到大學同學在曬學區,那一秒的微微疏離</h3><button class="copy">複製</button></div>
+  <span class="meta-tag">同學 · 社群</span>
+  <div class="pov">POV: 你看見一個半三明治世代的早晨</div>
+  <div class="script">早上滑 IG,大學同學在 Story 曬學區房,標籤「為了孩子」。我滑過那一秒,有點微微的疏離。不是嫉妒——我不要那個劇本。是發現我們真的走遠了。十年前我們一起在咖啡店熬論文,現在她在替小孩查國小,我在替媽媽查心臟科。我們同代,但不再是同類。這是 30 歲最安靜的告別。</div>
+  <div class="meta"><span>字數約 120</span><span>秒數約 35</span></div>
+</div>
+
+<div class="card">
+  <div class="card-head"><h3><span class="ep-pill">#07</span>婚禮收到「下次帶男朋友來」,我笑了三秒才回神</h3><button class="copy">複製</button></div>
+  <span class="meta-tag">同學 · 社群</span>
+  <div class="pov">POV: 你坐在 30+ 女設計師旁邊聽她說</div>
+  <div class="script">上週去同學婚禮,新娘媽媽笑著對我說:「Chie 啊,下次妳的場子,記得帶男朋友來。」我笑了三秒才回神。她沒惡意,但我聽見的是另一句——「妳今天還缺一塊。」回家想了很久。不是缺,是我替自己的場子,挑了不一樣的東西。婚禮會有,也可能不會有。但我的場子已經開了,每一天都是。</div>
+  <div class="meta"><span>字數約 125</span><span>秒數約 37</span></div>
+</div>
+
+<div class="card">
+  <div class="card-head"><h3><span class="ep-pill">#08</span>十年同學會的三秒尷尬,我終於不再害怕</h3><button class="copy">複製</button></div>
+  <span class="meta-tag">同學 · 社群</span>
+  <div class="pov">POV: 你旁邊坐著一個剛從同學會回來的女人</div>
+  <div class="script">十年同學會,輪到我自我介紹:「我做設計、自由接案、養一隻黑貓、單身。」三秒尷尬。我以前會慌著補一句什麼。今天我沒補。因為我意識到——「我做設計、自由接案、養一隻黑貓、單身」,這已經是一句完整的話。沒按劇本不等於沒過完。會尷尬的人,是還沒看見我的劇本的人。</div>
+  <div class="meta"><span>字數約 122</span><span>秒數約 36</span></div>
+</div>
+
+<!-- ============== GROUP 3 ============== -->
+<h2 class="group-title" id="g3"><span class="num">G3</span>父母 · 老家場 <span class="desc">上半的責任浮現 — 媽媽住院 / 爸爸重複講故事 / 老家空了 / 雙重供養</span></h2>
+
+<div class="card">
+  <div class="card-head"><h3><span class="ep-pill">#09</span>媽媽第一次住院,我在病房過了三個夜晚才看清</h3><button class="copy">複製</button></div>
+  <span class="meta-tag">父母 · 老家</span>
+  <div class="pov">POV: 你看見一個女兒在病房的折疊床上</div>
+  <div class="script">29 歲那年冬天,媽媽動了一個小手術。我在病房折疊床睡了三個晚上。第二夜聽著她的呼吸聲,我突然懂了——我夾在「上一代要照顧」和「下一代沒接力」之間。同代的人都在帶小孩,我在帶媽媽掛號。這不是失敗,這是一種沒人替我寫過的劇本。從那夜起,我替自己重新寫。</div>
+  <div class="meta"><span>字數約 122</span><span>秒數約 36</span></div>
+</div>
+
+<div class="card">
+  <div class="card-head"><h3><span class="ep-pill">#10</span>爸爸開始重複講同一個故事,我學會了三件事</h3><button class="copy">複製</button></div>
+  <span class="meta-tag">父母 · 老家</span>
+  <div class="pov">POV: 你聽見一對父女在客廳餐桌</div>
+  <div class="script">上週回家,爸爸第三次跟我講他當兵時的那個故事。我以前會打斷「你講過了」,最近我學會閉嘴聽完。因為我發現——他重複,不是忘了,是想被聽見。三件事我學會了:父母老化是緩慢的,等你發現時已經來不及;陪伴不是花錢,是花注意力;最重的孝順,是讓他覺得他沒有被當成累贅。</div>
+  <div class="meta"><span>字數約 130</span><span>秒數約 38</span></div>
+</div>
+
+<div class="card">
+  <div class="card-head"><h3><span class="ep-pill">#11</span>回老家發現家裡空了,但媽媽還在</h3><button class="copy">複製</button></div>
+  <span class="meta-tag">父母 · 老家</span>
+  <div class="pov">POV: 你在客廳看見一個沉默的女兒</div>
+  <div class="script">那天回老家,發現我以前的房間已經改成媽媽的儲物間。原本的床、書桌、海報全沒了。我站在門口看了很久。沒有難過,只是一陣空。那一刻我懂——家不是空間,是裡面的人還在。媽媽從廚房叫我吃飯,那一聲讓我繼續走進去。我們夾心世代要學的,是把「家」這個字,從房間延伸到人身上。</div>
+  <div class="meta"><span>字數約 125</span><span>秒數約 37</span></div>
+</div>
+
+<div class="card">
+  <div class="card-head"><h3><span class="ep-pill">#12</span>我替父母想退休金,我的退休金誰想?</h3><button class="copy">複製</button></div>
+  <span class="meta-tag">父母 · 老家 · 雙向供養</span>
+  <div class="pov">POV: 你看見一個 30 歲女兒在算試算表</div>
+  <div class="script">我有一張 Excel,每個月分三欄:自己生活、爸媽未來醫療、自己的退休金。算到第三欄常常算不下去。父母有勞退,但醫療費不知道哪天會來。我沒有小孩接力,自己的老年得自己備。這代人最大的孤獨,不是沒對象,是雙向供養但沒人接班。但我們不哭窮,我們算好。算好,就是一種尊嚴。</div>
+  <div class="meta"><span>字數約 125</span><span>秒數約 37</span></div>
+</div>
+
+<!-- ============== GROUP 4 ============== -->
+<h2 class="group-title" id="g4"><span class="num">G4</span>自己 · 深夜場 <span class="desc">內在自我和解 — 「我是不是失敗了」 / 35 歲生育時鐘 / 過得不差 / 一個人吃飯</span></h2>
+
+<div class="card">
+  <div class="card-head"><h3><span class="ep-pill">#13</span>深夜兩點:「我是不是失敗了?」這個問題我終於有答案</h3><button class="copy">複製</button></div>
+  <span class="meta-tag">自己 · 深夜</span>
+  <div class="pov">POV: 你聽見一個 30 歲女人在手帳上寫</div>
+  <div class="script">深夜兩點,我打開手帳寫了一行:「我是不是失敗了?」寫完盯了五分鐘。然後我畫掉重寫——「失敗的定義是誰下的?」我這幾年沒結婚、沒小孩、沒買房,但我有設計案、有貓、有手帳、有每月回去看媽媽的車票。這不是失敗,這只是沒按劇本。沒按劇本不等於沒活。這個答案,送給今晚一樣失眠的妳。</div>
+  <div class="meta"><span>字數約 130</span><span>秒數約 38</span></div>
+</div>
+
+<div class="card">
+  <div class="card-head"><h3><span class="ep-pill">#14</span>35 歲的生育時鐘響了,我哭了一整晚才想通</h3><button class="copy">複製</button></div>
+  <span class="meta-tag">自己 · 深夜</span>
+  <div class="pov">POV: 你身邊有一個哭過的 30+ 女人</div>
+  <div class="script">上個月我做了一個檢查,醫生輕描淡寫地說:「妳的卵巢狀態不太樂觀。」我點頭、走出診間、回家、把車停好、然後在車裡哭了一個小時。哭完我問自己——我是真的想要小孩,還是怕沒小孩?想了三天,答案是後者。我不是要小孩,我是怕沒按時繳交人生作業。這兩件事不一樣。先分清楚,再決定下一步。</div>
+  <div class="meta"><span>字數約 135</span><span>秒數約 40</span></div>
+</div>
+
+<div class="card">
+  <div class="card-head"><h3><span class="ep-pill">#15</span>「妳一個人,過得不差」這件事,我學會不需要解釋</h3><button class="copy">複製</button></div>
+  <span class="meta-tag">自己 · 深夜</span>
+  <div class="pov">POV: 你看見一個 30+ 女人在咖啡廳裡笑</div>
+  <div class="script">同事看到我在 IG 發「一個人吃日料」的照片,傳訊息問:「妳真的不孤單嗎?」我以前會解釋一大串。現在我學會回一個微笑就好。因為我發現一件事——過得好的人不需要證明,過得不好的人解釋也沒用。我一個人吃飯、一個人騎車、一個人喝紅酒。不是因為沒人約,是因為我享受。妳也可以。</div>
+  <div class="meta"><span>字數約 128</span><span>秒數約 38</span></div>
+</div>
+
+<div class="card">
+  <div class="card-head"><h3><span class="ep-pill">#16</span>一個人吃飯不是孤獨,是一場儀式感</h3><button class="copy">複製</button></div>
+  <span class="meta-tag">自己 · 深夜</span>
+  <div class="pov">POV: 你看見一個女人替自己擺餐桌</div>
+  <div class="script">我每週有兩天,會替自己好好做一頓飯。鋪桌布、開瓶紅酒、燒一道菜、放一張爵士黑膠。朋友以前會勸我「找個對象一起吃」,我笑笑說好。其實我不需要——一個人吃飯是孤獨還是儀式,差在妳怎麼擺它。被迫一個人是孤獨;選擇一個人,是儀式。30 歲學會這個區別,是這代人活得體面的關鍵。</div>
+  <div class="meta"><span>字數約 130</span><span>秒數約 38</span></div>
+</div>
+
+<!-- ============== GROUP 5 ============== -->
+<h2 class="group-title" id="g5"><span class="num">G5</span>重新框架 <span class="desc">替這個族群打贏內在戰爭 — 沒按劇本不等於沒活 / 單身不等於孤獨 / 無子不等於空虛 / 夾心也是完整</span></h2>
+
+<div class="card">
+  <div class="card-head"><h3><span class="ep-pill">#17</span>沒按劇本不等於沒活——30 歲我學會的最重要一句話</h3><button class="copy">複製</button></div>
+  <span class="meta-tag">重新框架 · 主旨句</span>
+  <div class="pov">POV: 你聽見一個過來人說</div>
+  <div class="script">30 歲後我終於懂一件事——劇本是別人寫的,人生是自己過的。劇本上要妳 25 歲訂婚、28 歲生小孩、32 歲買房。妳沒按時,不代表妳沒活。我認識的「半三明治世代」朋友,每個都活得有自己的形狀。沒結婚的在走山、沒生子的在養貓、沒買房的在環遊世界。沒按劇本不等於沒活。這句話,請替自己說一次。</div>
+  <div class="meta"><span>字數約 135</span><span>秒數約 40</span></div>
+</div>
+
+<div class="card">
+  <div class="card-head"><h3><span class="ep-pill">#18</span>單身不等於孤獨,這兩個字差很多</h3><button class="copy">複製</button></div>
+  <span class="meta-tag">重新框架 · 反義拆解</span>
+  <div class="pov">POV: 你身邊一個替妳重新定義的設計師</div>
+  <div class="script">我學設計學到一個概念——「同樣的字,放在不同的位置,意思完全不同」。「單身」也一樣。「單身」放在親戚的句子裡,叫做「妳怎麼還沒解決」。「單身」放在我自己的句子裡,叫做「我替自己挑伴侶有時間」。同樣兩個字,誰下定義差很多。今天起,妳替「單身」這兩個字,重新寫一個位置。它就不再傷妳。</div>
+  <div class="meta"><span>字數約 132</span><span>秒數約 39</span></div>
+</div>
+
+<div class="card">
+  <div class="card-head"><h3><span class="ep-pill">#19</span>無子不等於空虛,我有一整個世界要跑</h3><button class="copy">複製</button></div>
+  <span class="meta-tag">重新框架 · 反義拆解</span>
+  <div class="pov">POV: 你聽見一個沒打算生孩子的女人</div>
+  <div class="script">親戚一直說「妳沒小孩老了會空虛」,我終於想清楚怎麼回。我說:「阿姨,空虛不是因為沒小孩,是因為人沒有自己的世界。我有設計、有貓、有手帳、有每年的旅行、有每月回家陪你們的時間。空虛是個自我問題,不是子女問題。」她點點頭沒再說。我們這代人要證明的,是「幸福不只一條路」。</div>
+  <div class="meta"><span>字數約 130</span><span>秒數約 38</span></div>
+</div>
+
+<div class="card">
+  <div class="card-head"><h3><span class="ep-pill">#20</span>我們夾心,但不失格——半三明治世代的尊嚴</h3><button class="copy">複製</button></div>
+  <span class="meta-tag">重新框架 · 品牌焊死句</span>
+  <div class="pov">POV: 你看見一群被劇本忽略的 30+ 女人</div>
+  <div class="script">我們是夾心世代——上有父母在老,下沒有小孩接力。同代人在學區、在彌月、在我們不在的劇本裡。但夾心不等於失敗。夾心是一種角度,是能看見上下兩層、卻沒被任何一層套住的位置。我們可以選擇——選擇照顧、選擇愛、選擇活法、選擇關係。沒按劇本,也算數。我們夾心,但不失格。</div>
+  <div class="meta"><span>字數約 130</span><span>秒數約 38</span></div>
+</div>
+
+<div class="closing">
+  <div class="big">「父母在老,我也在過。<br>我們夾心,但不失格。」</div>
+  <div class="small">— Chie 棲羽 · 半三明治世代的策展人 —</div>
+</div>
+
+</main>
+
+<footer>
+  半三明治日常 · 主題 1 · 20 支 · v1.0 · 2026-04-29 · Chie 棲羽<br>
+  搭配《角色聖經 v3.0》使用,所有開場 / 結尾簽名請參照聖經第 7 節
+</footer>
+
+<script>
+  document.querySelectorAll('.copy').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.stopPropagation();
+      const card = btn.closest('.card');
+      const script = card.querySelector('.script').textContent.trim();
+      navigator.clipboard.writeText(script).then(() => {
+        btn.textContent = '已複製';
+        btn.classList.add('copied');
+        setTimeout(() => {
+          btn.textContent = '複製';
+          btn.classList.remove('copied');
+        }, 1500);
+      });
+    });
+  });
+</script>
+</body>
+</html>
